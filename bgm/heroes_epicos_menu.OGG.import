@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/heroes_epicos_menu.OGG-6b32457b8ca2e6f378803387db53a9ce.oggstr"
+
+[deps]
+
+source_file="res://bgm/heroes_epicos_menu.OGG"
+dest_files=[ "res://.import/heroes_epicos_menu.OGG-6b32457b8ca2e6f378803387db53a9ce.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
