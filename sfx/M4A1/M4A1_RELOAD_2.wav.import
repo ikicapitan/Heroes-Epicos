@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/M4A1_RELOAD_2.wav-1a6790e663210b3e10b34e2bd4147703.sample"
+
+[deps]
+
+source_file="res://sfx/M4A1/M4A1_RELOAD_2.wav"
+dest_files=[ "res://.import/M4A1_RELOAD_2.wav-1a6790e663210b3e10b34e2bd4147703.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var Velocidad = Vector2()
 export (float) var vel_desp
 export (float) var vel_rot
 export(float) var COOLDOWN_W1 
@@ -19,8 +18,14 @@ func _ready():
 
 func _physics_process(delta):
 	if(path.size() > 1):
-		var d = global_position.distance_to(path[0])
+		var d = position.distance_to(path[0])
 		if(d > 2):
-			global_position = global_position.linear_interpolate(path[0], (vel_desp * delta) / d)
+			position = position.linear_interpolate(path[0], (vel_desp * delta) / d)
 		else:
 			path.remove(0)
+			
+func update_path():
+	print(gamehandler.puntero.position)
+	objetivo = gamehandler.puntero
+	path = nav.get_simple_path(position, objetivo.position, false)
+	

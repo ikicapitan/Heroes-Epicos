@@ -7,3 +7,14 @@ var puntero #Hacia donde apunta el mouse
 func _ready():
 	pass # Replace with function body.
 
+func _input(event):
+	if(target != null):
+		#ANRDOID
+		if(event is InputEventScreenTouch):
+			puntero.position = event.position
+			target.get_node("Personaje").update_path()
+		#PC
+		if(event is InputEventMouseButton):
+			if(event.button_index == BUTTON_RIGHT):
+				puntero.position = event.position
+				target.get_node("Personaje").update_path()
