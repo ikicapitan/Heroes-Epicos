@@ -1,21 +1,27 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
 [ext_resource path="res://scenes/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://sprites/soldado.png" type="Texture" id=3]
 [ext_resource path="res://tiles/tile_n1.tres" type="TileSet" id=4]
+[ext_resource path="res://scenes/Enemy.gd" type="Script" id=5]
+[ext_resource path="res://sprites/terrorista.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.4559, 4.96002 )
+extents = Vector2( 7.79773, 12.3487 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 13.4559, 11.819 )
+extents = Vector2( 12.1671, 11.819 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5.13881, 11.8194 )
 
 [node name="nivel1" type="Node2D"]
 
 [node name="unidad" type="Node" parent="." groups=[
 "player",
 ]]
+editor/display_folded = true
 script = ExtResource( 1 )
 
 [node name="Personaje" type="KinematicBody2D" parent="unidad"]
@@ -40,15 +46,15 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="unidad/Personaje/Area2D"]
+rotation = 1.5708
 texture = ExtResource( 3 )
-flip_v = true
 hframes = 2
 
 [node name="rango_w1" type="RayCast2D" parent="unidad/Personaje"]
-cast_to = Vector2( 0, 300 )
+cast_to = Vector2( 300, 0 )
 
 [node name="rango_w2" type="RayCast2D" parent="unidad/Personaje"]
-cast_to = Vector2( 0, 300 )
+cast_to = Vector2( 300, 0 )
 
 [node name="cooldown" type="Timer" parent="unidad/Personaje"]
 
@@ -76,4 +82,49 @@ position = Vector2( 275.087, 185.452 )
 
 [node name="max" type="Position2D" parent="."]
 position = Vector2( 2410.88, 1282.71 )
+
+[node name="unidad2" type="Node" parent="." groups=[
+"player",
+]]
+script = ExtResource( 1 )
+
+[node name="Enemy" type="KinematicBody2D" parent="unidad2"]
+editor/display_folded = true
+position = Vector2( 1264.62, 339.679 )
+script = ExtResource( 5 )
+vel_desp = 50.0
+vel_rot = 15.0
+
+[node name="Sprite" type="Sprite" parent="unidad2/Enemy"]
+rotation = 1.5708
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="unidad2/Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="unidad2/Enemy"]
+
+[node name="rango_w1" type="RayCast2D" parent="unidad2/Enemy"]
+cast_to = Vector2( 300, 0 )
+
+[node name="rango_w2" type="RayCast2D" parent="unidad2/Enemy"]
+cast_to = Vector2( 300, 0 )
+
+[node name="cooldown" type="Timer" parent="unidad2/Enemy"]
+
+[node name="patrol_points" type="Node" parent="unidad2"]
+
+[node name="1" type="Position2D" parent="unidad2/patrol_points"]
+position = Vector2( 1502.49, 339.058 )
+
+[node name="2" type="Position2D" parent="unidad2/patrol_points"]
+position = Vector2( 1512.98, 696.645 )
+
+[node name="3" type="Position2D" parent="unidad2/patrol_points"]
+position = Vector2( 1054.71, 699.608 )
+
+[node name="4" type="Position2D" parent="unidad2/patrol_points"]
+position = Vector2( 1057.36, 344.504 )
 

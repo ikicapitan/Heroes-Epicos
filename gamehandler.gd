@@ -16,5 +16,5 @@ func _input(event):
 		#PC
 		if(event is InputEventMouseButton):
 			if(event.button_index == BUTTON_RIGHT):
-				puntero.position = event.position
+				puntero.position = puntero.get_global_mouse_position()
 				target.get_node("Personaje").update_path()
