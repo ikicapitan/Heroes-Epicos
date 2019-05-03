@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
 [ext_resource path="res://scenes/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://sprites/soldado.png" type="Texture" id=3]
+[ext_resource path="res://scenes/cam.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.89397, 13.5718 )
@@ -20,9 +21,6 @@ script = ExtResource( 2 )
 vel_desp = 50.0
 vel_rot = 15.0
 
-[node name="Camera2D" type="Camera2D" parent="Personaje"]
-current = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
 position = Vector2( -0.75103, 0.394326 )
 shape = SubResource( 1 )
@@ -30,6 +28,7 @@ shape = SubResource( 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Personaje"]
 
 [node name="Area2D" type="Area2D" parent="Personaje"]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje/Area2D"]
 shape = SubResource( 2 )
@@ -47,3 +46,6 @@ cast_to = Vector2( 300, 0 )
 
 [node name="cooldown" type="Timer" parent="Personaje"]
 
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+
+[connection signal="input_event" from="Personaje/Area2D" to="Personaje" method="_on_Area2D_input_event"]

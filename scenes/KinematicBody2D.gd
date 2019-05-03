@@ -30,3 +30,14 @@ func update_path():
 	objetivo = gamehandler.puntero
 	path = nav.get_simple_path(position, objetivo.position, false)
 	
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	if(gamehandler.estado_actual == gamehandler.estados.select):
+		if(event is InputEventScreenTouch || (event is InputEventMouseButton && event.button_index == BUTTON_LEFT)):
+			gamehandler.target = get_parent()
+			var cam = get_tree().get_nodes_in_group("cam")[0]
+			cam.get_parent().remove_child(cam) #Remuevo la camara como hijo
+			get_node("Area2D").add_child(cam) 
+			cam.position = position
+			cam.position = position - cam.position
+			
