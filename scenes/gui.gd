@@ -20,7 +20,7 @@ func _on_btn_w2_button_down():
 
 func _on_btn_cam_button_down():
 	gamehandler.estado_actual = gamehandler.estados.camera
-	gamehandler.free_camara()
+	gamehandler.free_camera()
 
 
 func _on_btn_exit_button_down():

@@ -21,26 +21,39 @@ func _input(event):
 			if(event is InputEventScreenTouch):
 				puntero.position = event.position
 				target.get_node("Personaje").update_path()
-		elif(estado_actual == estados.camera):
-			if(event is InputEventScreenDrag):
-				if(drag_ant):
-					primer_drag = event.relative_pos*3 - primer_drag
-					get_tree().get_nodes_in_group("camera")[0].set_pos(get_tree().get_nodes_in_group("camera")[0].get_pos() + primer_drag)
-					drag_ant = false
-				else:
-					drag_ant = true
-					primer_drag = event.relative_pos
+	
 		#PC
 		if(event is InputEventMouseButton):
 			if(event.button_index == BUTTON_RIGHT):
 				if(estado_actual == estados.move):
 					puntero.position = puntero.get_global_mouse_position()
 					target.get_node("Personaje").update_path()
-					
-					
+	
+	#Android
+	if(estado_actual == estados.camera):
+		if(event is InputEventScreenDrag):
+			if(drag_ant):
+				primer_drag = event.relative*3 - primer_drag
+				get_tree().get_nodes_in_group("cam")[0].position += primer_drag
+				drag_ant = false
+			else:
+				drag_ant = true
+				primer_drag = event.relative
+		elif(event is InputEventMouseButton):
+			if(event.button_index == BUTTON_LEFT):
+				if(event.is_pressed()):
+					primer_drag = true
+				else:
+					primer_drag = false
+			
+		elif(event is InputEventMouseMotion && primer_drag):
+				var cam = get_tree().get_nodes_in_group("cam")[0]
+				cam.global_position += -event.speed/10
+	
+		
 func free_camera(): #Deja la camara libre para mover
 	if(target != null):
 		var cam = get_tree().get_nodes_in_group("cam")[0]
 		cam.get_parent().remove_child(cam)
 		get_tree().get_nodes_in_group("gui")[0].add_child(cam)
-		cam.position = target.position
+		cam.position = target.get_node("Personaje").position
