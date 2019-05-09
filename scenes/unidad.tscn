@@ -36,7 +36,7 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="Personaje/Area2D"]
 rotation = 1.5708
 texture = ExtResource( 3 )
-hframes = 2
+hframes = 13
 
 [node name="rango_w1" type="RayCast2D" parent="Personaje"]
 cast_to = Vector2( 300, 0 )

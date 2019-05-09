@@ -6,9 +6,11 @@ var puntero #Hacia donde apunta el mouse
 enum estados {none,select,move,weapon1,weapon2, camera}
 var estado_actual = estados.none
 
+
 #Android
 var drag_ant = false
 var primer_drag = Vector2()
+var boton_presionado = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,9 +19,9 @@ func _ready():
 func _input(event):
 	if(target != null):
 		#ANRDOID
-		if(estado_actual == estados.move):
+		if(estado_actual == estados.move && !boton_presionado):
 			if(event is InputEventScreenTouch):
-				puntero.position = event.position
+				puntero.position = puntero.get_global_mouse_position()
 				target.get_node("Personaje").update_path()
 	
 		#PC
