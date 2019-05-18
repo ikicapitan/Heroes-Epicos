@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/7.WAV-bab8d8de2f4e0746366732226a728313.sample"
+
+[deps]
+
+source_file="res://sfx/7.WAV"
+dest_files=[ "res://.import/7.WAV-bab8d8de2f4e0746366732226a728313.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

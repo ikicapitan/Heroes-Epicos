@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/menu.gd" type="Script" id=1]
+[ext_resource path="res://scenes/main.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menu/background_menu.jpg" type="Texture" id=3]
+[ext_resource path="res://menu/heroesepicos_title.png" type="Texture" id=4]
+[ext_resource path="res://bgm/MENU.ogg" type="AudioStream" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "menu"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.192157 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="menu" type="Node2D" groups=[
+"menu",
+]]
+script = ExtResource( 1 )
+juego = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="bckg" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 513.26, 330.492 )
+scale = Vector2( 1.06339, 1.07295 )
+texture = ExtResource( 3 )
+
+[node name="title" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 534.001, 479.339 )
+scale = Vector2( 0.960145, 0.760868 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "menu"
+anims/menu = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 6.058
+autoplay = true
+
