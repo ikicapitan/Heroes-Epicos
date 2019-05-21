@@ -71,6 +71,9 @@ func procesar_colision():
 		if(col.is_in_group("player")):
 			estado_npc = estados.disparando
 			if(puede_disparar):
+				var newshot = get_tree().get_nodes_in_group("main")[0].shotcol.instance()
+				get_tree().get_nodes_in_group("nivel")[0].add_child(newshot)
+				newshot.get_node("P2").global_position = col.global_position
 				if(disparar(col)):
 					col.muerte()
 					estado_npc = estados.persiguiendo
@@ -86,6 +89,7 @@ func disparar(col):
 		return true
 	else:
 		return false
+
 
 func _on_cooldown_timeout():
 	puede_disparar = true

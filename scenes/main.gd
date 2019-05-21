@@ -5,6 +5,7 @@ export (int) var nivel
 export (PackedScene) var gui
 export (PackedScene) var cam
 export (PackedScene) var sfx
+export (PackedScene) var shotcol
 
 
 func load_level():

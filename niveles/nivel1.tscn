@@ -46,7 +46,9 @@ extents = Vector2( 11.8981, 11.819 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 5.13881, 11.8194 )
 
-[node name="nivel1" type="Node2D"]
+[node name="nivel1" type="Node2D" groups=[
+"nivel",
+]]
 
 [node name="paredes" type="TileMap" parent="." groups=[
 "pared",
@@ -74,6 +76,7 @@ position = Vector2( 275.087, 185.452 )
 position = Vector2( 2410.88, 1282.71 )
 
 [node name="unidad" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Personaje" type="KinematicBody2D" parent="unidad" groups=[
