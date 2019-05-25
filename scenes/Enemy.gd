@@ -90,6 +90,9 @@ func disparar(col):
 	else:
 		return false
 
+func muerte():
+	pass
 
 func _on_cooldown_timeout():
 	puede_disparar = true
+

@@ -51,8 +51,32 @@ func muerte():
 func disparar():
 	if(puede_disparar):
 		puede_disparar = false
-		$cooldown.start()
-		get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
+		look_at(get_global_mouse_position()) #Volteamos hacia el disparo
+		match(gamehandler.estado_actual):
+			gamehandler.estados.weapon1: #Arma Primaria
+				$rango_w1.force_raycast_update() #Actualizo Angulo Raycast
+				$cooldown.start()
+				get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
+				if($rango_w1.is_colliding()):
+					var col = $rango_w1.get_collider()
+					var main = get_tree().get_nodes_in_group("main")[0]
+					var nivel = get_tree().get_nodes_in_group("nivel")[0]
+					if(col.is_in_group("npc")):
+						var newshot = main.shotcol.instance()
+						newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
+						nivel.add_child(newshot)
+						if(rand_range(0,100) <= PRECISION):
+							col.muerte()
+					else:
+						var newshot = main.shotcol.instance()
+						newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
+						nivel.add_child(newshot)
+
+			gamehandler.estados.weapon2: #Pistola
+				$rango_w2.force_raycast_update()
+				$cooldown.start()
+				get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
+
 
 func _on_cooldown_timeout():
 	puede_disparar = true

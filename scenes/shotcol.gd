@@ -5,4 +5,5 @@ func _ready():
 
 func _physics_process(delta):
 	if(!$P2.emitting):
-		queue_free()
+		#queue_free()
+		pass
