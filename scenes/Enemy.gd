@@ -91,7 +91,7 @@ func disparar(col):
 		return false
 
 func muerte():
-	pass
+	queue_free()
 
 func _on_cooldown_timeout():
 	puede_disparar = true

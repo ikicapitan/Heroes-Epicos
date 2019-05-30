@@ -10,7 +10,9 @@ extents = Vector2( 5.13881, 11.8194 )
 [node name="enemigo" type="Node"]
 script = ExtResource( 1 )
 
-[node name="Enemy" type="KinematicBody2D" parent="."]
+[node name="Enemy" type="KinematicBody2D" parent="." groups=[
+"npc",
+]]
 script = ExtResource( 2 )
 vel_desp = 50.0
 vel_rot = 15.0

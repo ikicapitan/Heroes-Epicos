@@ -50,6 +50,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 vel_desp = 100.0
 vel_rot = 15.0
+PRECISION = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
 position = Vector2( -0.75103, 0.394326 )

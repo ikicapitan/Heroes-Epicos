@@ -20,6 +20,9 @@ func _ready():
 	pass # Replace with function body.
 
 func _input(event):
+	pass #Amor y paz 
+	
+func _unhandled_input(event):
 	match(estado_j_actual):
 		estados_juego.menu:
 			if(event is InputEventMouseButton || event is InputEventScreenTouch):
@@ -47,7 +50,7 @@ func _input(event):
 						if((estado_actual == estados.weapon1 || estado_actual == estados.weapon2) && !boton_presionado):
 							puntero.position = puntero.get_global_mouse_position()
 							target.get_node("Personaje").disparar()
-			
+							print("hijo de buda")
 			#Android
 			if(estado_actual == estados.camera):
 				if(event is InputEventScreenDrag):
@@ -69,7 +72,7 @@ func _input(event):
 						var cam = get_tree().get_nodes_in_group("cam")[0]
 						cam.global_position += -event.speed/10
 	
-		
+
 func free_camera(): #Deja la camara libre para mover
 	if(target != null):
 		var cam = get_tree().get_nodes_in_group("cam")[0]
