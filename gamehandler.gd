@@ -50,7 +50,6 @@ func _unhandled_input(event):
 						if((estado_actual == estados.weapon1 || estado_actual == estados.weapon2) && !boton_presionado):
 							puntero.position = puntero.get_global_mouse_position()
 							target.get_node("Personaje").disparar()
-							print("hijo de buda")
 			#Android
 			if(estado_actual == estados.camera):
 				if(event is InputEventScreenDrag):

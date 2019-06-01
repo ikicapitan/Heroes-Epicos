@@ -61,6 +61,7 @@ anims/idle = SubResource( 2 )
 anims/walk = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Personaje"]
+editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje/Area2D"]
 shape = SubResource( 4 )

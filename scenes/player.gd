@@ -2,14 +2,14 @@ extends KinematicBody2D
 
 export (float) var vel_desp
 export (float) var vel_rot
-export(float) var COOLDOWN_W1 
-export(float) var COOLDOWN_W2
 export (int) var PRECISION
 var nav = Navigation2D
 var path = []
 var objetivo = Vector2()
 var puede_disparar = true
- 
+export (float) var wait_w1
+export (float) var wait_w2
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -55,6 +55,7 @@ func disparar():
 		match(gamehandler.estado_actual):
 			gamehandler.estados.weapon1: #Arma Primaria
 				$rango_w1.force_raycast_update() #Actualizo Angulo Raycast
+				$cooldown.wait_time = wait_w1
 				$cooldown.start()
 				get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
 				if($rango_w1.is_colliding()):
@@ -74,8 +75,23 @@ func disparar():
 
 			gamehandler.estados.weapon2: #Pistola
 				$rango_w2.force_raycast_update()
+				$cooldown.wait_time = wait_w2
 				$cooldown.start()
-				get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
+				get_tree().get_nodes_in_group("main")[0].generar_sfx(2)
+				if($rango_w1.is_colliding()):
+					var col = $rango_w2.get_collider()
+					var main = get_tree().get_nodes_in_group("main")[0]
+					var nivel = get_tree().get_nodes_in_group("nivel")[0]
+					if(col.is_in_group("npc")):
+						var newshot = main.shotcol.instance()
+						newshot.get_node("P2").global_position = $rango_w2.get_collision_point()
+						nivel.add_child(newshot)
+						if(rand_range(0,100) <= PRECISION):
+							col.muerte()
+					else:
+						var newshot = main.shotcol.instance()
+						newshot.get_node("P2").global_position = $rango_w2.get_collision_point()
+						nivel.add_child(newshot)
 
 
 func _on_cooldown_timeout():
