@@ -12,6 +12,7 @@ script = ExtResource( 1 )
 
 [node name="Enemy" type="KinematicBody2D" parent="." groups=[
 "npc",
+"enemy",
 ]]
 script = ExtResource( 2 )
 vel_desp = 50.0

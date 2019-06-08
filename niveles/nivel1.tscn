@@ -123,17 +123,21 @@ cast_to = Vector2( 300, 0 )
 one_shot = true
 
 [node name="enemigo" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo" groups=[
 "npc",
+"enemy",
 ]]
+editor/display_folded = true
 position = Vector2( 1301.25, 336.904 )
 script = ExtResource( 5 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 75.0
 PRECISION = 20
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo/Enemy"]
 rotation = 1.5708
@@ -167,6 +171,247 @@ position = Vector2( 1053.98, 683.08 )
 [node name="4" type="Position2D" parent="enemigo/patrol_points"]
 position = Vector2( 1053.98, 336.904 )
 
+[node name="enemigo2" type="Node" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="Enemy" type="KinematicBody2D" parent="enemigo2" groups=[
+"npc",
+"enemy",
+]]
+editor/display_folded = true
+position = Vector2( 2196.94, 660.759 )
+script = ExtResource( 5 )
+vel_desp = 50.0
+vel_rot = 15.0
+vel_rot_ray = 75.0
+PRECISION = 20
+radio_patrullaje = Vector2( 70, 0 )
+
+[node name="Sprite" type="Sprite" parent="enemigo2/Enemy"]
+rotation = 1.5708
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo2/Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo2/Enemy"]
+
+[node name="rango" type="RayCast2D" parent="enemigo2/Enemy"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+
+[node name="cooldown" type="Timer" parent="enemigo2/Enemy"]
+
+[node name="patrol_points" type="Node" parent="enemigo2"]
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="enemigo2/patrol_points"]
+position = Vector2( 2211.6, 480.62 )
+
+[node name="2" type="Position2D" parent="enemigo2/patrol_points"]
+position = Vector2( 2209.75, 657.821 )
+
+[node name="3" type="Position2D" parent="enemigo2/patrol_points"]
+position = Vector2( 2077.36, 947.716 )
+
+[node name="4" type="Position2D" parent="enemigo2/patrol_points"]
+position = Vector2( 2284.63, 947.602 )
+
+[node name="enemigo3" type="Node" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="Enemy" type="KinematicBody2D" parent="enemigo3" groups=[
+"npc",
+"enemy",
+]]
+editor/display_folded = true
+position = Vector2( 1810.17, 947.602 )
+script = ExtResource( 5 )
+vel_desp = 50.0
+vel_rot = 15.0
+vel_rot_ray = 75.0
+PRECISION = 20
+radio_patrullaje = Vector2( 70, 0 )
+
+[node name="Sprite" type="Sprite" parent="enemigo3/Enemy"]
+rotation = 1.5708
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo3/Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo3/Enemy"]
+
+[node name="rango" type="RayCast2D" parent="enemigo3/Enemy"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+
+[node name="cooldown" type="Timer" parent="enemigo3/Enemy"]
+
+[node name="patrol_points" type="Node" parent="enemigo3"]
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="enemigo3/patrol_points"]
+position = Vector2( 2392.96, 473.218 )
+
+[node name="enemigo4" type="Node" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="Enemy" type="KinematicBody2D" parent="enemigo4" groups=[
+"npc",
+"enemy",
+]]
+editor/display_folded = true
+position = Vector2( 1303.1, 1145.62 )
+script = ExtResource( 5 )
+vel_desp = 50.0
+vel_rot = 15.0
+vel_rot_ray = 75.0
+PRECISION = 20
+radio_patrullaje = Vector2( 70, 0 )
+
+[node name="Sprite" type="Sprite" parent="enemigo4/Enemy"]
+rotation = 1.5708
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo4/Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo4/Enemy"]
+
+[node name="rango" type="RayCast2D" parent="enemigo4/Enemy"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+
+[node name="cooldown" type="Timer" parent="enemigo4/Enemy"]
+
+[node name="patrol_points" type="Node" parent="enemigo4"]
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="enemigo4/patrol_points"]
+position = Vector2( 1302.96, 1200.5 )
+
+[node name="2" type="Position2D" parent="enemigo4/patrol_points"]
+position = Vector2( 1413.99, 1200.05 )
+
+[node name="3" type="Position2D" parent="enemigo4/patrol_points"]
+position = Vector2( 1572.15, 916.255 )
+
+[node name="4" type="Position2D" parent="enemigo4/patrol_points"]
+position = Vector2( 1307.51, 919.843 )
+
+[node name="enemigo5" type="Node" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="Enemy" type="KinematicBody2D" parent="enemigo5" groups=[
+"npc",
+"enemy",
+]]
+editor/display_folded = true
+position = Vector2( 1171.71, 1062.34 )
+script = ExtResource( 5 )
+vel_desp = 50.0
+vel_rot = 15.0
+vel_rot_ray = 75.0
+PRECISION = 20
+radio_patrullaje = Vector2( 70, 0 )
+
+[node name="Sprite" type="Sprite" parent="enemigo5/Enemy"]
+rotation = 1.5708
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo5/Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo5/Enemy"]
+
+[node name="rango" type="RayCast2D" parent="enemigo5/Enemy"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+
+[node name="cooldown" type="Timer" parent="enemigo5/Enemy"]
+
+[node name="patrol_points" type="Node" parent="enemigo5"]
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="enemigo5/patrol_points"]
+position = Vector2( 969.85, 1144.99 )
+
+[node name="2" type="Position2D" parent="enemigo5/patrol_points"]
+position = Vector2( 1169.71, 1144.53 )
+
+[node name="3" type="Position2D" parent="enemigo5/patrol_points"]
+position = Vector2( 1096.54, 977.325 )
+
+[node name="4" type="Position2D" parent="enemigo5/patrol_points"]
+position = Vector2( 965.151, 942.05 )
+
+[node name="enemigo6" type="Node" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="Enemy" type="KinematicBody2D" parent="enemigo6" groups=[
+"npc",
+"enemy",
+]]
+editor/display_folded = true
+position = Vector2( 448.124, 1088.25 )
+script = ExtResource( 5 )
+vel_desp = 50.0
+vel_rot = 15.0
+vel_rot_ray = 75.0
+PRECISION = 20
+radio_patrullaje = Vector2( 70, 0 )
+
+[node name="Sprite" type="Sprite" parent="enemigo6/Enemy"]
+rotation = 1.5708
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo6/Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo6/Enemy"]
+
+[node name="rango" type="RayCast2D" parent="enemigo6/Enemy"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+
+[node name="cooldown" type="Timer" parent="enemigo6/Enemy"]
+
+[node name="patrol_points" type="Node" parent="enemigo6"]
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="enemigo6/patrol_points"]
+position = Vector2( 357.302, 1096.87 )
+
+[node name="2" type="Position2D" parent="enemigo6/patrol_points"]
+position = Vector2( 844.009, 1179.69 )
+
+[node name="3" type="Position2D" parent="enemigo6/patrol_points"]
+position = Vector2( 763.436, 1179.04 )
+
+[node name="4" type="Position2D" parent="enemigo6/patrol_points"]
+position = Vector2( 913.335, 1099.35 )
+
 [connection signal="input_event" from="unidad/Personaje/Area2D" to="unidad/Personaje" method="_on_Area2D_input_event"]
 [connection signal="timeout" from="unidad/Personaje/cooldown" to="unidad/Personaje" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="enemigo3/Enemy/cooldown" to="enemigo3/Enemy" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="enemigo4/Enemy/cooldown" to="enemigo4/Enemy" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="enemigo5/Enemy/cooldown" to="enemigo5/Enemy" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="enemigo6/Enemy/cooldown" to="enemigo6/Enemy" method="_on_cooldown_timeout"]

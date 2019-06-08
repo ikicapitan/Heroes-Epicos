@@ -5,6 +5,8 @@ export (float) var vel_rot
 export (float) var vel_rot_ray
 export(float) var COOLDOWN_W1 
 export (int) var PRECISION
+export (Vector2) var radio_patrullaje
+var nivel_alerta = 0
 
 enum estados {none, patrullando, persiguiendo, disparando, vigilando}
 var estado_npc = estados.patrullando
@@ -26,13 +28,13 @@ func _ready():
 		$rango.add_exception(enemy)
 
 	nav = get_tree().get_nodes_in_group("nav")[0]
-	for p_points in get_parent().get_node("patrol_points").get_children():
-		objetivo.append(p_points.position)
+	agregar_patrol_points()
 	update_path()
 
 func _physics_process(delta):
 	radar(delta)
-	if(path.size() > 1 && (estado_npc == estados.persiguiendo || estado_npc == estados.patrullando)):
+	if(path.size() > 1 && (estado_npc == estados.patrullando || estados.persiguiendo)):
+		
 		var angulo = get_angle_to(path[0])
 		rotate(angulo * vel_rot * delta)
 		var d = position.distance_to(path[0])
@@ -40,12 +42,37 @@ func _physics_process(delta):
 			position = position.linear_interpolate(path[0], (vel_desp * delta) / d)
 		else:
 			path.remove(0)
+			
 	else:
-		if(index < objetivo.size()):
-			index+= 1
-		else:
-			index = 1
-		update_path()
+		
+		if(estado_npc == estados.patrullando):
+			if(index < objetivo.size()):
+				index+= 1
+			else:
+				index = 1
+			
+			update_path()
+		
+		if(estado_npc == estados.persiguiendo):
+
+			if(nivel_alerta < 10): #Se enfrio el nivel de alerta
+				print("patrullando")
+				estado_npc = estados.patrullando
+				agregar_patrol_points()
+				update_path()
+			else:
+				print("persiguiendo")
+				var r = radio_patrullaje.rotated(rand_range(0,360))
+				objetivo = []
+				objetivo.append(r + global_position) #Asigno como objetivo posicion del player)
+				nivel_alerta -= 10
+				update_path_enemy()
+		
+		#estaba aca el update_path, testear si funciona igual
+
+func agregar_patrol_points():
+	for p_points in get_parent().get_node("patrol_points").get_children():
+		objetivo.append(p_points.position)
 
 func radar(delta):
 	procesar_colision()
@@ -64,12 +91,20 @@ func radar(delta):
 func update_path():
 	path = nav.get_simple_path(position, objetivo[index-1], false)
 	
+func update_path_enemy():
+	path = nav.get_simple_path(position, objetivo[0], false)
+	
 func procesar_colision():
 	#Deteccion de players raycast
 	if($rango.is_colliding()):
 		var col = $rango.get_collider()
 		if(col.is_in_group("player")):
+			objetivo = []
+			nivel_alerta = 100 #Doy alerta maximo
+			objetivo.append(col.global_position) #Asigno como objetivo posicion del player)
+			update_path_enemy()
 			estado_npc = estados.disparando
+			get_tree().call_group("enemy", "dar_alarma", col.global_position)
 			if(puede_disparar):
 				var newshot = get_tree().get_nodes_in_group("main")[0].shotcol.instance()
 				get_tree().get_nodes_in_group("nivel")[0].add_child(newshot)
@@ -79,6 +114,7 @@ func procesar_colision():
 					estado_npc = estados.persiguiendo
 	elif(estado_npc == estados.disparando):
 		estado_npc = estados.persiguiendo
+		
 	
 func disparar(col):
 	puede_disparar = false
@@ -95,4 +131,13 @@ func muerte():
 
 func _on_cooldown_timeout():
 	puede_disparar = true
+	
+func dar_alarma(posicion):
+	var d = position.distance_to(posicion)
+	if(d > 800): #Distancia respecto del enemigo al punto de alarma
+		if(estado_npc != estados.disparando && estado_npc != estados.persiguiendo):
+			objetivo = []
+			nivel_alerta = 100 #Doy alerta maximo
+			objetivo.append(posicion) #Asigno como objetivo posicion del player)
+			update_path_enemy()
 
