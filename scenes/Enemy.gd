@@ -134,10 +134,11 @@ func _on_cooldown_timeout():
 	
 func dar_alarma(posicion):
 	var d = position.distance_to(posicion)
-	if(d > 800): #Distancia respecto del enemigo al punto de alarma
+	if(d < 800): #Distancia respecto del enemigo al punto de alarma
 		if(estado_npc != estados.disparando && estado_npc != estados.persiguiendo):
 			objetivo = []
 			nivel_alerta = 100 #Doy alerta maximo
+			estado_npc = estados.persiguiendo
 			objetivo.append(posicion) #Asigno como objetivo posicion del player)
 			update_path_enemy()
 

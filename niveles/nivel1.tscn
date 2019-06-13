@@ -1,49 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tiles/tile_n1.tres" type="TileSet" id=1]
-[ext_resource path="res://scenes/unidad.gd" type="Script" id=2]
-[ext_resource path="res://scenes/player.gd" type="Script" id=3]
-[ext_resource path="res://sprites/soldado.png" type="Texture" id=4]
-[ext_resource path="res://scenes/Enemy.gd" type="Script" id=5]
-[ext_resource path="res://sprites/terrorista.png" type="Texture" id=6]
+[ext_resource path="res://scenes/unidad.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/unidad.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Enemy.gd" type="Script" id=4]
+[ext_resource path="res://sprites/civil.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.89397, 13.5718 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Area2D/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=3]
-length = 1.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Area2D/Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 0 ]
-}
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 11.8981, 11.819 )
-
-[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 5.13881, 11.8194 )
 
 [node name="nivel1" type="Node2D" groups=[
@@ -61,6 +24,7 @@ tile_data = PoolIntArray( 786467, 8, 0, 786468, 7, 0, 786469, 7, 0, 786470, 7, 0
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "nav",
 ]]
+editor/display_folded = true
 
 [node name="mapa" type="TileMap" parent="Navigation2D"]
 tile_set = ExtResource( 1 )
@@ -80,59 +44,20 @@ position = Vector2( 275.087, 185.452 )
 [node name="max" type="Position2D" parent="."]
 position = Vector2( 2410.88, 1282.71 )
 
-[node name="unidad" type="Node" parent="."]
-script = ExtResource( 2 )
+[node name="unidad" parent="." instance=ExtResource( 2 )]
 
-[node name="Personaje" type="KinematicBody2D" parent="unidad" groups=[
-"player",
-]]
-position = Vector2( 1307.75, 509.404 )
-script = ExtResource( 3 )
-vel_desp = 100.0
-vel_rot = 15.0
-PRECISION = 100
-wait_w1 = 0.3
-wait_w2 = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="unidad/Personaje"]
-position = Vector2( -0.75103, 0.394326 )
-shape = SubResource( 1 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="unidad/Personaje"]
-anims/idle = SubResource( 2 )
-anims/walk = SubResource( 3 )
-
-[node name="Area2D" type="Area2D" parent="unidad/Personaje"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="unidad/Personaje/Area2D"]
-shape = SubResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="unidad/Personaje/Area2D"]
-rotation = 1.5708
-texture = ExtResource( 4 )
-hframes = 13
-frame = 12
-
-[node name="rango_w1" type="RayCast2D" parent="unidad/Personaje"]
-cast_to = Vector2( 300, 0 )
-
-[node name="rango_w2" type="RayCast2D" parent="unidad/Personaje"]
-cast_to = Vector2( 300, 0 )
-
-[node name="cooldown" type="Timer" parent="unidad/Personaje"]
-one_shot = true
+[node name="Personaje" parent="unidad" index="0"]
+position = Vector2( 1299.32, 524.012 )
 
 [node name="enemigo" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo" groups=[
-"npc",
 "enemy",
+"npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1301.25, 336.904 )
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 75.0
@@ -141,12 +66,12 @@ radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo/Enemy"]
 rotation = 1.5708
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo/Enemy"]
 
@@ -172,16 +97,14 @@ position = Vector2( 1053.98, 683.08 )
 position = Vector2( 1053.98, 336.904 )
 
 [node name="enemigo2" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo2" groups=[
-"npc",
 "enemy",
+"npc",
 ]]
-editor/display_folded = true
 position = Vector2( 2196.94, 660.759 )
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 75.0
@@ -190,12 +113,12 @@ radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo2/Enemy"]
 rotation = 1.5708
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo2/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo2/Enemy"]
 
@@ -221,16 +144,14 @@ position = Vector2( 2077.36, 947.716 )
 position = Vector2( 2284.63, 947.602 )
 
 [node name="enemigo3" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo3" groups=[
-"npc",
 "enemy",
+"npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1810.17, 947.602 )
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 75.0
@@ -239,12 +160,12 @@ radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo3/Enemy"]
 rotation = 1.5708
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo3/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo3/Enemy"]
 
@@ -258,19 +179,17 @@ cast_to = Vector2( 300, 0 )
 editor/display_folded = true
 
 [node name="1" type="Position2D" parent="enemigo3/patrol_points"]
-position = Vector2( 2392.96, 473.218 )
+position = Vector2( 1813.72, 947.515 )
 
 [node name="enemigo4" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo4" groups=[
-"npc",
 "enemy",
+"npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1303.1, 1145.62 )
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 75.0
@@ -279,12 +198,12 @@ radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo4/Enemy"]
 rotation = 1.5708
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo4/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo4/Enemy"]
 
@@ -310,16 +229,14 @@ position = Vector2( 1572.15, 916.255 )
 position = Vector2( 1307.51, 919.843 )
 
 [node name="enemigo5" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo5" groups=[
-"npc",
 "enemy",
+"npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1171.71, 1062.34 )
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 75.0
@@ -328,12 +245,12 @@ radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo5/Enemy"]
 rotation = 1.5708
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo5/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo5/Enemy"]
 
@@ -359,16 +276,14 @@ position = Vector2( 1096.54, 977.325 )
 position = Vector2( 965.151, 942.05 )
 
 [node name="enemigo6" type="Node" parent="."]
-editor/display_folded = true
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo6" groups=[
-"npc",
 "enemy",
+"npc",
 ]]
-editor/display_folded = true
 position = Vector2( 448.124, 1088.25 )
-script = ExtResource( 5 )
+script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 75.0
@@ -377,12 +292,12 @@ radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo6/Enemy"]
 rotation = 1.5708
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo6/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo6/Enemy"]
 
@@ -407,11 +322,11 @@ position = Vector2( 763.436, 1179.04 )
 [node name="4" type="Position2D" parent="enemigo6/patrol_points"]
 position = Vector2( 913.335, 1099.35 )
 
-[connection signal="input_event" from="unidad/Personaje/Area2D" to="unidad/Personaje" method="_on_Area2D_input_event"]
-[connection signal="timeout" from="unidad/Personaje/cooldown" to="unidad/Personaje" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo3/Enemy/cooldown" to="enemigo3/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo4/Enemy/cooldown" to="enemigo4/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo5/Enemy/cooldown" to="enemigo5/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo6/Enemy/cooldown" to="enemigo6/Enemy" method="_on_cooldown_timeout"]
+
+[editable path="unidad"]
