@@ -1,13 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menu/background_menu.jpg" type="Texture" id=3]
-[ext_resource path="res://menu/heroesepicos_title.png" type="Texture" id=4]
-[ext_resource path="res://bgm/MENU.ogg" type="AudioStream" id=5]
+[ext_resource path="res://gui/ikikapitan background.jpg" type="Texture" id=4]
+[ext_resource path="res://menu/heroesepicos_title.png" type="Texture" id=5]
+[ext_resource path="res://fonts/ARMY RUST.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://bgm/MENU.ogg" type="AudioStream" id=7]
 
-[sub_resource type="Animation" id=1]
-resource_name = "menu"
+[sub_resource type="DynamicFont" id=1]
+size = 38
+outline_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=2]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -22,6 +28,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.192157 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/touch_start:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.2, 0.180392, 0.180392, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="menu" type="Node2D" groups=[
 "menu",
@@ -31,22 +49,40 @@ juego = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="bckg" type="Sprite" parent="CanvasLayer"]
+[node name="bckg2" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 513.26, 330.492 )
 scale = Vector2( 1.06339, 1.07295 )
 texture = ExtResource( 3 )
 
+[node name="bckg" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 515.72, 330.457 )
+scale = Vector2( 0.128339, 0.143385 )
+texture = ExtResource( 4 )
+
 [node name="title" type="Sprite" parent="CanvasLayer"]
+visible = false
 position = Vector2( 534.001, 479.339 )
 scale = Vector2( 0.960145, 0.760868 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
+
+[node name="touch_start" type="Label" parent="CanvasLayer"]
+margin_left = 274.126
+margin_top = 507.241
+margin_right = 768.126
+margin_bottom = 547.241
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "TOQUE LA PANTALLA PARA EMPEZAR"
+align = 1
+valign = 1
+uppercase = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "menu"
-anims/menu = SubResource( 1 )
+anims/menu = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 7 )
 volume_db = 6.058
 autoplay = true
 

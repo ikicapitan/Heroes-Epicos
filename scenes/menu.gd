@@ -2,6 +2,7 @@ extends Node2D
 
 export (PackedScene) var juego
 
+
 var instancia = 0 #Pantalla carga
 
 # Called when the node enters the scene tree for the first time.

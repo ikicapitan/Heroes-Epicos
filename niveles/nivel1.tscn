@@ -16,6 +16,7 @@ extents = Vector2( 5.13881, 11.8194 )
 [node name="paredes" type="TileMap" parent="." groups=[
 "pared",
 ]]
+z_index = -2
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -25,6 +26,7 @@ tile_data = PoolIntArray( 786467, 8, 0, 786468, 7, 0, 786469, 7, 0, 786470, 7, 0
 "nav",
 ]]
 editor/display_folded = true
+z_index = -1
 
 [node name="mapa" type="TileMap" parent="Navigation2D"]
 tile_set = ExtResource( 1 )
@@ -48,6 +50,10 @@ position = Vector2( 2410.88, 1282.71 )
 
 [node name="Personaje" parent="unidad" index="0"]
 position = Vector2( 1299.32, 524.012 )
+z_index = 1
+
+[node name="Sprite" parent="unidad/Personaje/Area2D" index="1"]
+z_index = 1
 
 [node name="enemigo" type="Node" parent="."]
 script = ExtResource( 3 )
@@ -56,7 +62,9 @@ script = ExtResource( 3 )
 "enemy",
 "npc",
 ]]
+editor/display_folded = true
 position = Vector2( 1301.25, 336.904 )
+z_index = 1
 script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
@@ -104,6 +112,7 @@ script = ExtResource( 3 )
 "npc",
 ]]
 position = Vector2( 2196.94, 660.759 )
+z_index = 1
 script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
@@ -151,6 +160,7 @@ script = ExtResource( 3 )
 "npc",
 ]]
 position = Vector2( 1810.17, 947.602 )
+z_index = 1
 script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
@@ -189,6 +199,7 @@ script = ExtResource( 3 )
 "npc",
 ]]
 position = Vector2( 1303.1, 1145.62 )
+z_index = 1
 script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
@@ -236,6 +247,7 @@ script = ExtResource( 3 )
 "npc",
 ]]
 position = Vector2( 1171.71, 1062.34 )
+z_index = 1
 script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0
@@ -283,6 +295,7 @@ script = ExtResource( 3 )
 "npc",
 ]]
 position = Vector2( 448.124, 1088.25 )
+z_index = 1
 script = ExtResource( 4 )
 vel_desp = 50.0
 vel_rot = 15.0

@@ -67,6 +67,7 @@ shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Personaje/Area2D"]
 rotation = 1.5708
+z_index = 1
 texture = ExtResource( 3 )
 hframes = 18
 

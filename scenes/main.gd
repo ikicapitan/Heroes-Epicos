@@ -6,6 +6,7 @@ export (PackedScene) var gui
 export (PackedScene) var cam
 export (PackedScene) var sfx
 export (PackedScene) var shotcol
+export (PackedScene) var select
 
 
 func load_level():
@@ -22,9 +23,6 @@ func load_level():
 	var newcam = cam.instance()
 	newgui.add_child(newcam)
 	newcam.global_position = get_tree().get_nodes_in_group("player")[0].global_position
-	
-	
-
 	
 	
 

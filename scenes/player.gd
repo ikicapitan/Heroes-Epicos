@@ -29,6 +29,7 @@ func _physics_process(delta):
 			path.remove(0)
 	else:
 		$AnimationPlayer.play("idle")
+		
 			
 func update_path():
 	objetivo = gamehandler.puntero
@@ -44,6 +45,8 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			get_node("Area2D").add_child(cam) 
 			cam.position = position
 			cam.position = position - cam.position
+			var s_select = get_tree().get_nodes_in_group("main")[0].select.instance()
+			add_child(s_select)
 			
 func muerte():
 	print("muerto")
