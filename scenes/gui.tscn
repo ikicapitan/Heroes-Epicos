@@ -18,7 +18,12 @@ script = ExtResource( 1 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="btn_select" type="TextureButton" parent="GUI"]
+[node name="Botones" type="Position2D" parent="GUI" groups=[
+"botones",
+]]
+visible = false
+
+[node name="btn_select" type="TextureButton" parent="GUI/Botones"]
 editor/display_folded = true
 margin_left = 32.0
 margin_top = 503.0
@@ -28,11 +33,11 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 
-[node name="Sprite" type="Sprite" parent="GUI/btn_select"]
+[node name="Sprite" type="Sprite" parent="GUI/Botones/btn_select"]
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 4 )
 
-[node name="btn_move" type="TextureButton" parent="GUI"]
+[node name="btn_move" type="TextureButton" parent="GUI/Botones"]
 editor/display_folded = true
 margin_left = 132.0
 margin_top = 500.0
@@ -42,11 +47,11 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 
-[node name="Sprite" type="Sprite" parent="GUI/btn_move"]
+[node name="Sprite" type="Sprite" parent="GUI/Botones/btn_move"]
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 5 )
 
-[node name="btn_w1" type="TextureButton" parent="GUI"]
+[node name="btn_w1" type="TextureButton" parent="GUI/Botones"]
 editor/display_folded = true
 margin_left = 232.0
 margin_top = 500.0
@@ -56,11 +61,11 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 
-[node name="Sprite" type="Sprite" parent="GUI/btn_w1"]
+[node name="Sprite" type="Sprite" parent="GUI/Botones/btn_w1"]
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 6 )
 
-[node name="btn_w2" type="TextureButton" parent="GUI"]
+[node name="btn_w2" type="TextureButton" parent="GUI/Botones"]
 editor/display_folded = true
 margin_left = 332.0
 margin_top = 500.0
@@ -70,11 +75,11 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 
-[node name="Sprite" type="Sprite" parent="GUI/btn_w2"]
+[node name="Sprite" type="Sprite" parent="GUI/Botones/btn_w2"]
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 7 )
 
-[node name="btn_cam" type="TextureButton" parent="GUI"]
+[node name="btn_cam" type="TextureButton" parent="GUI/Botones"]
 editor/display_folded = true
 margin_left = 432.0
 margin_top = 500.0
@@ -84,11 +89,11 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 
-[node name="Sprite" type="Sprite" parent="GUI/btn_cam"]
+[node name="Sprite" type="Sprite" parent="GUI/Botones/btn_cam"]
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 8 )
 
-[node name="btn_exit" type="TextureButton" parent="GUI"]
+[node name="btn_exit" type="TextureButton" parent="GUI/Botones"]
 editor/display_folded = true
 margin_left = 957.733
 margin_top = 6.98947
@@ -98,7 +103,7 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 3 )
 expand = true
 
-[node name="Label" type="Label" parent="GUI/btn_exit"]
+[node name="Label" type="Label" parent="GUI/Botones/btn_exit"]
 margin_left = 5.01062
 margin_top = 23.3825
 margin_right = 45.0106
@@ -109,9 +114,9 @@ text = "X
 align = 1
 valign = 1
 
-[connection signal="button_down" from="GUI/btn_select" to="." method="_on_btn_select_button_down"]
-[connection signal="button_down" from="GUI/btn_move" to="." method="_on_btn_move_button_down"]
-[connection signal="button_down" from="GUI/btn_w1" to="." method="_on_btn_w1_button_down"]
-[connection signal="button_down" from="GUI/btn_w2" to="." method="_on_btn_w2_button_down"]
-[connection signal="button_down" from="GUI/btn_cam" to="." method="_on_btn_cam_button_down"]
-[connection signal="button_down" from="GUI/btn_exit" to="." method="_on_btn_exit_button_down"]
+[connection signal="button_down" from="GUI/Botones/btn_select" to="." method="_on_btn_select_button_down"]
+[connection signal="button_down" from="GUI/Botones/btn_move" to="." method="_on_btn_move_button_down"]
+[connection signal="button_down" from="GUI/Botones/btn_w1" to="." method="_on_btn_w1_button_down"]
+[connection signal="button_down" from="GUI/Botones/btn_w2" to="." method="_on_btn_w2_button_down"]
+[connection signal="button_down" from="GUI/Botones/btn_cam" to="." method="_on_btn_cam_button_down"]
+[connection signal="button_down" from="GUI/Botones/btn_exit" to="." method="_on_btn_exit_button_down"]

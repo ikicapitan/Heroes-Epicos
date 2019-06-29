@@ -48,6 +48,7 @@ script = ExtResource( 1 )
 juego = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="bckg2" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 513.26, 330.492 )

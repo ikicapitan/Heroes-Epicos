@@ -45,7 +45,12 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			get_node("Area2D").add_child(cam) 
 			cam.position = position
 			cam.position = position - cam.position
-			var s_select = get_tree().get_nodes_in_group("main")[0].select.instance()
+			var s_select
+			if(get_tree().get_nodes_in_group("select").size() == 0):
+			 	s_select = get_tree().get_nodes_in_group("main")[0].select.instance()
+			else:
+				s_select = get_tree().get_nodes_in_group("select")[0]
+			
 			add_child(s_select)
 			
 func muerte():

@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/rehen.gd" type="Script" id=1]
+[ext_resource path="res://sprites/soldado.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.89397, 13.5718 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Area2D/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Area2D/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.8981, 11.819 )
+
+[node name="rehen" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Personaje" type="KinematicBody2D" parent="." groups=[
+"objetivo",
+"rehen",
+]]
+position = Vector2( 1299.32, 524.012 )
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
+position = Vector2( -0.75103, 0.394326 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personaje"]
+anims/idle = SubResource( 2 )
+anims/walk = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Personaje"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje/Area2D"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Personaje/Area2D"]
+rotation = 1.5708
+z_index = 1
+texture = ExtResource( 2 )
+hframes = 18
+
+[connection signal="input_event" from="Personaje/Area2D" to="Personaje" method="_on_Area2D_input_event"]

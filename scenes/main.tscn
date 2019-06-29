@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/cam.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/sfx.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/shotcol.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/Select.tscn" type="PackedScene" id=6]
-[ext_resource path="res://bgm/1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://scenes/camobj.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/sfx.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/shotcol.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Select.tscn" type="PackedScene" id=7]
+[ext_resource path="res://bgm/1.ogg" type="AudioStream" id=8]
 
 [node name="main" type="Node2D" groups=[
 "main",
@@ -15,15 +16,16 @@ script = ExtResource( 1 )
 nivel = 1
 gui = ExtResource( 2 )
 cam = ExtResource( 3 )
-sfx = ExtResource( 4 )
-shotcol = ExtResource( 5 )
-select = ExtResource( 6 )
+cam_obj = ExtResource( 4 )
+sfx = ExtResource( 5 )
+shotcol = ExtResource( 6 )
+select = ExtResource( 7 )
 
 [node name="objetivo" type="Position2D" parent="." groups=[
 "goal",
 ]]
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+stream = ExtResource( 8 )
 volume_db = 4.0
 
