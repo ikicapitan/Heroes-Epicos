@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasModulate
 
 export (int) var nivel
 
@@ -11,6 +11,8 @@ export (PackedScene) var select
 
 
 func load_level():
+	fade_in()
+	
 	var lvl = load("res://niveles/nivel" +str(nivel)+ ".tscn")
 	
 
@@ -50,3 +52,15 @@ func generar_sfx(num):
 	newSfx.play()
 	
 
+func fade_in():
+	$canvas.play("fade_in")
+	
+func fade_out():
+	$canvas.play("fade_out")
+	
+
+
+
+func _on_canvas_animation_finished(anim_name):
+	if(anim_name == "fade_out"):
+		load_level()

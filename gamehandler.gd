@@ -9,6 +9,8 @@ var estado_j_actual = estados_juego.menu
 enum estados {none,select,move,weapon1,weapon2, camera}
 var estado_actual = estados.none
 
+var nivel = 1
+
 
 #Android
 var drag_ant = false
@@ -78,3 +80,8 @@ func free_camera(): #Deja la camara libre para mover
 		cam.get_parent().remove_child(cam)
 		get_tree().get_nodes_in_group("gui")[0].add_child(cam)
 		cam.position = target.get_node("Personaje").position
+		
+func hostage_saved():
+	if(get_tree().get_nodes_in_group("not_saved").size() == 0):
+		nivel += 1
+		#animacion + change level

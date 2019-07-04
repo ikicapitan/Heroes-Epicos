@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui.tscn" type="PackedScene" id=2]
@@ -9,7 +9,39 @@
 [ext_resource path="res://scenes/Select.tscn" type="PackedScene" id=7]
 [ext_resource path="res://bgm/1.ogg" type="AudioStream" id=8]
 
-[node name="main" type="Node2D" groups=[
+[sub_resource type="Animation" id=1]
+resource_name = "fade_in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="main" type="CanvasModulate" groups=[
 "main",
 ]]
 script = ExtResource( 1 )
@@ -29,3 +61,8 @@ select = ExtResource( 7 )
 stream = ExtResource( 8 )
 volume_db = 4.0
 
+[node name="canvas" type="AnimationPlayer" parent="."]
+anims/fade_in = SubResource( 1 )
+anims/fade_out = SubResource( 2 )
+
+[connection signal="animation_finished" from="canvas" to="." method="_on_canvas_animation_finished"]
