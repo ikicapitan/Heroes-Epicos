@@ -29,7 +29,8 @@ func _unhandled_input(event):
 		estados_juego.menu:
 			if(event is InputEventMouseButton || event is InputEventScreenTouch):
 				#Pasamos a otra instancia del menu
-				get_tree().get_nodes_in_group("menu")[0].procesar_instancia()
+				if(get_tree().get_nodes_in_group("menu")[0].instancia == 0):
+					get_tree().get_nodes_in_group("menu")[0].procesar_instancia()
 		estados_juego.juego:
 			if(target != null):
 				#ANRDOID

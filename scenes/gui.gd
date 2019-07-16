@@ -34,7 +34,7 @@ func button_press():
 	gamehandler.boton_presionado = false
 
 func _on_btn_exit_button_down():
-	pass # Replace with function body.
+	get_tree().quit()
 
 
 
