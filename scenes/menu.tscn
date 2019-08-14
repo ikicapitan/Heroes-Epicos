@@ -1,393 +1,43 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/main.tscn" type="PackedScene" id=2]
-[ext_resource path="res://menu/background_menu.jpg" type="Texture" id=3]
-[ext_resource path="res://gui/ikikapitan background.jpg" type="Texture" id=4]
-[ext_resource path="res://menu/heroesepicos_title.png" type="Texture" id=5]
-[ext_resource path="res://fonts/ARMY RUST.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://gui/btn_game.png" type="Texture" id=7]
-[ext_resource path="res://bgm/MENU.ogg" type="AudioStream" id=8]
+[ext_resource path="res://scenes/mision.tscn" type="PackedScene" id=3]
+[ext_resource path="res://bgm/MENU.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/canvasmenu.tscn" type="PackedScene" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-size = 46
-outline_color = Color( 0.905882, 0.905882, 0.905882, 1 )
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 66
-font_data = ExtResource( 6 )
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 length = 2.0
 loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/title:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.192157 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/touch_start:custom_colors/font_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.2, 0.180392, 0.180392, 1 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [node name="menu" type="Node2D" groups=[
 "menu",
 ]]
 script = ExtResource( 1 )
 juego = ExtResource( 2 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="bckg2" type="Sprite" parent="CanvasLayer"]
-visible = false
-modulate = Color( 1, 1, 1, 0.631373 )
-position = Vector2( 513.26, 330.492 )
-scale = Vector2( 1.06339, 1.07295 )
-texture = ExtResource( 3 )
-
-[node name="bckg" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 515.72, 330.457 )
-scale = Vector2( 0.128339, 0.143385 )
-texture = ExtResource( 4 )
-
-[node name="title" type="Sprite" parent="CanvasLayer"]
-visible = false
-position = Vector2( 529.684, 118.874 )
-scale = Vector2( 0.960145, 0.760868 )
-texture = ExtResource( 5 )
-
-[node name="touch_start" type="Label" parent="CanvasLayer"]
-margin_left = 274.126
-margin_top = 507.241
-margin_right = 768.126
-margin_bottom = 547.241
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "TOQUE LA PANTALLA PARA EMPEZAR"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="menu2" type="Position2D" parent="CanvasLayer"]
-editor/display_folded = true
-visible = false
-
-[node name="start" type="TextureButton" parent="CanvasLayer/menu2"]
-margin_left = 269.809
-margin_top = 269.208
-margin_right = 918.809
-margin_bottom = 363.208
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 7 )
-expand = true
-
-[node name="continue" type="TextureButton" parent="CanvasLayer/menu2"]
-margin_left = 269.809
-margin_top = 365.465
-margin_right = 918.809
-margin_bottom = 459.465
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 7 )
-expand = true
-
-[node name="creditos" type="TextureButton" parent="CanvasLayer/menu2"]
-margin_left = 269.809
-margin_top = 459.465
-margin_right = 918.809
-margin_bottom = 553.465
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 7 )
-expand = true
-
-[node name="salir" type="TextureButton" parent="CanvasLayer/menu2"]
-margin_left = 956.0
-margin_top = 21.0
-margin_right = 1002.0
-margin_bottom = 72.0
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 7 )
-expand = true
-
-[node name="newgame" type="Label" parent="CanvasLayer/menu2"]
-margin_left = 280.601
-margin_top = 280.602
-margin_right = 774.601
-margin_bottom = 329.602
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "NUEVO JUEGO"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="continue2" type="Label" parent="CanvasLayer/menu2"]
-margin_left = 278.443
-margin_top = 375.574
-margin_right = 772.443
-margin_bottom = 424.574
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "CONTINUAR"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="credits" type="Label" parent="CanvasLayer/menu2"]
-margin_left = 278.443
-margin_top = 472.706
-margin_right = 772.443
-margin_bottom = 521.706
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "CREDITOS"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="menu3" type="Position2D" parent="CanvasLayer"]
-editor/display_folded = true
-visible = false
-
-[node name="atras" type="TextureButton" parent="CanvasLayer/menu3"]
-margin_left = 956.0
-margin_top = 21.0
-margin_right = 1002.0
-margin_bottom = 72.0
-rect_scale = Vector2( 0.8, 0.8 )
-texture_normal = ExtResource( 7 )
-expand = true
-
-[node name="creador" type="Label" parent="CanvasLayer/menu3"]
-editor/display_folded = true
-margin_left = 280.601
-margin_top = 41.0117
-margin_right = 774.601
-margin_bottom = 257.012
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "CREADOR:
-
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="ALANW" type="Label" parent="CanvasLayer/menu3/creador"]
-margin_left = 62.5957
-margin_top = 62.5956
-margin_right = 556.596
-margin_bottom = 163.596
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.552941, 0.941176, 0.615686, 1 )
-text = "ALAN WILHELM      iki
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="graficos" type="Label" parent="CanvasLayer/menu3"]
-editor/display_folded = true
-margin_left = -92.8143
-margin_top = 172.678
-margin_right = 401.186
-margin_bottom = 388.678
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "GRAFICOS
-
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="1" type="Label" parent="CanvasLayer/menu3/graficos"]
-margin_left = 1.76337
-margin_top = 56.1927
-margin_right = 495.763
-margin_bottom = 157.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "MAESTRO GODOT
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="2" type="Label" parent="CanvasLayer/menu3/graficos"]
-margin_left = 1.763
-margin_top = 100.193
-margin_right = 495.763
-margin_bottom = 201.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "LUCAS ALE
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="3" type="Label" parent="CanvasLayer/menu3/graficos"]
-margin_left = 1.763
-margin_top = 144.193
-margin_right = 495.763
-margin_bottom = 245.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "WILLIAN MOREJON
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="4" type="Label" parent="CanvasLayer/menu3/graficos"]
-margin_left = 1.763
-margin_top = 168.193
-margin_right = 495.763
-margin_bottom = 269.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "BRIAN ARG"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="5" type="Label" parent="CanvasLayer/menu3/graficos"]
-margin_left = 1.763
-margin_top = 222.193
-margin_right = 495.763
-margin_bottom = 323.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "BLACK NIGHT"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="6" type="Label" parent="CanvasLayer/menu3/graficos"]
-margin_left = 1.763
-margin_top = 266.193
-margin_right = 495.763
-margin_bottom = 367.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "JUAN C. MONTES"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="7" type="Label" parent="CanvasLayer/menu3/graficos"]
-margin_left = 1.763
-margin_top = 310.193
-margin_right = 495.763
-margin_bottom = 411.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "ANTIFONTE"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="COLABPATROC" type="Label" parent="CanvasLayer/menu3"]
-editor/display_folded = true
-margin_left = 284.918
-margin_top = 170.52
-margin_right = 778.918
-margin_bottom = 313.52
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "PATROCINADORES:
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="1" type="Label" parent="CanvasLayer/menu3/COLABPATROC"]
-margin_top = 32.193
-margin_right = 494.0
-margin_bottom = 133.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "CRISTIAN QUIROZ"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="2" type="Label" parent="CanvasLayer/menu3/COLABPATROC"]
-margin_top = 76.193
-margin_right = 494.0
-margin_bottom = 177.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "TINCHO Z"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="3" type="Label" parent="CanvasLayer/menu3/COLABPATROC"]
-margin_top = 120.193
-margin_right = 494.0
-margin_bottom = 221.193
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "VANGODP"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="BGMSFX" type="Label" parent="CanvasLayer/menu3"]
-editor/display_folded = true
-margin_left = 641.065
-margin_top = 135.984
-margin_right = 1135.07
-margin_bottom = 351.984
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "bgm/ sfx
-"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="1" type="Label" parent="CanvasLayer/menu3/BGMSFX"]
-margin_left = 1.763
-margin_top = 94.0
-margin_right = 495.763
-margin_bottom = 195.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
-text = "EITA
-"
-align = 1
-valign = 1
-uppercase = true
+mision = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "menu"
-anims/menu = SubResource( 2 )
+anims/menu = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 4 )
 volume_db = 6.058
 autoplay = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+
+[node name="menu2" parent="CanvasLayer" index="4"]
+editor/display_folded = false
+
+[node name="menu3" parent="CanvasLayer" index="5"]
+editor/display_folded = false
 
 [connection signal="pressed" from="CanvasLayer/menu2/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu3/atras" to="." method="_on_atras_pressed"]
+
+[editable path="CanvasLayer"]

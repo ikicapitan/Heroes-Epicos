@@ -1,6 +1,7 @@
 extends Node2D
 
 export (PackedScene) var juego
+export (PackedScene) var mision
 
 
 var instancia = 0 #Pantalla carga
@@ -20,8 +21,8 @@ func procesar_instancia():
 
 
 func _on_start_pressed():
-	gamehandler.estado_j_actual = gamehandler.estados_juego.juego
-	get_tree().change_scene_to(juego)
+	gamehandler.estado_j_actual = gamehandler.estados_juego.mision
+	get_tree().change_scene_to(mision)
 
 
 func _on_continue_pressed():

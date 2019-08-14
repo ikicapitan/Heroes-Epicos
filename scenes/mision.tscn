@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/mision.gd" type="Script" id=1]
+[ext_resource path="res://scenes/main.tscn" type="PackedScene" id=2]
+[ext_resource path="res://menu/background_menu.jpg" type="Texture" id=3]
+[ext_resource path="res://gui/Heroes_.png" type="Texture" id=4]
+[ext_resource path="res://fonts/ARMY RUST.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 46
+outline_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 5 )
+
+[node name="mision" type="CanvasLayer" groups=[
+"mision",
+]]
+script = ExtResource( 1 )
+juego = ExtResource( 2 )
+
+[node name="bckg2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.631373 )
+position = Vector2( 513.26, 330.492 )
+scale = Vector2( 1.06339, 1.07295 )
+texture = ExtResource( 3 )
+
+[node name="bckg" type="Sprite" parent="."]
+position = Vector2( 801.974, 248.372 )
+scale = Vector2( 0.454597, 0.422757 )
+texture = ExtResource( 4 )
+
+[node name="touch_start" type="Label" parent="."]
+margin_left = 207.81
+margin_top = 510.399
+margin_right = 854.81
+margin_bottom = 559.399
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "TOQUE LA PANTALLA PARA CONTINUAR"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="newgame" type="Label" parent="."]
+margin_left = 22.1578
+margin_top = 60.9801
+margin_right = 637.158
+margin_bottom = 345.98
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 3
+valign = 1
+uppercase = true
+

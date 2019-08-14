@@ -3,7 +3,7 @@ extends Node
 var target #Unidad seleccionada
 var puntero #Hacia donde apunta el mouse
 
-enum estados_juego {menu,juego}
+enum estados_juego {menu,juego, mision}
 var estado_j_actual = estados_juego.menu
 
 enum estados {none,select,move,weapon1,weapon2, camera}
@@ -31,6 +31,9 @@ func _unhandled_input(event):
 				#Pasamos a otra instancia del menu
 				if(get_tree().get_nodes_in_group("menu")[0].instancia == 0):
 					get_tree().get_nodes_in_group("menu")[0].procesar_instancia()
+		estados_juego.mision:
+			if(event is InputEventMouseButton || event is InputEventScreenTouch):
+				get_tree().get_nodes_in_group("mision")[0].procesar_instancia()
 		estados_juego.juego:
 			if(target != null):
 				#ANRDOID
