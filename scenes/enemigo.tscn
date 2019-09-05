@@ -23,7 +23,7 @@ PRECISION = 100
 [node name="Sprite" type="Sprite" parent="Enemy"]
 rotation = 1.5708
 texture = ExtResource( 3 )
-hframes = 18
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 position = Vector2( -0.250343, -0.106361 )

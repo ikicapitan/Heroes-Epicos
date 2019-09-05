@@ -1,20 +1,21 @@
-[gd_resource type="TileSet" load_steps=32 format=2]
+[gd_resource type="TileSet" load_steps=33 format=2]
 
-[ext_resource path="res://tiles/HETileset.png" type="Texture" id=1]
-[ext_resource path="res://tiles/Alambre.png" type="Texture" id=2]
-[ext_resource path="res://tiles/suelos_lucas.png" type="Texture" id=3]
-[ext_resource path="res://tiles/Alambre2.png" type="Texture" id=4]
-[ext_resource path="res://tiles/edificio_tile.png" type="Texture" id=5]
-[ext_resource path="res://tiles/ruta.png" type="Texture" id=6]
-[ext_resource path="res://tiles/Torreta_ppal.png" type="Texture" id=7]
-[ext_resource path="res://tiles/Pared2.png" type="Texture" id=8]
-[ext_resource path="res://tiles/Pared_rota.png" type="Texture" id=9]
-[ext_resource path="res://tiles/Me_Pica_El_Higado.png" type="Texture" id=10]
-[ext_resource path="res://tiles/1.png" type="Texture" id=11]
-[ext_resource path="res://tiles/2.png" type="Texture" id=12]
-[ext_resource path="res://tiles/3.png" type="Texture" id=13]
-[ext_resource path="res://tiles/4.png" type="Texture" id=14]
-[ext_resource path="res://tiles/5.png" type="Texture" id=15]
+[ext_resource path="res://tiles/piso_de_madera.jpg" type="Texture" id=1]
+[ext_resource path="res://tiles/HETileset.png" type="Texture" id=2]
+[ext_resource path="res://tiles/Alambre.png" type="Texture" id=3]
+[ext_resource path="res://tiles/suelos_lucas.png" type="Texture" id=4]
+[ext_resource path="res://tiles/Alambre2.png" type="Texture" id=5]
+[ext_resource path="res://tiles/edificio_tile.png" type="Texture" id=6]
+[ext_resource path="res://tiles/ruta.png" type="Texture" id=7]
+[ext_resource path="res://tiles/Torreta_ppal.png" type="Texture" id=8]
+[ext_resource path="res://tiles/Pared2.png" type="Texture" id=9]
+[ext_resource path="res://tiles/Pared_rota.png" type="Texture" id=10]
+[ext_resource path="res://tiles/Me_Pica_El_Higado.png" type="Texture" id=11]
+[ext_resource path="res://tiles/1.png" type="Texture" id=12]
+[ext_resource path="res://tiles/2.png" type="Texture" id=13]
+[ext_resource path="res://tiles/3.png" type="Texture" id=14]
+[ext_resource path="res://tiles/4.png" type="Texture" id=15]
+[ext_resource path="res://tiles/5.png" type="Texture" id=16]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
@@ -92,7 +93,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 0/shapes = [  ]
 0/z_index = 0
 1/name = "2"
-1/texture = ExtResource( 1 )
+1/texture = ExtResource( 2 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 32, 0, 32, 32 )
@@ -103,7 +104,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 1/shapes = [  ]
 1/z_index = 0
 2/name = "3"
-2/texture = ExtResource( 1 )
+2/texture = ExtResource( 2 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 96, 0, 32, 32 )
@@ -114,7 +115,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 2/shapes = [  ]
 2/z_index = 0
 3/name = "4"
-3/texture = ExtResource( 1 )
+3/texture = ExtResource( 2 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 128, 0, 32, 32 )
@@ -125,7 +126,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 3/shapes = [  ]
 3/z_index = 0
 4/name = "5"
-4/texture = ExtResource( 1 )
+4/texture = ExtResource( 2 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 160, 0, 32, 32 )
@@ -136,7 +137,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 4/shapes = [  ]
 4/z_index = 0
 5/name = "6"
-5/texture = ExtResource( 1 )
+5/texture = ExtResource( 2 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 192, 0, 32, 32 )
@@ -147,7 +148,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 5/shapes = [  ]
 5/z_index = 0
 6/name = "7"
-6/texture = ExtResource( 1 )
+6/texture = ExtResource( 2 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 224, 0, 32, 32 )
@@ -158,7 +159,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 6/shapes = [  ]
 6/z_index = 0
 7/name = "8"
-7/texture = ExtResource( 1 )
+7/texture = ExtResource( 2 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 320, 0, 32, 32 )
@@ -174,7 +175,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 7/z_index = 0
 8/name = "9"
-8/texture = ExtResource( 1 )
+8/texture = ExtResource( 2 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 288, 0, 32, 32 )
@@ -190,7 +191,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 8/z_index = 0
 9/name = "10"
-9/texture = ExtResource( 1 )
+9/texture = ExtResource( 2 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 256, 0, 32, 32 )
@@ -201,7 +202,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 9/shapes = [  ]
 9/z_index = 0
 10/name = "11"
-10/texture = ExtResource( 1 )
+10/texture = ExtResource( 2 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 352, 0, 32, 32 )
@@ -217,7 +218,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 10/z_index = 0
 11/name = "12"
-11/texture = ExtResource( 1 )
+11/texture = ExtResource( 2 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 288, 32, 32, 32 )
@@ -233,7 +234,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 11/z_index = 0
 12/name = "13"
-12/texture = ExtResource( 1 )
+12/texture = ExtResource( 2 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 352, 32, 32, 32 )
@@ -249,7 +250,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 12/z_index = 0
 13/name = "14"
-13/texture = ExtResource( 1 )
+13/texture = ExtResource( 2 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 288, 64, 32, 32 )
@@ -265,7 +266,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 13/z_index = 0
 14/name = "15"
-14/texture = ExtResource( 1 )
+14/texture = ExtResource( 2 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 32, 32, 32, 32 )
@@ -276,7 +277,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 14/shapes = [  ]
 14/z_index = 0
 15/name = "16"
-15/texture = ExtResource( 1 )
+15/texture = ExtResource( 2 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 384, 32, 32, 32 )
@@ -287,7 +288,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 15/shapes = [  ]
 15/z_index = 0
 16/name = "17"
-16/texture = ExtResource( 1 )
+16/texture = ExtResource( 2 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 320, 64, 32, 32 )
@@ -303,7 +304,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 16/z_index = 0
 17/name = "18"
-17/texture = ExtResource( 1 )
+17/texture = ExtResource( 2 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 352, 64, 32, 32 )
@@ -319,7 +320,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 17/z_index = 0
 18/name = "19"
-18/texture = ExtResource( 1 )
+18/texture = ExtResource( 2 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 352, 96, 32, 32 )
@@ -335,7 +336,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 18/z_index = 0
 19/name = "20"
-19/texture = ExtResource( 1 )
+19/texture = ExtResource( 2 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 384, 64, 32, 32 )
@@ -346,7 +347,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 19/shapes = [  ]
 19/z_index = 0
 20/name = "28"
-20/texture = ExtResource( 1 )
+20/texture = ExtResource( 2 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 0, 192, 32, 32 )
@@ -362,7 +363,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 20/z_index = 0
 21/name = "29"
-21/texture = ExtResource( 1 )
+21/texture = ExtResource( 2 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 32, 192, 32, 32 )
@@ -378,7 +379,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 21/z_index = 0
 22/name = "30"
-22/texture = ExtResource( 1 )
+22/texture = ExtResource( 2 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 64, 192, 32, 32 )
@@ -394,7 +395,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 22/z_index = 0
 23/name = "31"
-23/texture = ExtResource( 1 )
+23/texture = ExtResource( 2 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 64, 192, 32, 32 )
@@ -410,7 +411,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 23/z_index = 0
 24/name = "32"
-24/texture = ExtResource( 1 )
+24/texture = ExtResource( 2 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 96, 192, 32, 32 )
@@ -426,7 +427,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 24/z_index = 0
 25/name = "33"
-25/texture = ExtResource( 1 )
+25/texture = ExtResource( 2 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 128, 192, 32, 32 )
@@ -442,7 +443,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 25/z_index = 0
 26/name = "34"
-26/texture = ExtResource( 1 )
+26/texture = ExtResource( 2 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 192, 192, 32, 32 )
@@ -458,7 +459,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 26/z_index = 0
 27/name = "41"
-27/texture = ExtResource( 1 )
+27/texture = ExtResource( 2 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
 27/region = Rect2( 192, 224, 32, 32 )
@@ -474,7 +475,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 27/z_index = 0
 28/name = "42"
-28/texture = ExtResource( 1 )
+28/texture = ExtResource( 2 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
 28/region = Rect2( 224, 224, 32, 32 )
@@ -490,7 +491,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 28/z_index = 0
 29/name = "43"
-29/texture = ExtResource( 1 )
+29/texture = ExtResource( 2 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
 29/region = Rect2( 256, 224, 32, 32 )
@@ -506,7 +507,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 29/z_index = 0
 30/name = "59"
-30/texture = ExtResource( 2 )
+30/texture = ExtResource( 3 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
 30/region = Rect2( 0, 0, 32, 32 )
@@ -522,7 +523,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 30/z_index = 0
 31/name = "61"
-31/texture = ExtResource( 3 )
+31/texture = ExtResource( 4 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
 31/region = Rect2( 0, 32, 32, 32 )
@@ -538,7 +539,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 31/z_index = 0
 32/name = "62"
-32/texture = ExtResource( 3 )
+32/texture = ExtResource( 4 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
 32/region = Rect2( 32, 32, 32, 32 )
@@ -554,7 +555,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 32/z_index = 0
 33/name = "60"
-33/texture = ExtResource( 4 )
+33/texture = ExtResource( 5 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
 33/region = Rect2( 0, 0, 32, 32 )
@@ -570,7 +571,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 33/z_index = 0
 34/name = "21"
-34/texture = ExtResource( 1 )
+34/texture = ExtResource( 2 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
 34/region = Rect2( 0, 96, 32, 32 )
@@ -581,7 +582,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 34/shapes = [  ]
 34/z_index = 0
 35/name = "22"
-35/texture = ExtResource( 1 )
+35/texture = ExtResource( 2 )
 35/tex_offset = Vector2( 0, 0 )
 35/modulate = Color( 1, 1, 1, 1 )
 35/region = Rect2( 96, 96, 32, 32 )
@@ -592,7 +593,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 35/shapes = [  ]
 35/z_index = 0
 36/name = "23"
-36/texture = ExtResource( 1 )
+36/texture = ExtResource( 2 )
 36/tex_offset = Vector2( 0, 0 )
 36/modulate = Color( 1, 1, 1, 1 )
 36/region = Rect2( 192, 96, 32, 32 )
@@ -603,7 +604,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 36/shapes = [  ]
 36/z_index = 0
 37/name = "24"
-37/texture = ExtResource( 1 )
+37/texture = ExtResource( 2 )
 37/tex_offset = Vector2( 0, 0 )
 37/modulate = Color( 1, 1, 1, 1 )
 37/region = Rect2( 384, 160, 32, 32 )
@@ -614,7 +615,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 37/shapes = [  ]
 37/z_index = 0
 38/name = "25"
-38/texture = ExtResource( 1 )
+38/texture = ExtResource( 2 )
 38/tex_offset = Vector2( 0, 0 )
 38/modulate = Color( 1, 1, 1, 1 )
 38/region = Rect2( 384, 128, 32, 32 )
@@ -625,7 +626,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 38/shapes = [  ]
 38/z_index = 0
 39/name = "26"
-39/texture = ExtResource( 1 )
+39/texture = ExtResource( 2 )
 39/tex_offset = Vector2( 0, 0 )
 39/modulate = Color( 1, 1, 1, 1 )
 39/region = Rect2( 416, 160, 32, 32 )
@@ -636,7 +637,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 39/shapes = [  ]
 39/z_index = 0
 40/name = "27"
-40/texture = ExtResource( 1 )
+40/texture = ExtResource( 2 )
 40/tex_offset = Vector2( 0, 0 )
 40/modulate = Color( 1, 1, 1, 1 )
 40/region = Rect2( 416, 160, 32, 32 )
@@ -647,7 +648,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 40/shapes = [  ]
 40/z_index = 0
 41/name = "35"
-41/texture = ExtResource( 1 )
+41/texture = ExtResource( 2 )
 41/tex_offset = Vector2( 0, 0 )
 41/modulate = Color( 1, 1, 1, 1 )
 41/region = Rect2( 224, 192, 32, 32 )
@@ -658,7 +659,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 41/shapes = [  ]
 41/z_index = 0
 42/name = "36"
-42/texture = ExtResource( 1 )
+42/texture = ExtResource( 2 )
 42/tex_offset = Vector2( 0, 0 )
 42/modulate = Color( 1, 1, 1, 1 )
 42/region = Rect2( 256, 192, 32, 32 )
@@ -669,7 +670,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 42/shapes = [  ]
 42/z_index = 0
 43/name = "37"
-43/texture = ExtResource( 1 )
+43/texture = ExtResource( 2 )
 43/tex_offset = Vector2( 0, 0 )
 43/modulate = Color( 1, 1, 1, 1 )
 43/region = Rect2( 288, 192, 32, 32 )
@@ -680,7 +681,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 43/shapes = [  ]
 43/z_index = 0
 44/name = "38"
-44/texture = ExtResource( 1 )
+44/texture = ExtResource( 2 )
 44/tex_offset = Vector2( 0, 0 )
 44/modulate = Color( 1, 1, 1, 1 )
 44/region = Rect2( 320, 192, 32, 32 )
@@ -691,7 +692,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 44/shapes = [  ]
 44/z_index = 0
 45/name = "39"
-45/texture = ExtResource( 1 )
+45/texture = ExtResource( 2 )
 45/tex_offset = Vector2( 0, 0 )
 45/modulate = Color( 1, 1, 1, 1 )
 45/region = Rect2( 352, 192, 32, 32 )
@@ -702,7 +703,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 45/shapes = [  ]
 45/z_index = 0
 46/name = "40"
-46/texture = ExtResource( 1 )
+46/texture = ExtResource( 2 )
 46/tex_offset = Vector2( 0, 0 )
 46/modulate = Color( 1, 1, 1, 1 )
 46/region = Rect2( 288, 224, 32, 32 )
@@ -713,7 +714,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 46/shapes = [  ]
 46/z_index = 0
 47/name = "44"
-47/texture = ExtResource( 1 )
+47/texture = ExtResource( 2 )
 47/tex_offset = Vector2( 0, 0 )
 47/modulate = Color( 1, 1, 1, 1 )
 47/region = Rect2( 192, 256, 32, 32 )
@@ -724,7 +725,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 47/shapes = [  ]
 47/z_index = 0
 48/name = "45"
-48/texture = ExtResource( 1 )
+48/texture = ExtResource( 2 )
 48/tex_offset = Vector2( 0, 0 )
 48/modulate = Color( 1, 1, 1, 1 )
 48/region = Rect2( 224, 256, 32, 32 )
@@ -735,7 +736,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 48/shapes = [  ]
 48/z_index = 0
 49/name = "46"
-49/texture = ExtResource( 1 )
+49/texture = ExtResource( 2 )
 49/tex_offset = Vector2( 0, 0 )
 49/modulate = Color( 1, 1, 1, 1 )
 49/region = Rect2( 256, 256, 32, 32 )
@@ -746,7 +747,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 49/shapes = [  ]
 49/z_index = 0
 50/name = "47"
-50/texture = ExtResource( 1 )
+50/texture = ExtResource( 2 )
 50/tex_offset = Vector2( 0, 0 )
 50/modulate = Color( 1, 1, 1, 1 )
 50/region = Rect2( 288, 256, 32, 32 )
@@ -757,7 +758,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 50/shapes = [  ]
 50/z_index = 0
 51/name = "48"
-51/texture = ExtResource( 1 )
+51/texture = ExtResource( 2 )
 51/tex_offset = Vector2( 0, 0 )
 51/modulate = Color( 1, 1, 1, 1 )
 51/region = Rect2( 320, 256, 32, 32 )
@@ -768,7 +769,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 51/shapes = [  ]
 51/z_index = 0
 52/name = "49"
-52/texture = ExtResource( 1 )
+52/texture = ExtResource( 2 )
 52/tex_offset = Vector2( 0, 0 )
 52/modulate = Color( 1, 1, 1, 1 )
 52/region = Rect2( 352, 256, 32, 32 )
@@ -779,18 +780,23 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 52/shapes = [  ]
 52/z_index = 0
 53/name = "50"
-53/texture = ExtResource( 5 )
+53/texture = ExtResource( 6 )
 53/tex_offset = Vector2( 0, 0 )
 53/modulate = Color( 1, 1, 1, 1 )
 53/region = Rect2( 0, 0, 32, 32 )
 53/tile_mode = 0
 53/occluder_offset = Vector2( 16, 16 )
 53/navigation_offset = Vector2( 16, 16 )
-53/navigation = SubResource( 7 )
-53/shapes = [  ]
+53/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
+} ]
 53/z_index = 0
 54/name = "51"
-54/texture = ExtResource( 6 )
+54/texture = ExtResource( 7 )
 54/tex_offset = Vector2( 0, 0 )
 54/modulate = Color( 1, 1, 1, 1 )
 54/region = Rect2( 0, 0, 32, 32 )
@@ -801,7 +807,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 54/shapes = [  ]
 54/z_index = 0
 55/name = "52"
-55/texture = ExtResource( 6 )
+55/texture = ExtResource( 7 )
 55/tex_offset = Vector2( 0, 0 )
 55/modulate = Color( 1, 1, 1, 1 )
 55/region = Rect2( 32, 0, 32, 32 )
@@ -812,7 +818,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 55/shapes = [  ]
 55/z_index = 0
 56/name = "53"
-56/texture = ExtResource( 6 )
+56/texture = ExtResource( 7 )
 56/tex_offset = Vector2( 0, 0 )
 56/modulate = Color( 1, 1, 1, 1 )
 56/region = Rect2( 0, 32, 32, 32 )
@@ -823,7 +829,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 56/shapes = [  ]
 56/z_index = 0
 57/name = "54"
-57/texture = ExtResource( 3 )
+57/texture = ExtResource( 4 )
 57/tex_offset = Vector2( 0, 0 )
 57/modulate = Color( 1, 1, 1, 1 )
 57/region = Rect2( 0, 0, 32, 32 )
@@ -834,7 +840,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 57/shapes = [  ]
 57/z_index = 0
 58/name = "56"
-58/texture = ExtResource( 3 )
+58/texture = ExtResource( 4 )
 58/tex_offset = Vector2( 0, 0 )
 58/modulate = Color( 1, 1, 1, 1 )
 58/region = Rect2( 32, 0, 32, 32 )
@@ -845,7 +851,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 58/shapes = [  ]
 58/z_index = 0
 59/name = "57"
-59/texture = ExtResource( 3 )
+59/texture = ExtResource( 4 )
 59/tex_offset = Vector2( 0, 0 )
 59/modulate = Color( 1, 1, 1, 1 )
 59/region = Rect2( 32, 0, 32, 32 )
@@ -855,7 +861,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 59/shapes = [  ]
 59/z_index = 0
 60/name = "58"
-60/texture = ExtResource( 7 )
+60/texture = ExtResource( 8 )
 60/tex_offset = Vector2( 0, 0 )
 60/modulate = Color( 1, 1, 1, 1 )
 60/region = Rect2( 0, 0, 64, 64 )
@@ -865,7 +871,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 60/shapes = [  ]
 60/z_index = 0
 61/name = "63"
-61/texture = ExtResource( 8 )
+61/texture = ExtResource( 9 )
 61/tex_offset = Vector2( 0, 0 )
 61/modulate = Color( 1, 1, 1, 1 )
 61/region = Rect2( 0, 0, 32, 32 )
@@ -875,7 +881,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 61/shapes = [  ]
 61/z_index = 0
 62/name = "64"
-62/texture = ExtResource( 9 )
+62/texture = ExtResource( 10 )
 62/tex_offset = Vector2( 0, 0 )
 62/modulate = Color( 1, 1, 1, 1 )
 62/region = Rect2( 0, 0, 32, 32 )
@@ -885,7 +891,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 62/shapes = [  ]
 62/z_index = 0
 63/name = "65"
-63/texture = ExtResource( 10 )
+63/texture = ExtResource( 11 )
 63/tex_offset = Vector2( 0, 0 )
 63/modulate = Color( 1, 1, 1, 1 )
 63/region = Rect2( 0, 0, 32, 32 )
@@ -901,7 +907,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 63/z_index = 0
 64/name = "66"
-64/texture = ExtResource( 11 )
+64/texture = ExtResource( 12 )
 64/tex_offset = Vector2( 0, 0 )
 64/modulate = Color( 1, 1, 1, 1 )
 64/region = Rect2( 0, 0, 32, 32 )
@@ -917,7 +923,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 64/z_index = 0
 65/name = "67"
-65/texture = ExtResource( 12 )
+65/texture = ExtResource( 13 )
 65/tex_offset = Vector2( 0, 0 )
 65/modulate = Color( 1, 1, 1, 1 )
 65/region = Rect2( 0, 0, 32, 32 )
@@ -933,7 +939,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 65/z_index = 0
 66/name = "68"
-66/texture = ExtResource( 13 )
+66/texture = ExtResource( 14 )
 66/tex_offset = Vector2( 0, 0 )
 66/modulate = Color( 1, 1, 1, 1 )
 66/region = Rect2( 0, 0, 32, 32 )
@@ -949,7 +955,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 66/z_index = 0
 67/name = "69"
-67/texture = ExtResource( 14 )
+67/texture = ExtResource( 15 )
 67/tex_offset = Vector2( 0, 0 )
 67/modulate = Color( 1, 1, 1, 1 )
 67/region = Rect2( 0, 0, 32, 32 )
@@ -965,7 +971,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 67/z_index = 0
 68/name = "70"
-68/texture = ExtResource( 15 )
+68/texture = ExtResource( 16 )
 68/tex_offset = Vector2( 0, 0 )
 68/modulate = Color( 1, 1, 1, 1 )
 68/region = Rect2( 0, 0, 32, 32 )

@@ -18,6 +18,7 @@ func load_level():
 
 	var newgui = gui.instance()
 	add_child(newgui)
+	newgui.procesar_instancias()
 	gamehandler.puntero = $objetivo
 	
 	var newlvl = lvl.instance()
@@ -40,6 +41,8 @@ func load_level():
 	var newcamo = cam_obj.instance()
 	newcamo.name = "Camaraaaaa"
 	newgui.add_child(newcamo)
+	
+	gamehandler.instancias = 0
 
 func _ready():
 	load_level()
@@ -64,3 +67,4 @@ func fade_out():
 func _on_canvas_animation_finished(anim_name):
 	if(anim_name == "fade_out"):
 		load_level()
+

@@ -11,6 +11,8 @@ var estado_actual = estados.none
 
 var nivel = 1
 
+var instancias = 0 #0 intro, 1 cam, 2 intro
+
 
 #Android
 var drag_ant = false

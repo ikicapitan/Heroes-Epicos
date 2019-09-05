@@ -68,7 +68,7 @@ shape = SubResource( 4 )
 rotation = 1.5708
 z_index = 1
 texture = ExtResource( 2 )
-hframes = 18
+hframes = 2
 
 [connection signal="body_entered" from="Personaje/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="input_event" from="Personaje/Area2D" to="Personaje" method="_on_Area2D_input_event"]

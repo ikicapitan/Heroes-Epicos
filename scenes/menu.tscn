@@ -28,10 +28,7 @@ autoplay = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
 
-[node name="menu2" parent="CanvasLayer" index="4"]
-editor/display_folded = false
-
-[node name="menu3" parent="CanvasLayer" index="5"]
+[node name="creador" parent="CanvasLayer/menu3" index="1"]
 editor/display_folded = false
 
 [connection signal="pressed" from="CanvasLayer/menu2/start" to="." method="_on_start_pressed"]

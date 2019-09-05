@@ -1,6 +1,8 @@
 extends CanvasModulate
 
-
+var dat = {
+	texto = ""
+	}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -37,4 +39,37 @@ func _on_btn_exit_button_down():
 	get_tree().quit()
 
 
+func procesar_instancias():
+	leer_tuto()
+	#match(gamehandler.instancias):
+	#	0:
+	#		$GUI/Dialogo.visible = true
+	#		
+	#	1:
+	#		$GUI/Dialogo.visible = false
+	#	2:
+	#		$GUI/Dialogo.visible = true
 
+func leer_tuto():
+	var file = File.new()
+	
+	if(!file.file_exists("res://data/tutorial/" + String(gamehandler.nivel) + "/" + String(gamehandler.instancias) + ".txt")):
+		$GUI/Dialogo.visible = false
+	else:
+		$GUI/Dialogo.visible = true
+		file.open("res://data/tutorial/" + String(gamehandler.nivel) + "/" + String(gamehandler.instancias) + ".txt", File.READ)
+		
+		var data = dat
+		
+		if(!file.eof_reached()):
+			data = parse_json(file.get_line())
+		
+		$GUI/Dialogo/tuto_text.text = file.get_as_text()
+		
+		file.close()
+
+func _on_TextureButton_pressed():
+	gamehandler.instancias += 1
+	$GUI/Dialogo.visible = false
+	procesar_instancias()
+	

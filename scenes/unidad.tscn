@@ -69,7 +69,7 @@ shape = SubResource( 4 )
 rotation = 1.5708
 z_index = 1
 texture = ExtResource( 3 )
-hframes = 18
+hframes = 2
 
 [node name="rango_w1" type="RayCast2D" parent="Personaje"]
 cast_to = Vector2( 300, 0 )

@@ -22,7 +22,8 @@ func _physics_process(delta):
 		rotate(angulo * vel_rot * delta)
 		var d = position.distance_to(path[0])
 		if(!$AnimationPlayer.is_playing()):
-			$AnimationPlayer.play("walk")
+			pass
+			#$AnimationPlayer.play("walk")
 		if(d > 2):
 			position = position.linear_interpolate(path[0], (vel_desp * delta) / d)
 		else:
