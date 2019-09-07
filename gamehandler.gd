@@ -43,6 +43,9 @@ func _unhandled_input(event):
 					if(event is InputEventScreenTouch):
 						puntero.position = puntero.get_global_mouse_position()
 						target.get_node("Personaje").update_path()
+						if(gamehandler.nivel == 1 && gamehandler.instancias == 6):
+							gamehandler.instancias = 7
+							get_tree().get_nodes_in_group("gui")[0].procesar_instancias()
 				elif((estado_actual == estados.weapon1 || estado_actual == estados.weapon2) && !boton_presionado):
 					if(event is InputEventScreenTouch):
 						puntero.position = puntero.get_global_mouse_position()
@@ -54,6 +57,9 @@ func _unhandled_input(event):
 						if(estado_actual == estados.move):
 							puntero.position = puntero.get_global_mouse_position()
 							target.get_node("Personaje").update_path()
+							if(gamehandler.nivel == 1 && gamehandler.instancias == 6):
+								gamehandler.instancias = 7
+								get_tree().get_nodes_in_group("gui")[0].procesar_instancias()
 					if(event.button_index == BUTTON_LEFT):
 						if((estado_actual == estados.weapon1 || estado_actual == estados.weapon2) && !boton_presionado):
 							puntero.position = puntero.get_global_mouse_position()

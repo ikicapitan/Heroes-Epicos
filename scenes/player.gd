@@ -47,12 +47,18 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			cam.position = position
 			cam.position = position - cam.position
 			var s_select
+			
 			if(get_tree().get_nodes_in_group("select").size() == 0):
 			 	s_select = get_tree().get_nodes_in_group("main")[0].select.instance()
 			else:
 				s_select = get_tree().get_nodes_in_group("select")[0]
 			
 			add_child(s_select)
+			
+			#Tutorial
+			if(gamehandler.nivel == 1 && gamehandler.instancias == 4):
+				gamehandler.instancias = 5
+				get_tree().get_nodes_in_group("gui")[0].procesar_instancias()
 			
 func muerte():
 	print("muerto")
