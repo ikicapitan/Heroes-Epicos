@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://sprites/civil.png" type="Texture" id=3]
+[ext_resource path="res://sprites/s4.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.13881, 11.8194 )
@@ -11,8 +11,8 @@ extents = Vector2( 5.13881, 11.8194 )
 script = ExtResource( 1 )
 
 [node name="Enemy" type="KinematicBody2D" parent="." groups=[
-"enemy",
 "npc",
+"enemy",
 ]]
 script = ExtResource( 2 )
 vel_desp = 50.0
@@ -21,9 +21,10 @@ vel_rot_ray = 5.0
 PRECISION = 100
 
 [node name="Sprite" type="Sprite" parent="Enemy"]
+position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
+scale = Vector2( 0.673, 0.457 )
 texture = ExtResource( 3 )
-hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
 position = Vector2( -0.250343, -0.106361 )

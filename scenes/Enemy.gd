@@ -127,6 +127,12 @@ func disparar(col):
 		return false
 
 func muerte():
+	if(gamehandler.nivel == 1 && gamehandler.instancias == 12):
+		gamehandler.instancias = 13
+		get_tree().get_nodes_in_group("gui")[0].procesar_instancias()
+	var ed = get_tree().get_nodes_in_group("main")[0].enemy_dead.instance()
+	get_tree().get_nodes_in_group("nivel")[0].add_child(ed)
+	ed.global_position = global_position
 	queue_free()
 
 func _on_cooldown_timeout():

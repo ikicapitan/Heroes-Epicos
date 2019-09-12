@@ -38,7 +38,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 11.8981, 11.819 )
+extents = Vector2( 18.928, 23.28 )
 
 [node name="rehen" type="Node"]
 script = ExtResource( 1 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/s4.png-fbde2954abed476642126a955f2ccd74.stex"
+path="res://.import/Granadero_Muerto.png-8012e8e1dc1e55dd5f6bf536c7380c16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/s4.png"
-dest_files=[ "res://.import/s4.png-fbde2954abed476642126a955f2ccd74.stex" ]
+source_file="res://sprites/Granadero_Muerto.png"
+dest_files=[ "res://.import/Granadero_Muerto.png-8012e8e1dc1e55dd5f6bf536c7380c16.stex" ]
 
 [params]
 

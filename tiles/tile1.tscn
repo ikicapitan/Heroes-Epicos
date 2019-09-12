@@ -745,7 +745,6 @@ hframes = 2
 navpoly = SubResource( 15 )
 
 [node name="56" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 32, 352 )
 texture = ExtResource( 4 )
 vframes = 2
@@ -781,7 +780,6 @@ texture = ExtResource( 10 )
 shape = SubResource( 16 )
 
 [node name="66" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 416 )
 texture = ExtResource( 11 )
 flip_h = true

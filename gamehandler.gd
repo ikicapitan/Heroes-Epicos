@@ -71,6 +71,7 @@ func _unhandled_input(event):
 						primer_drag = event.relative*3 - primer_drag
 						get_tree().get_nodes_in_group("cam")[0].position += primer_drag
 						drag_ant = false
+						
 					else:
 						drag_ant = true
 						primer_drag = event.relative
@@ -96,4 +97,5 @@ func free_camera(): #Deja la camara libre para mover
 func hostage_saved():
 	if(get_tree().get_nodes_in_group("not_saved").size() == 0):
 		nivel += 1
+		get_tree().get_nodes_in_group("main")[0].restart_level()
 		#animacion + change level

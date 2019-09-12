@@ -28,6 +28,7 @@ func _physics_process(delta):
 			position = position.linear_interpolate(path[0], (vel_desp * delta) / d)
 		else:
 			path.remove(0)
+			
 	else:
 		$AnimationPlayer.play("idle")
 		
@@ -61,7 +62,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				get_tree().get_nodes_in_group("gui")[0].procesar_instancias()
 			
 func muerte():
-	print("muerto")
+	get_parent().morir()
 	
 func disparar():
 	if(puede_disparar):

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/s4.png-fbde2954abed476642126a955f2ccd74.stex"
+path="res://.import/Avion_ww2_papa.png-fa3cd465b90013d3ce997ece490a60e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/s4.png"
-dest_files=[ "res://.import/s4.png-fbde2954abed476642126a955f2ccd74.stex" ]
+source_file="res://sprites/Avion_ww2_papa.png"
+dest_files=[ "res://.import/Avion_ww2_papa.png-fa3cd465b90013d3ce997ece490a60e7.stex" ]
 
 [params]
 

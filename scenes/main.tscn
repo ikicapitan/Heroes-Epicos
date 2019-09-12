@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/gui.tscn" type="PackedScene" id=2]
@@ -7,7 +7,9 @@
 [ext_resource path="res://scenes/sfx.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/shotcol.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/Select.tscn" type="PackedScene" id=7]
-[ext_resource path="res://bgm/1.ogg" type="AudioStream" id=8]
+[ext_resource path="res://scenes/pdead.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/edead.tscn" type="PackedScene" id=9]
+[ext_resource path="res://bgm/1.ogg" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
@@ -52,13 +54,15 @@ cam_obj = ExtResource( 4 )
 sfx = ExtResource( 5 )
 shotcol = ExtResource( 6 )
 select = ExtResource( 7 )
+pj_dead = ExtResource( 8 )
+enemy_dead = ExtResource( 9 )
 
 [node name="objetivo" type="Position2D" parent="." groups=[
 "goal",
 ]]
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 10 )
 volume_db = 4.0
 
 [node name="canvas" type="AnimationPlayer" parent="."]

@@ -1,7 +1,5 @@
 extends CanvasModulate
 
-export (int) var nivel
-
 export (PackedScene) var gui
 export (PackedScene) var cam
 export (PackedScene) var cam_obj
@@ -9,11 +7,23 @@ export (PackedScene) var sfx
 export (PackedScene) var shotcol
 export (PackedScene) var select
 
+export (PackedScene) var pj_dead
+export (PackedScene) var enemy_dead
+
+
+func restart_level():
+	yield(get_tree().create_timer(2.0),"timeout")
+	gamehandler.instancias = 0
+	gamehandler.estado_actual = gamehandler.estados.none
+	gamehandler.target = null
+	gamehandler.puntero = null
+	get_tree().reload_current_scene()
+	
 
 func load_level():
 	fade_in()
 	
-	var lvl = load("res://niveles/nivel" +str(nivel)+ ".tscn")
+	var lvl = load("res://niveles/nivel" +str(gamehandler.nivel)+ ".tscn")
 	
 
 	var newgui = gui.instance()
