@@ -18,6 +18,7 @@ func morir():
 		$Personaje.path = []
 		$Personaje/Area2D/CollisionShape2D.disabled = true
 		$Personaje/CollisionShape2D.disabled = true
-		get_tree().get_nodes_in_group("select")[0].visible = false
+		if(get_tree().get_nodes_in_group("select").size() > 0):
+			get_tree().get_nodes_in_group("select")[0].visible = false
 		get_tree().get_nodes_in_group("main")[0].restart_level()
 	
