@@ -11,14 +11,18 @@ export (PackedScene) var pj_dead
 export (PackedScene) var enemy_dead
 
 
+
+
 func restart_level():
 	yield(get_tree().create_timer(2.0),"timeout")
+	clear_data_level()
+	get_tree().reload_current_scene()
+	
+func clear_data_level():
 	gamehandler.instancias = 0
 	gamehandler.estado_actual = gamehandler.estados.none
 	gamehandler.target = null
 	gamehandler.puntero = null
-	get_tree().reload_current_scene()
-	
 
 func load_level():
 	fade_in()

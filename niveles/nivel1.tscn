@@ -65,8 +65,8 @@ editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo" groups=[
-"enemy",
 "npc",
+"enemy",
 ]]
 position = Vector2( 1301.25, 336.904 )
 z_index = 1
@@ -115,8 +115,8 @@ editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo2" groups=[
-"enemy",
 "npc",
+"enemy",
 ]]
 position = Vector2( 2196.94, 660.759 )
 z_index = 1
@@ -165,8 +165,8 @@ editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo3" groups=[
-"enemy",
 "npc",
+"enemy",
 ]]
 position = Vector2( 1810.17, 947.602 )
 z_index = 1
@@ -206,8 +206,8 @@ editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo4" groups=[
-"enemy",
 "npc",
+"enemy",
 ]]
 position = Vector2( 1303.1, 1145.62 )
 z_index = 1
@@ -256,8 +256,8 @@ editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo5" groups=[
-"enemy",
 "npc",
+"enemy",
 ]]
 position = Vector2( 1171.71, 1062.34 )
 z_index = 1
@@ -306,8 +306,8 @@ editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo6" groups=[
-"enemy",
 "npc",
+"enemy",
 ]]
 editor/display_folded = true
 position = Vector2( 448.124, 1088.25 )
@@ -383,7 +383,7 @@ flip_h = true
 [node name="unidad" parent="." instance=ExtResource( 8 )]
 
 [node name="Personaje" parent="unidad" index="0"]
-position = Vector2( 1301, 528 )
+position = Vector2( 880, 1168 )
 
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]

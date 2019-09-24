@@ -47,7 +47,6 @@ tracks/0/keys = {
 "main",
 ]]
 script = ExtResource( 1 )
-nivel = 1
 gui = ExtResource( 2 )
 cam = ExtResource( 3 )
 cam_obj = ExtResource( 4 )

@@ -45,8 +45,8 @@ script = ExtResource( 1 )
 
 [node name="Personaje" type="KinematicBody2D" parent="." groups=[
 "objetivo",
-"rehen",
 "not_saved",
+"rehen",
 ]]
 position = Vector2( 1299.32, 524.012 )
 z_index = 1

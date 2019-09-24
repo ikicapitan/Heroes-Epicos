@@ -97,5 +97,8 @@ func free_camera(): #Deja la camara libre para mover
 func hostage_saved():
 	if(get_tree().get_nodes_in_group("not_saved").size() == 0):
 		nivel += 1
-		get_tree().get_nodes_in_group("main")[0].restart_level()
+		estado_j_actual = estados_juego.mision
+		get_tree().get_nodes_in_group("main")[0].clear_data_level()
+		get_tree().change_scene("res://scenes/mision.tscn")
+		
 		#animacion + change level
