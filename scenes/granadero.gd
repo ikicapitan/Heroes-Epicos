@@ -70,24 +70,26 @@ func disparar():
 		look_at(get_global_mouse_position()) #Volteamos hacia el disparo
 		match(gamehandler.estado_actual):
 			gamehandler.estados.weapon1: #Arma Primaria
-				$rango_w1.force_raycast_update() #Actualizo Angulo Raycast
 				$cooldown.wait_time = wait_w1
 				$cooldown.start()
-				get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
+			#	get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
+				yield(get_tree().create_timer(1.5),"timeout")
 				if($rango_w1.is_colliding()):
+					look_at(get_global_mouse_position())
+					$rango_w1.force_raycast_update() #Actualizo Angulo Raycast
 					var col = $rango_w1.get_collider()
 					var main = get_tree().get_nodes_in_group("main")[0]
 					var nivel = get_tree().get_nodes_in_group("nivel")[0]
-					if(col.is_in_group("npc")):
-						var newshot = main.shotcol.instance()
-						newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
-						nivel.add_child(newshot)
-						if(rand_range(0,100) <= PRECISION):
-							col.muerte()
-					else:
-						var newshot = main.shotcol.instance()
-						newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
-						nivel.add_child(newshot)
+					if(col.is_in_group("pared")):
+						pass
+						#var newshot = main.shotcol.instance()
+						#newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
+						#nivel.add_child(newshot)
+						#if(rand_range(0,100) <= PRECISION):
+						#	col.muerte()
+				else:
+					pass
+
 
 			gamehandler.estados.weapon2: #Pistola
 				$rango_w2.force_raycast_update()

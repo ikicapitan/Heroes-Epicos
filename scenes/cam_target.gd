@@ -2,6 +2,8 @@ extends Path2D
 
 export (float) var vel_cam
 
+var mov_cam = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().get_nodes_in_group("botones")[0].visible = false
@@ -16,6 +18,9 @@ func _ready():
 
 func _physics_process(delta):
 	if(gamehandler.instancias == 1):
+		mov_cam = true
+		
+	if(mov_cam):
 		if($PathFollow2D.unit_offset >= 1):
 			$PathFollow2D/Camera2D.clear_current()
 			get_tree().get_nodes_in_group("cam")[0].make_current()

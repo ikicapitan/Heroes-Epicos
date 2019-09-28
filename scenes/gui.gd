@@ -40,6 +40,7 @@ func _on_btn_exit_button_down():
 
 
 func procesar_instancias():
+		
 	leer_tuto()
 	#match(gamehandler.instancias):
 	#	0:
@@ -55,6 +56,7 @@ func leer_tuto():
 	
 	if(!file.file_exists("res://data/tutorial/" + String(gamehandler.nivel) + "/" + String(gamehandler.instancias) + ".txt")):
 		$GUI/Dialogo.visible = false
+		get_tree().get_nodes_in_group("botones")[0].visible = true
 	else:
 		$GUI/Dialogo.visible = true
 		file.open("res://data/tutorial/" + String(gamehandler.nivel) + "/" + String(gamehandler.instancias) + ".txt", File.READ)
