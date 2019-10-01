@@ -81,14 +81,20 @@ func disparar():
 					var main = get_tree().get_nodes_in_group("main")[0]
 					var nivel = get_tree().get_nodes_in_group("nivel")[0]
 					if(col.is_in_group("pared")):
-						pass
+						if($rango_w1.cast_to.x > global_position.distance_to(get_global_mouse_position())):
+							print("lanzando granada")
+						else:
+							print("demasiado lejos")
 						#var newshot = main.shotcol.instance()
 						#newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
 						#nivel.add_child(newshot)
 						#if(rand_range(0,100) <= PRECISION):
 						#	col.muerte()
 				else:
-					pass
+						if($rango_w1.cast_to.x > global_position.distance_to(get_global_mouse_position())):
+							print("lanzando granada")
+						else:
+							print("demasiado lejos")
 
 
 			gamehandler.estados.weapon2: #Pistola
