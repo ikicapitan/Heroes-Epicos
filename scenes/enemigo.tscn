@@ -11,8 +11,8 @@ extents = Vector2( 5.13881, 11.8194 )
 script = ExtResource( 1 )
 
 [node name="Enemy" type="KinematicBody2D" parent="." groups=[
-"npc",
 "enemy",
+"npc",
 ]]
 script = ExtResource( 2 )
 vel_desp = 50.0

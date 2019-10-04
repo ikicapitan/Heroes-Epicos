@@ -43,11 +43,17 @@ extents = Vector2( 11.8981, 11.819 )
 
 [node name="granadero" type="Node"]
 script = ExtResource( 1 )
+id = 1
 
 [node name="Personaje" type="KinematicBody2D" parent="." groups=[
 "player",
 ]]
 script = ExtResource( 2 )
+vel_desp = 100.0
+vel_rot = 15.0
+PRECISION = 100
+wait_w1 = 3.0
+wait_w2 = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
 position = Vector2( -0.75103, 0.394326 )

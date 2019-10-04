@@ -148,3 +148,17 @@ func dar_alarma(posicion):
 			objetivo.append(posicion) #Asigno como objetivo posicion del player)
 			update_path_enemy()
 
+func cegar(duracion):
+	$rango.enabled = false
+	yield(get_tree().create_timer(duracion),"timeout")
+	$rango.enabled = true
+	nivel_alerta = 100
+	estado_npc = estados.persiguiendo
+	
+	
+	
+	
+	
+	
+	
+	
