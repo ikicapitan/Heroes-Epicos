@@ -11,6 +11,7 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if(body.is_in_group("enemy")):
 		look_at(body.global_position) #Miro al enemigo (para rotar el raycast)
+		$RayCast2D.force_raycast_update()
 		if($RayCast2D.is_colliding()):
 			var col = $RayCast2D.get_collider()
 			if(col.is_in_group("npc")):

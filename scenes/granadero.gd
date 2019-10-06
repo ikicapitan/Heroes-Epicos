@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+export (PackedScene) var granada_f
 export (float) var vel_desp
 export (float) var vel_rot
 export (int) var PRECISION
@@ -73,7 +74,7 @@ func disparar():
 				$cooldown.wait_time = wait_w1
 				$cooldown.start()
 			#	get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
-				yield(get_tree().create_timer(1.5),"timeout")
+				yield(get_tree().create_timer(1.0),"timeout")
 				if($rango_w1.is_colliding()):
 					look_at(get_global_mouse_position())
 					$rango_w1.force_raycast_update() #Actualizo Angulo Raycast
@@ -82,9 +83,11 @@ func disparar():
 					var nivel = get_tree().get_nodes_in_group("nivel")[0]
 					if(col.is_in_group("pared")):
 						if($rango_w1.cast_to.x > global_position.distance_to(get_global_mouse_position())):
-							print("lanzando granada")
-						else:
-							print("demasiado lejos")
+							var newgranada = granada_f.instance()
+							nivel.add_child(newgranada)
+							newgranada.global_position = get_global_mouse_position()
+						else: #Mas lejos que el rango
+							pass
 						#var newshot = main.shotcol.instance()
 						#newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
 						#nivel.add_child(newshot)
@@ -92,9 +95,13 @@ func disparar():
 						#	col.muerte()
 				else:
 						if($rango_w1.cast_to.x > global_position.distance_to(get_global_mouse_position())):
-							print("lanzando granada")
-						else:
-							print("demasiado lejos")
+							var nivel = get_tree().get_nodes_in_group("nivel")[0]
+							var newgranada = granada_f.instance()
+							nivel.add_child(newgranada)
+							newgranada.global_position = get_global_mouse_position()
+							print("se lanzo")
+						else: #Mas lejos que el rango
+							pass
 
 
 			gamehandler.estados.weapon2: #Pistola

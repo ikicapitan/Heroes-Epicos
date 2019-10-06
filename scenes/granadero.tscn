@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
 [ext_resource path="res://scenes/granadero.gd" type="Script" id=2]
-[ext_resource path="res://sprites/s1.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Granada.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sprites/s1.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.89397, 13.5718 )
@@ -49,6 +50,7 @@ id = 1
 "player",
 ]]
 script = ExtResource( 2 )
+granada_f = ExtResource( 3 )
 vel_desp = 100.0
 vel_rot = 15.0
 PRECISION = 100
@@ -73,7 +75,7 @@ position = Vector2( 4.19115, 2.09559 )
 rotation = 1.5708
 scale = Vector2( 0.672567, 0.457393 )
 z_index = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="rango_w1" type="RayCast2D" parent="Personaje"]
 cast_to = Vector2( 300, 0 )

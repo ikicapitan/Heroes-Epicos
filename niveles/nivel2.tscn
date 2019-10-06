@@ -968,7 +968,6 @@ cast_to = Vector2( 300, 0 )
 [node name="cooldown" type="Timer" parent="enemigo7/Enemy7"]
 
 [node name="enemigo8" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 26 )
 
 [node name="patrol_points" type="Node" parent="enemigo8"]
@@ -990,7 +989,6 @@ position = Vector2( 1045.54, 591.247 )
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1076.24, 571.994 )
 rotation = 1.5708
 script = ExtResource( 27 )

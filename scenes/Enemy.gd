@@ -56,12 +56,12 @@ func _physics_process(delta):
 		if(estado_npc == estados.persiguiendo):
 
 			if(nivel_alerta < 10): #Se enfrio el nivel de alerta
-				print("patrullando")
+				#print("patrullando")
 				estado_npc = estados.patrullando
 				agregar_patrol_points()
 				update_path()
 			else:
-				print("persiguiendo")
+				#print("persiguiendo")
 				var r = radio_patrullaje.rotated(rand_range(0,360))
 				objetivo = []
 				objetivo.append(r + global_position) #Asigno como objetivo posicion del player)
@@ -154,6 +154,7 @@ func cegar(duracion):
 	$rango.enabled = true
 	nivel_alerta = 100
 	estado_npc = estados.persiguiendo
+	print("aaaaa")
 	
 	
 	
