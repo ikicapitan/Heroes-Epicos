@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-export (PackedScene) var granada_f
+export (ImageTexture) var spr_original
+export (ImageTexture) var spr_espia
 export (float) var vel_desp
 export (float) var vel_rot
 export (int) var PRECISION
@@ -10,6 +11,7 @@ var objetivo = Vector2()
 var puede_disparar = true
 export (float) var wait_w1
 export (float) var wait_w2
+var vestido = false
 
 
 
@@ -70,33 +72,7 @@ func disparar():
 				$cooldown.start()
 			#	get_tree().get_nodes_in_group("main")[0].generar_sfx(1)
 				yield(get_tree().create_timer(0.5),"timeout")
-				if($rango_w1.is_colliding()):
-					look_at(get_global_mouse_position())
-					$rango_w1.force_raycast_update() #Actualizo Angulo Raycast
-					var col = $rango_w1.get_collider()
-					var main = get_tree().get_nodes_in_group("main")[0]
-					var nivel = get_tree().get_nodes_in_group("nivel")[0]
-					if(col.is_in_group("pared")):
-						if($rango_w1.cast_to.x > global_position.distance_to(get_global_mouse_position())):
-							var newgranada = granada_f.instance()
-							nivel.add_child(newgranada)
-							newgranada.global_position = get_global_mouse_position()
-						else: #Mas lejos que el rango
-							pass
-						#var newshot = main.shotcol.instance()
-						#newshot.get_node("P2").global_position = $rango_w1.get_collision_point()
-						#nivel.add_child(newshot)
-						#if(rand_range(0,100) <= PRECISION):
-						#	col.muerte()
-				else:
-						if($rango_w1.cast_to.x > global_position.distance_to(get_global_mouse_position())):
-							var nivel = get_tree().get_nodes_in_group("nivel")[0]
-							var newgranada = granada_f.instance()
-							nivel.add_child(newgranada)
-							newgranada.global_position = get_global_mouse_position()
-							print("se lanzo")
-						else: #Mas lejos que el rango
-							pass
+				
 
 
 			gamehandler.estados.weapon2: #Pistola
@@ -123,3 +99,10 @@ func disparar():
 func _on_cooldown_timeout():
 	puede_disparar = true
 	get_tree().get_nodes_in_group("main")[0].generar_sfx(5)
+
+func vestir():
+	vestido = !vestido
+	if(vestido):
+		$Area2D/Sprite.texture = spr_espia
+	else:
+		$Area2D/Sprite.texture = spr_original

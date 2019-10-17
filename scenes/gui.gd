@@ -17,8 +17,12 @@ func _on_btn_move_button_down():
 	button_press()
 
 func _on_btn_w1_button_down():
-	gamehandler.estado_actual = gamehandler.estados.weapon1
-	button_press()
+	if(gamehandler.target != null):
+		if(gamehandler.target.get_parent().id == 2):
+			gamehandler.target.vestir()
+		else:
+			gamehandler.estado_actual = gamehandler.estados.weapon1
+			button_press()
 
 func _on_btn_w2_button_down():
 	gamehandler.estado_actual = gamehandler.estados.weapon2
