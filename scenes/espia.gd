@@ -104,5 +104,9 @@ func vestir():
 	vestido = !vestido
 	if(vestido):
 		$Area2D/Sprite.texture = spr_espia
+		set_collision_layer_bit(0,false)
+		set_collision_mask_bit(0,false)
 	else:
 		$Area2D/Sprite.texture = spr_original
+		set_collision_layer_bit(0,true)
+		set_collision_mask_bit(0,true)

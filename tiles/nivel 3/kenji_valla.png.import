@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bafle berretin.png-28b4e711f891b221e077305d4ea906d8.stex"
+path="res://.import/kenji_valla.png-02e7981f37b2f5b491cf858b35dfe229.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/nivel 3/bafle berretin.png"
-dest_files=[ "res://.import/bafle berretin.png-28b4e711f891b221e077305d4ea906d8.stex" ]
+source_file="res://tiles/nivel 3/kenji_valla.png"
+dest_files=[ "res://.import/kenji_valla.png-02e7981f37b2f5b491cf858b35dfe229.stex" ]
 
 [params]
 

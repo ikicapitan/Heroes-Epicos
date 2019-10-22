@@ -57,6 +57,14 @@ func load_level():
 	newgui.add_child(newcamo)
 	
 	gamehandler.instancias = 0
+	
+	#Tiempo si hay bombas
+	if(get_tree().get_nodes_in_group("bomba").size() > 0): #Hay un objeto tipo bomba encontrado
+		get_tree().get_nodes_in_group("tiempo")[0].visible = true
+	else:
+		get_tree().get_nodes_in_group("tiempo")[0].visible = false
+		
+	
 
 func _ready():
 	load_level()

@@ -9,7 +9,7 @@ var estado_j_actual = estados_juego.menu
 enum estados {none,select,move,weapon1,weapon2, camera}
 var estado_actual = estados.none
 
-var nivel = 2
+var nivel = 3
 
 var instancias = 0 #0 intro, 1 cam, 2 intro
 
@@ -102,3 +102,6 @@ func hostage_saved():
 		get_tree().change_scene("res://scenes/mision.tscn")
 		
 		#animacion + change level
+		
+func update_time(t):
+	get_tree().get_nodes_in_group("tiempo")[0].get_node("time").text = String(int(t/60)) + " " + String(int(t%60))

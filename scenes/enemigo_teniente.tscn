@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://sprites/s4.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.13881, 11.8194 )
+
+[node name="enemigo" type="Node"]
+script = ExtResource( 1 )
+id = 1
+
+[node name="Enemy" type="KinematicBody2D" parent="." groups=[
+"enemy",
+"npc",
+]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 2 )
+vel_desp = 50.0
+vel_rot = 15.0
+vel_rot_ray = 5.0
+PRECISION = 100
+
+[node name="Sprite" type="Sprite" parent="Enemy"]
+position = Vector2( 3.59241, 0.59874 )
+rotation = 1.5708
+scale = Vector2( 0.673, 0.457 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+
+[node name="rango" type="RayCast2D" parent="Enemy"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+collision_mask = 3
+
+[node name="cooldown" type="Timer" parent="Enemy"]
+
+[node name="patrol_points" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="patrol_points"]
+
+[node name="2" type="Position2D" parent="patrol_points"]
+
+[node name="3" type="Position2D" parent="patrol_points"]
+
+[node name="4" type="Position2D" parent="patrol_points"]
+
+[connection signal="timeout" from="Enemy/cooldown" to="Enemy" method="_on_cooldown_timeout"]
