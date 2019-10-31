@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://tiles/tile_n3.tres" type="TileSet" id=1]
 [ext_resource path="res://tiles/nivel 3/baya.png" type="Texture" id=2]
@@ -6,27 +6,37 @@
 [ext_resource path="res://tiles/nivel 3/kenji_valla.png" type="Texture" id=4]
 [ext_resource path="res://tiles/nivel 3/farola.png" type="Texture" id=5]
 [ext_resource path="res://tiles/nivel 3/Publico_v2_1_64x64.png" type="Texture" id=6]
-[ext_resource path="res://tiles/nivel 3/Escenario de rock.png" type="Texture" id=7]
-[ext_resource path="res://tiles/nivel 3/bafle berretin.png" type="Texture" id=8]
-[ext_resource path="res://tiles/nivel 3/Publico_v2_2_64x64.png" type="Texture" id=9]
-[ext_resource path="res://tiles/nivel 3/kenji_baño_quimico_1.png" type="Texture" id=10]
-[ext_resource path="res://tiles/nivel 3/kenji_baño_quimico_2.png" type="Texture" id=11]
-[ext_resource path="res://tiles/nivel 3/kenji_piano_2.png" type="Texture" id=12]
-[ext_resource path="res://tiles/nivel 3/papelera_kenji_2.png" type="Texture" id=13]
-[ext_resource path="res://scenes/espia.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/bomba.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/unidad.gd" type="Script" id=16]
-[ext_resource path="res://scenes/Enemy.gd" type="Script" id=17]
-[ext_resource path="res://sprites/s4.png" type="Texture" id=18]
+[ext_resource path="res://tiles/nivel 3/escenario1.png" type="Texture" id=7]
+[ext_resource path="res://tiles/nivel2/kenji_piscina.png" type="Texture" id=8]
+[ext_resource path="res://tiles/saco_arena.png" type="Texture" id=9]
+[ext_resource path="res://tiles/Alambre.png" type="Texture" id=10]
+[ext_resource path="res://tiles/nivel2/sofa triple negro.png" type="Texture" id=11]
+[ext_resource path="res://tiles/nivel2/cama 64x64.png" type="Texture" id=12]
+[ext_resource path="res://tiles/nivel 5/mesa-billar.png" type="Texture" id=13]
+[ext_resource path="res://tiles/nivel 3/escenario2.png" type="Texture" id=14]
+[ext_resource path="res://tiles/nivel2/Planta.png" type="Texture" id=15]
+[ext_resource path="res://tiles/nivel2/mesa_5.png" type="Texture" id=16]
+[ext_resource path="res://tiles/nivel2/kenji_silla.png" type="Texture" id=17]
+[ext_resource path="res://tiles/nivel 3/bafle berretin.png" type="Texture" id=18]
+[ext_resource path="res://tiles/nivel 3/Publico_v2_2_64x64.png" type="Texture" id=19]
+[ext_resource path="res://tiles/nivel 3/kenji_baño_quimico_1.png" type="Texture" id=20]
+[ext_resource path="res://tiles/nivel 3/kenji_baño_quimico_2.png" type="Texture" id=21]
+[ext_resource path="res://tiles/nivel 3/kenji_piano_2.png" type="Texture" id=22]
+[ext_resource path="res://tiles/nivel 3/papelera_kenji_2.png" type="Texture" id=23]
+[ext_resource path="res://scenes/espia.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/bomba.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/unidad.gd" type="Script" id=26]
+[ext_resource path="res://scenes/Enemy.gd" type="Script" id=27]
+[ext_resource path="res://sprites/s4.png" type="Texture" id=28]
 
 [sub_resource type="AnimatedTexture" id=1]
 frames = 2
 frame_0/texture = ExtResource( 6 )
-frame_1/texture = ExtResource( 9 )
+frame_1/texture = ExtResource( 19 )
 frame_1/delay_sec = 0.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 322.212, 126.42 )
+extents = Vector2( 64.7974, 71.7904 )
 
 [sub_resource type="StreamTexture" id=3]
 load_path = "res://.import/s3.png-5c83a335b84104840e31880c47d55362.stex"
@@ -1716,7 +1726,7 @@ region_enabled = true
 region_rect = Rect2( 46, 23.9937, 14.5, 8.125 )
 
 [node name="publico172" type="Sprite" parent="Objetos"]
-position = Vector2( 1116.82, 731.997 )
+position = Vector2( 1114.97, 733.387 )
 rotation = -0.785397
 scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
@@ -2703,21 +2713,103 @@ region_enabled = true
 region_rect = Rect2( 50, 58.1265, 14.75, 6.375 )
 
 [node name="Escenario de rock" type="Sprite" parent="Objetos"]
-position = Vector2( 670.131, 316.432 )
-scale = Vector2( 7.59995, 10.1119 )
+position = Vector2( 640.657, 358.537 )
 texture = ExtResource( 7 )
 
-[node name="bafle berretin" type="Sprite" parent="Objetos"]
-position = Vector2( 383.402, 566.534 )
-rotation = 4.14952
-scale = Vector2( 2, 2 )
+[node name="kenji_piscina" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( -137.454, -162.067 )
+rotation = 1.51427
 texture = ExtResource( 8 )
 
-[node name="bafle berretin2" type="Sprite" parent="Objetos"]
-position = Vector2( 974.808, 567.966 )
-rotation = 5.72119
+[node name="saco_arena" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( -370.322, -194.314 )
+rotation = 0.39584
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="saco_arena2" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( -342.524, -230.89 )
+rotation = -1.88221
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+
+[node name="Alambre" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( 178.836, -211.946 )
+rotation = -0.954794
+scale = Vector2( 1, 1 )
+texture = ExtResource( 10 )
+
+[node name="sofa triple negro" type="Sprite" parent="Objetos/Escenario de rock/Alambre"]
+position = Vector2( -72.2903, -122.035 )
+rotation = 0.950824
+texture = ExtResource( 11 )
+
+[node name="cama 64x64" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( -317.034, -183.562 )
+rotation = -0.954794
+texture = ExtResource( 12 )
+
+[node name="mesa-billar" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( 63.4185, -125.414 )
+rotation = -2.96063
 scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
+texture = ExtResource( 13 )
+
+[node name="escenario2" type="Sprite" parent="Objetos/Escenario de rock"]
+z_index = 2
+texture = ExtResource( 14 )
+
+[node name="Planta" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( -300.848, -11.8805 )
+rotation = 3.07877
+texture = ExtResource( 15 )
+
+[node name="mesa_5" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( -245.377, -96.4078 )
+rotation = 3.07877
+texture = ExtResource( 16 )
+
+[node name="Planta2" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( 306.661, -9.45871 )
+rotation = 0.727796
+texture = ExtResource( 15 )
+
+[node name="kenji_silla" type="Sprite" parent="Objetos/Escenario de rock"]
+position = Vector2( -280.848, -117.54 )
+rotation = 0.722579
+texture = ExtResource( 17 )
+
+[node name="Artista" type="Sprite" parent="Objetos"]
+position = Vector2( 818.132, 522.39 )
+rotation = -3.40339
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 46, 23.9937, 14.5, 8.125 )
+
+[node name="bafle berretin" type="Sprite" parent="Objetos"]
+position = Vector2( 353.033, 598.663 )
+rotation = 4.45059
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+
+[node name="bafle berretin2" type="Sprite" parent="Objetos"]
+position = Vector2( 986.691, 598.775 )
+rotation = 4.97419
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+
+[node name="bafle berretin3" type="Sprite" parent="Objetos"]
+position = Vector2( 295.435, 357.895 )
+rotation = -1.5708
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 18 )
+
+[node name="bafle berretin4" type="Sprite" parent="Objetos"]
+position = Vector2( 995.12, 354.815 )
+rotation = -1.5708
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 18 )
 
 [node name="publicomucho" type="StaticBody2D" parent="Objetos"]
 editor/display_folded = true
@@ -2735,103 +2827,118 @@ stretch_mode = 2
 position = Vector2( 672.985, 746.466 )
 shape = SubResource( 2 )
 
+[node name="publicomucho2" type="StaticBody2D" parent="Objetos"]
+position = Vector2( 1000.98, 323.113 )
+rotation = -2.96063
+
+[node name="publico" type="TextureRect" parent="Objetos/publicomucho2"]
+margin_right = 64.0
+margin_bottom = 72.0
+rect_scale = Vector2( 2, 2 )
+texture = SubResource( 1 )
+stretch_mode = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objetos/publicomucho2"]
+position = Vector2( 63.6552, 71.8484 )
+shape = SubResource( 2 )
+
 [node name="bnioa" type="Sprite" parent="Objetos"]
 position = Vector2( 1865.52, 376.566 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa6" type="Sprite" parent="Objetos"]
 position = Vector2( 1865.52, 600.589 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bniov" type="Sprite" parent="Objetos"]
 position = Vector2( 1933.7, 376.566 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bniov5" type="Sprite" parent="Objetos"]
 position = Vector2( 1933.7, 600.589 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bniov2" type="Sprite" parent="Objetos"]
 position = Vector2( 2077.86, 374.618 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bniov6" type="Sprite" parent="Objetos"]
 position = Vector2( 2077.86, 598.641 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bniov3" type="Sprite" parent="Objetos"]
 position = Vector2( 2225.91, 370.722 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bniov7" type="Sprite" parent="Objetos"]
 position = Vector2( 2225.91, 594.745 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bniov4" type="Sprite" parent="Objetos"]
 position = Vector2( 2377.85, 374.618 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bniov8" type="Sprite" parent="Objetos"]
 position = Vector2( 2377.85, 598.641 )
-texture = ExtResource( 11 )
+texture = ExtResource( 21 )
 
 [node name="bnioa2" type="Sprite" parent="Objetos"]
 position = Vector2( 2005.78, 376.566 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa7" type="Sprite" parent="Objetos"]
 position = Vector2( 2005.78, 600.589 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa3" type="Sprite" parent="Objetos"]
 position = Vector2( 2153.83, 374.618 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa8" type="Sprite" parent="Objetos"]
 position = Vector2( 2153.83, 598.641 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa4" type="Sprite" parent="Objetos"]
 position = Vector2( 2303.83, 374.618 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa9" type="Sprite" parent="Objetos"]
 position = Vector2( 2303.83, 598.641 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa5" type="Sprite" parent="Objetos"]
 position = Vector2( 2457.72, 374.618 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="bnioa10" type="Sprite" parent="Objetos"]
 position = Vector2( 2457.72, 598.641 )
-texture = ExtResource( 10 )
+texture = ExtResource( 20 )
 
 [node name="Teclado" type="Sprite" parent="Objetos"]
-position = Vector2( 824.271, 547.52 )
-rotation = 2.73167
-texture = ExtResource( 12 )
+position = Vector2( 822.682, 538.384 )
+rotation = 2.89989
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 22 )
 
 [node name="papelera_kenji_2" type="Sprite" parent="."]
 position = Vector2( 1062.39, 907.741 )
 scale = Vector2( 2.15503, 2.07481 )
-texture = ExtResource( 13 )
+texture = ExtResource( 23 )
 
-[node name="espia" parent="." instance=ExtResource( 14 )]
+[node name="espia" parent="." instance=ExtResource( 24 )]
 
 [node name="Personaje" parent="espia" index="0"]
 position = Vector2( 2142.1, 885.52 )
 spr_original = SubResource( 3 )
 
-[node name="bomba" parent="." instance=ExtResource( 15 )]
-editor/display_folded = true
+[node name="bomba" parent="." instance=ExtResource( 25 )]
 
 [node name="Personaje" parent="bomba" index="0"]
-position = Vector2( 688.131, 96.8616 )
+position = Vector2( 694.647, 67.5394 )
 
 [node name="enemigo" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 id = 1
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo" groups=[
@@ -2842,7 +2949,7 @@ editor/display_folded = true
 position = Vector2( 206.438, 314.692 )
 collision_layer = 3
 collision_mask = 3
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -2852,7 +2959,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -2884,7 +2991,7 @@ position = Vector2( 1092.61, 176.228 )
 
 [node name="enemigo2" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 id = 1
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo2" groups=[
@@ -2895,7 +3002,7 @@ editor/display_folded = true
 position = Vector2( 362.525, 1170.65 )
 collision_layer = 3
 collision_mask = 3
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -2905,7 +3012,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo2/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -2936,7 +3043,7 @@ position = Vector2( 795.541, 1004.5 )
 position = Vector2( 365.043, 1165.62 )
 
 [node name="enemigo3" type="Node" parent="."]
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 id = 1
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo3" groups=[
@@ -2947,7 +3054,7 @@ editor/display_folded = true
 position = Vector2( 1286.46, 1087.58 )
 collision_layer = 3
 collision_mask = 3
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -2957,7 +3064,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo3/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -2988,7 +3095,7 @@ position = Vector2( 1132.89, 1137.93 )
 
 [node name="enemigo4" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 id = 1
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo4" groups=[
@@ -2999,7 +3106,7 @@ editor/display_folded = true
 position = Vector2( 2545.23, 1258.77 )
 collision_layer = 3
 collision_mask = 3
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3009,7 +3116,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo4/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3041,7 +3148,7 @@ position = Vector2( 2540.19, 1256.25 )
 
 [node name="enemigo5" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 id = 1
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo5" groups=[
@@ -3052,7 +3159,7 @@ editor/display_folded = true
 position = Vector2( 2097.11, 118.324 )
 collision_layer = 3
 collision_mask = 3
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3062,7 +3169,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo5/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3094,7 +3201,7 @@ position = Vector2( 1749.69, 146.017 )
 
 [node name="enemigo6" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 id = 1
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo6" groups=[
@@ -3105,7 +3212,7 @@ editor/display_folded = true
 position = Vector2( 1351.92, 118.324 )
 collision_layer = 3
 collision_mask = 3
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3115,7 +3222,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo6/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3147,7 +3254,7 @@ position = Vector2( 1261.29, 98.1839 )
 
 [node name="enemigo7" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo7" groups=[
 "enemy",
@@ -3155,7 +3262,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 311.683, 1312.35 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3165,7 +3272,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo7/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3196,7 +3303,7 @@ position = Vector2( 295.279, 1156.51 )
 
 [node name="enemigo8" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo8" groups=[
 "enemy",
@@ -3204,7 +3311,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 846.876, 1334.91 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3214,7 +3321,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo8/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3245,7 +3352,7 @@ position = Vector2( 727.944, 1341.06 )
 
 [node name="enemigo9" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo9" groups=[
 "enemy",
@@ -3253,7 +3360,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 1140.1, 1236.48 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3263,7 +3370,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo9/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3294,7 +3401,7 @@ position = Vector2( 1546.11, 1152.41 )
 
 [node name="enemigo10" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo10" groups=[
 "enemy",
@@ -3302,7 +3409,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 1056.03, 604.912 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3312,7 +3419,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo10/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3342,7 +3449,7 @@ position = Vector2( 1058.08, 545.446 )
 
 [node name="enemigo11" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo11" groups=[
 "enemy",
@@ -3350,7 +3457,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 1533.81, 1328.75 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3360,7 +3467,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo11/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3392,7 +3499,7 @@ position = Vector2( 1187.27, 1070.39 )
 
 [node name="enemigo12" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo12" groups=[
 "enemy",
@@ -3400,7 +3507,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 1246.73, 307.582 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3410,7 +3517,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo12/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3441,14 +3548,14 @@ position = Vector2( 1472.29, 252.217 )
 
 [node name="enemigo13" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo13" groups=[
 "enemy",
 "npc",
 ]]
 position = Vector2( 1878.3, 723.843 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3458,7 +3565,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo13/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3488,7 +3595,7 @@ position = Vector2( 2220.74, 691.035 )
 position = Vector2( 2274.06, 1037.58 )
 
 [node name="enemigo14" type="Node" parent="."]
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo14" groups=[
 "enemy",
@@ -3496,7 +3603,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 2475.01, 990.414 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3506,7 +3613,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo14/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3536,7 +3643,7 @@ position = Vector2( 2468.86, 996.566 )
 
 [node name="enemigo15" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo15" groups=[
 "enemy",
@@ -3544,7 +3651,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 2526.27, 449.07 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3554,7 +3661,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo15/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3585,7 +3692,7 @@ position = Vector2( 2526.27, 455.222 )
 
 [node name="enemigo16" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo16" groups=[
 "enemy",
@@ -3593,7 +3700,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 1628.13, 356.795 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3603,7 +3710,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo16/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3634,7 +3741,7 @@ position = Vector2( 1599.43, 268.622 )
 
 [node name="enemigo17" type="Node" parent="."]
 editor/display_folded = true
-script = ExtResource( 16 )
+script = ExtResource( 26 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo17" groups=[
 "enemy",
@@ -3642,7 +3749,7 @@ script = ExtResource( 16 )
 ]]
 editor/display_folded = true
 position = Vector2( 1525.61, 748.45 )
-script = ExtResource( 17 )
+script = ExtResource( 27 )
 vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
@@ -3652,7 +3759,7 @@ PRECISION = 100
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 18 )
+texture = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo17/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3679,7 +3786,6 @@ position = Vector2( 1021.17, 1343.11 )
 
 [node name="4" type="Position2D" parent="enemigo17/patrol_points"]
 position = Vector2( 1099.09, 88.1735 )
-
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo3/Enemy/cooldown" to="enemigo3/Enemy" method="_on_cooldown_timeout"]
