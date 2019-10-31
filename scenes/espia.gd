@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-export (ImageTexture) var spr_original
-export (ImageTexture) var spr_espia
+export (StreamTexture) var spr_original
+export (StreamTexture) var spr_espia
 export (float) var vel_desp
 export (float) var vel_rot
 export (int) var PRECISION

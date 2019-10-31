@@ -18,8 +18,8 @@ func _on_btn_move_button_down():
 
 func _on_btn_w1_button_down():
 	if(gamehandler.target != null):
-		if(gamehandler.target.get_parent().id == 2):
-			gamehandler.target.vestir()
+		if(gamehandler.target.id == 2):
+			gamehandler.target.get_node("Personaje").vestir()
 		else:
 			gamehandler.estado_actual = gamehandler.estados.weapon1
 			button_press()

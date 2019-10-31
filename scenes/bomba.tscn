@@ -46,11 +46,10 @@ tiempo = 300
 
 [node name="Personaje" type="StaticBody2D" parent="." groups=[
 "objetivo",
-"not_saved",
 "rehen",
+"not_saved",
 "bomba",
 ]]
-editor/display_folded = true
 position = Vector2( 1299.32, 524.012 )
 z_index = 1
 
@@ -75,6 +74,5 @@ texture = ExtResource( 2 )
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="body_entered" from="Personaje/Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="input_event" from="Personaje/Area2D" to="Personaje" method="_on_Area2D_input_event"]
+[connection signal="body_exited" from="Personaje/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

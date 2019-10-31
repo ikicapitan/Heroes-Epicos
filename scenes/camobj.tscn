@@ -10,7 +10,7 @@ _data = {
 [node name="camobj" type="Path2D"]
 curve = SubResource( 1 )
 script = ExtResource( 1 )
-vel_cam = 100.0
+vel_cam = 150.0
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 
