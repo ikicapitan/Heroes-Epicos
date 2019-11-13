@@ -62,7 +62,7 @@ enemy_dead = ExtResource( 9 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = 4.0
+volume_db = 2.0
 
 [node name="canvas" type="AnimationPlayer" parent="."]
 anims/fade_in = SubResource( 1 )
