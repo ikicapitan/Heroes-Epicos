@@ -6,7 +6,9 @@ export (float) var vel_rot_ray
 export(float) var COOLDOWN_W1 
 export (int) var PRECISION
 export (Vector2) var radio_patrullaje
+export (bool) var estatico
 var nivel_alerta = 0
+
 
 enum estados {none, patrullando, persiguiendo, disparando, vigilando}
 var estado_npc = estados.patrullando
@@ -33,42 +35,43 @@ func _ready():
 
 func _physics_process(delta):
 	radar(delta)
-	if(path.size() > 1 && (estado_npc == estados.patrullando || estados.persiguiendo)):
-		
-		var angulo = get_angle_to(path[0])
-		rotate(angulo * vel_rot * delta)
-		var d = position.distance_to(path[0])
-		if(d > 2):
-			position = position.linear_interpolate(path[0], (vel_desp * delta) / d)
+	if(!estatico):
+		if(path.size() > 1 && (estado_npc == estados.patrullando || estados.persiguiendo)):
+			
+			var angulo = get_angle_to(path[0])
+			rotate(angulo * vel_rot * delta)
+			var d = position.distance_to(path[0])
+			if(d > 2):
+				position = position.linear_interpolate(path[0], (vel_desp * delta) / d)
+			else:
+				path.remove(0)
+				
 		else:
-			path.remove(0)
 			
-	else:
-		
-		if(estado_npc == estados.patrullando):
-			if(index < objetivo.size()):
-				index+= 1
-			else:
-				index = 1
-			
-			update_path()
-		
-		if(estado_npc == estados.persiguiendo):
-
-			if(nivel_alerta < 10): #Se enfrio el nivel de alerta
-				#print("patrullando")
-				estado_npc = estados.patrullando
-				agregar_patrol_points()
+			if(estado_npc == estados.patrullando):
+				if(index < objetivo.size()):
+					index+= 1
+				else:
+					index = 1
+				
 				update_path()
-			else:
-				#print("persiguiendo")
-				var r = radio_patrullaje.rotated(rand_range(0,360))
-				objetivo = []
-				objetivo.append(r + global_position) #Asigno como objetivo posicion del player)
-				nivel_alerta -= 10
-				update_path_enemy()
-		
-		#estaba aca el update_path, testear si funciona igual
+			
+			if(estado_npc == estados.persiguiendo):
+	
+				if(nivel_alerta < 10): #Se enfrio el nivel de alerta
+					#print("patrullando")
+					estado_npc = estados.patrullando
+					agregar_patrol_points()
+					update_path()
+				else:
+					#print("persiguiendo")
+					var r = radio_patrullaje.rotated(rand_range(0,360))
+					objetivo = []
+					objetivo.append(r + global_position) #Asigno como objetivo posicion del player)
+					nivel_alerta -= 10
+					update_path_enemy()
+			
+			#estaba aca el update_path, testear si funciona igual
 
 func agregar_patrol_points():
 	for p_points in get_parent().get_node("patrol_points").get_children():

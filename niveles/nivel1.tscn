@@ -161,7 +161,6 @@ position = Vector2( 2077.36, 947.716 )
 position = Vector2( 2284.63, 947.602 )
 
 [node name="enemigo3" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo3" groups=[
