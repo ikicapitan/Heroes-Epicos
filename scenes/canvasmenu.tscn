@@ -124,7 +124,6 @@ valign = 1
 uppercase = true
 
 [node name="menu3" type="Position2D" parent="."]
-editor/display_folded = true
 visible = false
 
 [node name="atras" type="TextureButton" parent="menu3"]
@@ -266,8 +265,109 @@ align = 1
 valign = 1
 uppercase = true
 
-[node name="COLABPATROC" type="Label" parent="menu3"]
+[node name="graficos2" type="Label" parent="menu3"]
 editor/display_folded = true
+margin_left = -92.8143
+margin_top = 172.678
+margin_right = 401.186
+margin_bottom = 388.678
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "GRAFICOS
+
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="1" type="Label" parent="menu3/graficos2"]
+margin_left = 1.76337
+margin_top = 56.1927
+margin_right = 495.763
+margin_bottom = 157.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "MAESTRO GODOT
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="2" type="Label" parent="menu3/graficos2"]
+margin_left = 1.763
+margin_top = 100.193
+margin_right = 495.763
+margin_bottom = 201.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "LUCAS ALE
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="3" type="Label" parent="menu3/graficos2"]
+margin_left = 1.763
+margin_top = 144.193
+margin_right = 495.763
+margin_bottom = 245.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "WILLIAN MOREJON
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="4" type="Label" parent="menu3/graficos2"]
+margin_left = 1.763
+margin_top = 168.193
+margin_right = 495.763
+margin_bottom = 269.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "BRIAN ARG"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="5" type="Label" parent="menu3/graficos2"]
+margin_left = 1.763
+margin_top = 222.193
+margin_right = 495.763
+margin_bottom = 323.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "BLACK NIGHT"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="6" type="Label" parent="menu3/graficos2"]
+margin_left = 1.763
+margin_top = 266.193
+margin_right = 495.763
+margin_bottom = 367.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "JUAN C. MONTES"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="7" type="Label" parent="menu3/graficos2"]
+margin_left = 1.763
+margin_top = 310.193
+margin_right = 495.763
+margin_bottom = 411.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "ANTIFONTE"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="COLABPATROC" type="Label" parent="menu3"]
 margin_left = 284.918
 margin_top = 170.52
 margin_right = 778.918
@@ -309,6 +409,17 @@ margin_bottom = 221.193
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
 text = "VANGODP"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="4" type="Label" parent="menu3/COLABPATROC"]
+margin_top = 120.193
+margin_right = 494.0
+margin_bottom = 221.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "DEYFER"
 align = 1
 valign = 1
 uppercase = true

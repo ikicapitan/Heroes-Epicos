@@ -137,7 +137,6 @@ format = 1
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "nav",
 ]]
-editor/display_folded = true
 z_index = -1
 
 [node name="mapa" type="TileMap" parent="Navigation2D"]

@@ -30,6 +30,70 @@ autoplay = true
 
 [node name="creador" parent="CanvasLayer/menu3" index="1"]
 editor/display_folded = false
+margin_left = 207.121
+margin_top = 35.1799
+margin_right = 701.121
+margin_bottom = 251.18
+
+[node name="1" parent="CanvasLayer/menu3/graficos" index="0"]
+text = "BRIAN ARG
+"
+
+[node name="2" parent="CanvasLayer/menu3/graficos" index="1"]
+text = "MUYUATO
+"
+
+[node name="4" parent="CanvasLayer/menu3/graficos" index="3"]
+text = "BLACK NIGHT"
+
+[node name="5" parent="CanvasLayer/menu3/graficos" index="4"]
+text = "KENJI"
+
+[node name="7" parent="CanvasLayer/menu3/graficos" index="6"]
+text = "JAVIER OCAMPOS"
+
+[node name="graficos2" parent="CanvasLayer/menu3" index="3"]
+editor/display_folded = false
+margin_left = 205.771
+margin_right = 699.771
+
+[node name="1" parent="CanvasLayer/menu3/graficos2" index="0"]
+text = "ANTIFONTE
+"
+
+[node name="2" parent="CanvasLayer/menu3/graficos2" index="1"]
+text = "SANTIAGO FIERRO
+"
+
+[node name="3" parent="CanvasLayer/menu3/graficos2" index="2"]
+text = "EITA
+"
+
+[node name="4" parent="CanvasLayer/menu3/graficos2" index="3"]
+text = "DANNY HERAZO"
+
+[node name="5" parent="CanvasLayer/menu3/graficos2" index="4"]
+text = "MANPACMAN"
+
+[node name="6" parent="CanvasLayer/menu3/graficos2" index="5"]
+text = "TADCAB96"
+
+[node name="7" parent="CanvasLayer/menu3/graficos2" index="6"]
+text = "MAESTRO GODOT"
+
+[node name="COLABPATROC" parent="CanvasLayer/menu3" index="4"]
+margin_left = 556.677
+margin_right = 1050.68
+
+[node name="4" parent="CanvasLayer/menu3/COLABPATROC" index="3"]
+margin_top = 164.193
+margin_bottom = 265.193
+
+[node name="BGMSFX" parent="CanvasLayer/menu3" index="5"]
+margin_left = 564.086
+margin_top = 401.912
+margin_right = 1058.09
+margin_bottom = 617.912
 
 [connection signal="pressed" from="CanvasLayer/menu2/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/continue" to="." method="_on_continue_pressed"]
