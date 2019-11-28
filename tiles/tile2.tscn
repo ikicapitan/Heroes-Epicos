@@ -522,27 +522,21 @@ texture = ExtResource( 19 )
 navpoly = SubResource( 15 )
 
 [node name="23" type="Sprite" parent="."]
-editor/display_folded = true
-visible = false
+modulate = Color( 0.713726, 0.854902, 0.0196078, 1 )
 position = Vector2( 64, 128 )
-texture = ExtResource( 12 )
-vframes = 10
-hframes = 14
-frame = 48
+texture = ExtResource( 3 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="23"]
+visible = false
 navpoly = SubResource( 15 )
 
 [node name="24" type="Sprite" parent="."]
-editor/display_folded = true
-visible = false
+modulate = Color( 0.631373, 0.207843, 0.870588, 1 )
 position = Vector2( 96, 128 )
-texture = ExtResource( 12 )
-vframes = 10
-hframes = 14
-frame = 82
+texture = ExtResource( 11 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="24"]
+visible = false
 navpoly = SubResource( 15 )
 
 [node name="25" type="Sprite" parent="."]

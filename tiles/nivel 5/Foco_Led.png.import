@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mesa-billar.png-a9c70b973ef3e6060682268632f1aff4.stex"
+path="res://.import/Foco_Led.png-d4ecbf144a4b9621afd77e7d1e492f03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/nivel 5/mesa-billar.png"
-dest_files=[ "res://.import/mesa-billar.png-a9c70b973ef3e6060682268632f1aff4.stex" ]
+source_file="res://tiles/nivel 5/Foco_Led.png"
+dest_files=[ "res://.import/Foco_Led.png-d4ecbf144a4b9621afd77e7d1e492f03.stex" ]
 
 [params]
 

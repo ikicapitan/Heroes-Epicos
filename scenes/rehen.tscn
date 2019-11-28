@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/rehen.gd" type="Script" id=1]
-[ext_resource path="res://sprites/soldado.png" type="Texture" id=2]
+[ext_resource path="res://tiles/nivel 3/Publico_v2_1_64x64.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.89397, 13.5718 )
@@ -65,10 +65,13 @@ anims/walk = SubResource( 3 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Personaje/Area2D"]
-rotation = 1.5708
+position = Vector2( -0.71347, 0.305878 )
+rotation = 0.013355
+scale = Vector2( 1.5205, 1.63067 )
 z_index = 1
 texture = ExtResource( 2 )
-hframes = 2
+region_enabled = true
+region_rect = Rect2( 29.25, 47.7895, 15.5, 6.375 )
 
 [connection signal="body_entered" from="Personaje/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="input_event" from="Personaje/Area2D" to="Personaje" method="_on_Area2D_input_event"]

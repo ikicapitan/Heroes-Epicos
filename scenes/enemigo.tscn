@@ -19,6 +19,7 @@ vel_desp = 50.0
 vel_rot = 15.0
 vel_rot_ray = 5.0
 PRECISION = 100
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="Enemy"]
 position = Vector2( 3.59241, 0.59874 )

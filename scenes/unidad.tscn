@@ -51,7 +51,7 @@ script = ExtResource( 2 )
 vel_desp = 100.0
 vel_rot = 15.0
 PRECISION = 100
-wait_w2 = 1.5
+wait_w2 = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
 position = Vector2( -0.75103, 0.394326 )
@@ -78,7 +78,7 @@ texture = ExtResource( 3 )
 cast_to = Vector2( 300, 0 )
 
 [node name="rango_w2" type="RayCast2D" parent="Personaje"]
-cast_to = Vector2( 300, 0 )
+cast_to = Vector2( 180, 0 )
 
 [node name="cooldown" type="Timer" parent="Personaje"]
 one_shot = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tiles/tile_n1.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/unidad.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://tiles/Torreta_ppal.png" type="Texture" id=6]
 [ext_resource path="res://sprites/camioneta.png" type="Texture" id=7]
 [ext_resource path="res://scenes/unidad.tscn" type="PackedScene" id=8]
+[ext_resource path="res://bgm/1.ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.13881, 11.8194 )
@@ -61,7 +62,6 @@ position = Vector2( 275.087, 185.452 )
 position = Vector2( 2418.05, 1395.12 )
 
 [node name="enemigo" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo" groups=[
@@ -111,7 +111,6 @@ position = Vector2( 1053.98, 683.08 )
 position = Vector2( 1053.98, 336.904 )
 
 [node name="enemigo2" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo2" groups=[
@@ -161,6 +160,7 @@ position = Vector2( 2077.36, 947.716 )
 position = Vector2( 2284.63, 947.602 )
 
 [node name="enemigo3" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo3" groups=[
@@ -251,7 +251,6 @@ position = Vector2( 1572.15, 916.255 )
 position = Vector2( 1307.51, 919.843 )
 
 [node name="enemigo5" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo5" groups=[
@@ -352,6 +351,7 @@ position = Vector2( 763.436, 1179.04 )
 position = Vector2( 913.335, 1099.35 )
 
 [node name="unidad2" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 
 [node name="Personaje" parent="unidad2" index="0"]
 position = Vector2( 797.072, 1191.28 )
@@ -380,9 +380,17 @@ texture = ExtResource( 7 )
 flip_h = true
 
 [node name="unidad" parent="." instance=ExtResource( 8 )]
+editor/display_folded = true
 
 [node name="Personaje" parent="unidad" index="0"]
 position = Vector2( 1280, 512 )
+
+[node name="Area2D" parent="unidad/Personaje" index="2"]
+editor/display_folded = false
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
 
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]
