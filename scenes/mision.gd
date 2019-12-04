@@ -18,7 +18,7 @@ func procesar_instancia():
 		procesando_i = true
 		instancia+= 1
 		mostrar_instancia()
-		yield(get_tree().create_timer(1.0),"timeout")
+		yield(get_tree().create_timer(0.5),"timeout")
 		procesando_i = false
 	
 	

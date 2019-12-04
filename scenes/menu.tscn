@@ -27,9 +27,6 @@ autoplay = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
 
-[node name="menu3" parent="CanvasLayer" index="5"]
-editor/display_folded = true
-
 [node name="creador" parent="CanvasLayer/menu3" index="1"]
 editor/display_folded = false
 margin_left = 207.121
@@ -52,7 +49,9 @@ text = "BLACK NIGHT"
 text = "KENJI"
 
 [node name="7" parent="CanvasLayer/menu3/graficos" index="6"]
-text = "JAVIER OCAMPOS"
+margin_top = 354.514
+margin_bottom = 455.514
+text = "hak007"
 
 [node name="graficos2" parent="CanvasLayer/menu3" index="3"]
 editor/display_folded = false

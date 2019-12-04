@@ -78,9 +78,11 @@ z_index = 1
 texture = ExtResource( 4 )
 
 [node name="rango_w1" type="RayCast2D" parent="Personaje"]
+enabled = true
 cast_to = Vector2( 300, 0 )
 
 [node name="rango_w2" type="RayCast2D" parent="Personaje"]
+enabled = true
 cast_to = Vector2( 300, 0 )
 
 [node name="cooldown" type="Timer" parent="Personaje"]

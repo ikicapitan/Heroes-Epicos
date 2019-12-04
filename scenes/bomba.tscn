@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/bomba.gd" type="Script" id=1]
-[ext_resource path="res://sprites/bomba.png" type="Texture" id=2]
+[ext_resource path="res://tiles/nivel 5/objetos.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.2227, 7.93835 )
@@ -45,9 +45,9 @@ script = ExtResource( 1 )
 tiempo = 300
 
 [node name="Personaje" type="StaticBody2D" parent="." groups=[
+"not_saved",
 "objetivo",
 "rehen",
-"not_saved",
 "bomba",
 ]]
 position = Vector2( 1299.32, 524.012 )
@@ -68,8 +68,12 @@ position = Vector2( -0.951172, 0.237854 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Personaje/Area2D"]
+position = Vector2( 0.709854, 1.0256 )
+scale = Vector2( 1.19189, 1.20453 )
 z_index = 1
 texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 125, 34, 37, 27 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

@@ -164,7 +164,6 @@ valign = 1
 uppercase = true
 
 [node name="graficos" type="Label" parent="menu3"]
-editor/display_folded = true
 margin_left = -92.8143
 margin_top = 172.678
 margin_right = 401.186
@@ -254,6 +253,18 @@ valign = 1
 uppercase = true
 
 [node name="7" type="Label" parent="menu3/graficos"]
+margin_left = 1.763
+margin_top = 310.193
+margin_right = 495.763
+margin_bottom = 411.193
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "ANTIFONTE"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="8" type="Label" parent="menu3/graficos"]
 margin_left = 1.763
 margin_top = 310.193
 margin_right = 495.763

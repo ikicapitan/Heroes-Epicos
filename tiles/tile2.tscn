@@ -522,7 +522,7 @@ texture = ExtResource( 19 )
 navpoly = SubResource( 15 )
 
 [node name="23" type="Sprite" parent="."]
-modulate = Color( 0.713726, 0.854902, 0.0196078, 1 )
+modulate = Color( 0.188235, 0.498039, 0.168627, 1 )
 position = Vector2( 64, 128 )
 texture = ExtResource( 3 )
 
@@ -531,7 +531,7 @@ visible = false
 navpoly = SubResource( 15 )
 
 [node name="24" type="Sprite" parent="."]
-modulate = Color( 0.631373, 0.207843, 0.870588, 1 )
+modulate = Color( 0.364706, 0.141176, 0.494118, 1 )
 position = Vector2( 96, 128 )
 texture = ExtResource( 11 )
 
