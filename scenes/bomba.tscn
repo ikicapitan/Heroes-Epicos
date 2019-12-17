@@ -45,9 +45,8 @@ script = ExtResource( 1 )
 tiempo = 300
 
 [node name="Personaje" type="StaticBody2D" parent="." groups=[
-"not_saved",
 "objetivo",
-"rehen",
+"not_saved",
 "bomba",
 ]]
 position = Vector2( 1299.32, 524.012 )
@@ -78,5 +77,5 @@ region_rect = Rect2( 125, 34, 37, 27 )
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="body_exited" from="Personaje/Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Personaje/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

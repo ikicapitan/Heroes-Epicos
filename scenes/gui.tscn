@@ -67,7 +67,6 @@ custom_fonts/font = SubResource( 1 )
 [node name="Botones" type="Position2D" parent="GUI" groups=[
 "botones",
 ]]
-editor/display_folded = true
 visible = false
 
 [node name="btn_select" type="TextureButton" parent="GUI/Botones"]

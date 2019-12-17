@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 script = ExtResource( 2 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 100
 radio_patrullaje = Vector2( 70, 0 )
 

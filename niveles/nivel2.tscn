@@ -1038,8 +1038,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1096,8 +1097,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo2/Enemy2"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1145,8 +1147,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo3/Enemy3"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1194,8 +1197,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo4/Enemy4"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1243,8 +1247,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo5/Enemy5"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1292,8 +1297,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo6/Enemy6"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1332,8 +1338,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo7/Enemy7"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1380,8 +1387,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo8/Enemy8"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1429,8 +1437,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo9/Enemy9"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1477,8 +1486,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo10/Enemy10"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1519,8 +1529,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo11/Enemy11"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1561,14 +1572,14 @@ position = Vector2( 1972.49, 719.851 )
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1971, 718.81 )
 rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo12/Enemy12"]
 position = Vector2( 3.59241, 0.59874 )
@@ -1589,7 +1600,6 @@ cast_to = Vector2( 300, 0 )
 [node name="cooldown" type="Timer" parent="enemigo12/Enemy12"]
 
 [node name="enemigo13" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 35 )
 
 [node name="patrol_points" type="Node" parent="enemigo13"]
@@ -1617,8 +1627,9 @@ rotation = 1.5708
 script = ExtResource( 36 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
+vel_rot_ray = 75.0
 PRECISION = 100
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo13/Enemy13"]
 position = Vector2( 3.59241, 0.59874 )

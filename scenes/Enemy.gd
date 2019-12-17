@@ -102,6 +102,7 @@ func procesar_colision():
 	if($rango.is_colliding()):
 		var col = $rango.get_collider()
 		if(col.is_in_group("player")):
+			print(get_parent().name)
 			objetivo = []
 			nivel_alerta = 100 #Doy alerta maximo
 			objetivo.append(col.global_position) #Asigno como objetivo posicion del player)
@@ -115,6 +116,11 @@ func procesar_colision():
 				if(disparar(col)):
 					col.muerte()
 					estado_npc = estados.persiguiendo
+		elif(nivel_alerta > 10 && col.is_in_group("rehen")):
+			var newshot = get_tree().get_nodes_in_group("main")[0].shotcol.instance()
+			get_tree().get_nodes_in_group("nivel")[0].add_child(newshot)
+			newshot.get_node("P2").global_position = col.global_position
+			col.get_parent().muerte()
 	elif(estado_npc == estados.disparando):
 		estado_npc = estados.persiguiendo
 		

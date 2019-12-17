@@ -1,0 +1,486 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
+[ext_resource path="res://tiles/tile_n3.tres" type="TileSet" id=2]
+[ext_resource path="res://bgm/heroes_epicos_menu.OGG" type="AudioStream" id=3]
+[ext_resource path="res://menu/background_menu.jpg" type="Texture" id=4]
+[ext_resource path="res://fonts/ARMY RUST.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.89397, 13.5718 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 1.7
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5.13881, 11.8194 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8.89397, 13.5718 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+
+[sub_resource type="Animation" id=7]
+resource_name = "walk"
+length = 1.7
+
+[sub_resource type="DynamicFont" id=8]
+size = 66
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 46
+outline_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+font_data = ExtResource( 5 )
+
+[node name="nivel6" type="Node2D" groups=[
+"nivel",
+]]
+
+[node name="unidad" type="Node" parent="."]
+script = ExtResource( 1 )
+
+[node name="Personaje" type="KinematicBody2D" parent="unidad" groups=[
+"player",
+]]
+rotation = -3.12206
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="unidad/Personaje"]
+position = Vector2( -0.75103, 0.394326 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="unidad/Personaje"]
+anims/idle = SubResource( 2 )
+anims/walk = SubResource( 3 )
+
+[node name="rango_w1" type="RayCast2D" parent="unidad/Personaje"]
+cast_to = Vector2( 300, 0 )
+
+[node name="rango_w2" type="RayCast2D" parent="unidad/Personaje"]
+cast_to = Vector2( 180, 0 )
+
+[node name="cooldown" type="Timer" parent="unidad/Personaje"]
+one_shot = true
+
+[node name="Navigation2D" type="Navigation2D" parent="." groups=[
+"nav",
+]]
+z_index = -1
+
+[node name="mapa" type="TileMap" parent="Navigation2D"]
+z_index = -2
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 3
+collision_mask = 3
+format = 1
+
+[node name="min" type="Position2D" parent="." groups=[
+"min",
+]]
+position = Vector2( 271.092, 5.69904 )
+
+[node name="max" type="Position2D" parent="." groups=[
+"max",
+]]
+position = Vector2( 2613.78, 1395.12 )
+
+[node name="enemigo" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Enemy" type="KinematicBody2D" parent="enemigo" groups=[
+"enemy",
+"npc",
+]]
+editor/display_folded = true
+position = Vector2( 2116.13, 392.494 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo/Enemy"]
+position = Vector2( -0.250343, -0.106361 )
+shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigo/Enemy"]
+
+[node name="rango" type="RayCast2D" parent="enemigo/Enemy"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+collision_mask = 3
+
+[node name="cooldown" type="Timer" parent="enemigo/Enemy"]
+
+[node name="patrol_points" type="Node" parent="enemigo"]
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="enemigo/patrol_points"]
+position = Vector2( 2139.51, 591.246 )
+
+[node name="rehen" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Personaje" type="KinematicBody2D" parent="rehen" groups=[
+"objetivo",
+"not_saved",
+"rehen",
+]]
+rotation = 1.56373
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rehen/Personaje"]
+position = Vector2( -0.75103, 0.394326 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="rehen/Personaje"]
+anims/idle = SubResource( 6 )
+anims/walk = SubResource( 7 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.914
+autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+layer = 0
+
+[node name="bckg2" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0.631373 )
+position = Vector2( 513.26, 330.492 )
+scale = Vector2( 1.06339, 1.07295 )
+texture = ExtResource( 4 )
+
+[node name="menu3" type="Position2D" parent="CanvasLayer"]
+
+[node name="creador" type="Label" parent="CanvasLayer/menu3"]
+margin_left = 207.121
+margin_top = 35.1799
+margin_right = 701.121
+margin_bottom = 251.18
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "CREADOR:
+
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="ALANW" type="Label" parent="CanvasLayer/menu3/creador"]
+margin_left = 62.5957
+margin_top = 62.5956
+margin_right = 556.596
+margin_bottom = 163.596
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.552941, 0.941176, 0.615686, 1 )
+text = "ALAN WILHELM      iki
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="graficos" type="Label" parent="CanvasLayer/menu3"]
+margin_left = -92.8143
+margin_top = 172.678
+margin_right = 401.186
+margin_bottom = 388.678
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "GRAFICOS
+
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="1" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.76337
+margin_top = 56.1927
+margin_right = 495.763
+margin_bottom = 157.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "BRIAN ARG
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="2" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.763
+margin_top = 100.193
+margin_right = 495.763
+margin_bottom = 201.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "MUYUATO
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="3" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.763
+margin_top = 144.193
+margin_right = 495.763
+margin_bottom = 245.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "WILLIAN MOREJON
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="4" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.763
+margin_top = 168.193
+margin_right = 495.763
+margin_bottom = 269.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "BLACK NIGHT"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="5" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.763
+margin_top = 222.193
+margin_right = 495.763
+margin_bottom = 323.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "KENJI"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="6" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.763
+margin_top = 266.193
+margin_right = 495.763
+margin_bottom = 367.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "JUAN C. MONTES"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="7" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.763
+margin_top = 354.514
+margin_right = 495.763
+margin_bottom = 455.514
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "hak007"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="8" type="Label" parent="CanvasLayer/menu3/graficos"]
+margin_left = 1.763
+margin_top = 310.193
+margin_right = 495.763
+margin_bottom = 411.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "ANTIFONTE"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="graficos2" type="Label" parent="CanvasLayer/menu3"]
+margin_left = 205.771
+margin_top = 172.678
+margin_right = 699.771
+margin_bottom = 388.678
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "GRAFICOS
+
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="1" type="Label" parent="CanvasLayer/menu3/graficos2"]
+margin_left = 1.76337
+margin_top = 56.1927
+margin_right = 495.763
+margin_bottom = 157.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "ANTIFONTE
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="2" type="Label" parent="CanvasLayer/menu3/graficos2"]
+margin_left = 1.763
+margin_top = 100.193
+margin_right = 495.763
+margin_bottom = 201.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "SANTIAGO FIERRO
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="3" type="Label" parent="CanvasLayer/menu3/graficos2"]
+margin_left = 1.763
+margin_top = 144.193
+margin_right = 495.763
+margin_bottom = 245.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "EITA
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="4" type="Label" parent="CanvasLayer/menu3/graficos2"]
+margin_left = 1.763
+margin_top = 168.193
+margin_right = 495.763
+margin_bottom = 269.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "DANNY HERAZO"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="5" type="Label" parent="CanvasLayer/menu3/graficos2"]
+margin_left = 1.763
+margin_top = 222.193
+margin_right = 495.763
+margin_bottom = 323.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "MANPACMAN"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="6" type="Label" parent="CanvasLayer/menu3/graficos2"]
+margin_left = 1.763
+margin_top = 266.193
+margin_right = 495.763
+margin_bottom = 367.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "TADCAB96"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="7" type="Label" parent="CanvasLayer/menu3/graficos2"]
+margin_left = 1.763
+margin_top = 310.193
+margin_right = 495.763
+margin_bottom = 411.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "MAESTRO GODOT"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="COLABPATROC" type="Label" parent="CanvasLayer/menu3"]
+margin_left = 556.677
+margin_top = 170.52
+margin_right = 1050.68
+margin_bottom = 313.52
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "PATROCINADORES:
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="1" type="Label" parent="CanvasLayer/menu3/COLABPATROC"]
+margin_top = 32.193
+margin_right = 494.0
+margin_bottom = 133.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "CRISTIAN QUIROZ"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="2" type="Label" parent="CanvasLayer/menu3/COLABPATROC"]
+margin_top = 76.193
+margin_right = 494.0
+margin_bottom = 177.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "TINCHO Z"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="3" type="Label" parent="CanvasLayer/menu3/COLABPATROC"]
+margin_top = 120.193
+margin_right = 494.0
+margin_bottom = 221.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "VANGODP"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="4" type="Label" parent="CanvasLayer/menu3/COLABPATROC"]
+margin_top = 164.193
+margin_right = 494.0
+margin_bottom = 265.193
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "DEYFER"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="BGMSFX" type="Label" parent="CanvasLayer/menu3"]
+editor/display_folded = true
+margin_left = 564.086
+margin_top = 401.912
+margin_right = 1058.09
+margin_bottom = 617.912
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "bgm/ sfx
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="1" type="Label" parent="CanvasLayer/menu3/BGMSFX"]
+margin_left = 1.763
+margin_top = 94.0
+margin_right = 495.763
+margin_bottom = 195.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0.47451, 1, 0.556863, 1 )
+text = "EITA
+"
+align = 1
+valign = 1
+uppercase = true
+
+[connection signal="timeout" from="unidad/Personaje/cooldown" to="unidad/Personaje" method="_on_cooldown_timeout"]
+[connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]

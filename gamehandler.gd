@@ -9,10 +9,12 @@ var estado_j_actual = estados_juego.menu
 enum estados {none,select,move,weapon1,weapon2, camera}
 var estado_actual = estados.none
 
-var nivel = 3
+var nivel = 6
 
 var instancias = 0 #0 intro, 1 cam, 2 intro
 
+
+var select_wait = false
 
 #Android
 var drag_ant = false

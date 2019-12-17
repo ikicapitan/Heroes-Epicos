@@ -39,7 +39,7 @@ func update_path():
 	
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	if(gamehandler.estado_actual == gamehandler.estados.select):
+	if(gamehandler.estado_actual == gamehandler.estados.select && !gamehandler.select_wait):
 		if(event is InputEventScreenTouch || (event is InputEventMouseButton && event.button_index == BUTTON_LEFT)):
 			gamehandler.target = get_parent()
 			var cam = get_tree().get_nodes_in_group("cam")[0]
@@ -53,8 +53,14 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			 	s_select = get_tree().get_nodes_in_group("main")[0].select.instance()
 			else:
 				s_select = get_tree().get_nodes_in_group("select")[0]
+				s_select.get_parent().remove_child(s_select)
+				
 			
 			add_child(s_select)
+			s_select.global_position = global_position
+			gamehandler.select_wait = true
+			yield(get_tree().create_timer(1.0),"timeout")
+			gamehandler.select_wait = false
 			
 			#Tutorial
 			if(gamehandler.nivel == 1 && gamehandler.instancias == 4):

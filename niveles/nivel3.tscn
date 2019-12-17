@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://tiles/tile_n3.tres" type="TileSet" id=1]
 [ext_resource path="res://tiles/nivel 3/baya.png" type="Texture" id=2]
@@ -22,7 +22,9 @@
 [ext_resource path="res://scenes/bomba.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/unidad.gd" type="Script" id=21]
 [ext_resource path="res://scenes/Enemy.gd" type="Script" id=22]
-[ext_resource path="res://sprites/s4.png" type="Texture" id=23]
+[ext_resource path="res://sprites/General_granadero.png" type="Texture" id=23]
+[ext_resource path="res://sprites/s4.png" type="Texture" id=24]
+[ext_resource path="res://bgm/MENU.ogg" type="AudioStream" id=25]
 
 [sub_resource type="Animation" id=1]
 resource_name = "luz"
@@ -107,7 +109,7 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 [node name="min" type="Position2D" parent="." groups=[
 "min",
 ]]
-position = Vector2( 275.087, 185.452 )
+position = Vector2( 28.3114, 34.4401 )
 
 [node name="max" type="Position2D" parent="." groups=[
 "max",
@@ -115,6 +117,7 @@ position = Vector2( 275.087, 185.452 )
 position = Vector2( 2418.05, 1395.12 )
 
 [node name="Objetos" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="baya" type="Sprite" parent="Objetos"]
 position = Vector2( 337.439, 642.41 )
@@ -2891,6 +2894,7 @@ scale = Vector2( 2.15503, 2.07481 )
 texture = ExtResource( 18 )
 
 [node name="espia" parent="." instance=ExtResource( 19 )]
+editor/display_folded = true
 
 [node name="Personaje" parent="espia" index="0"]
 position = Vector2( 2142.1, 885.52 )
@@ -2902,8 +2906,10 @@ editor/display_folded = true
 [node name="Personaje" parent="bomba" index="0"]
 position = Vector2( 688.131, 96.8616 )
 
-[node name="enemigo" type="Node" parent="."]
+[node name="Area2D" parent="bomba/Personaje" index="2"]
 editor/display_folded = true
+
+[node name="enemigo" type="Node" parent="."]
 script = ExtResource( 21 )
 id = 1
 
@@ -2911,15 +2917,15 @@ id = 1
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 206.438, 314.692 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
@@ -2956,7 +2962,6 @@ position = Vector2( 380.148, 120.842 )
 position = Vector2( 1092.61, 176.228 )
 
 [node name="enemigo2" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 id = 1
 
@@ -2964,15 +2969,15 @@ id = 1
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 362.525, 1170.65 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo2/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
@@ -3016,15 +3021,15 @@ id = 1
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1286.46, 1087.58 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo3/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
@@ -3046,6 +3051,7 @@ collision_mask = 3
 [node name="cooldown" type="Timer" parent="enemigo3/Enemy"]
 
 [node name="patrol_points" type="Node" parent="enemigo3"]
+editor/display_folded = true
 
 [node name="1" type="Position2D" parent="enemigo3/patrol_points"]
 position = Vector2( 1900.74, 1256.25 )
@@ -3060,7 +3066,6 @@ position = Vector2( 1356.95, 818.199 )
 position = Vector2( 1132.89, 1137.93 )
 
 [node name="enemigo4" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 id = 1
 
@@ -3068,15 +3073,15 @@ id = 1
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 2545.23, 1258.77 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo4/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
@@ -3098,6 +3103,7 @@ collision_mask = 3
 [node name="cooldown" type="Timer" parent="enemigo4/Enemy"]
 
 [node name="patrol_points" type="Node" parent="enemigo4"]
+editor/display_folded = true
 
 [node name="1" type="Position2D" parent="enemigo4/patrol_points"]
 position = Vector2( 1943.54, 1263.8 )
@@ -3113,7 +3119,6 @@ position = Vector2( 1626.33, 616.796 )
 position = Vector2( 2540.19, 1256.25 )
 
 [node name="enemigo5" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 id = 1
 
@@ -3121,15 +3126,15 @@ id = 1
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 2097.11, 118.324 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo5/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
@@ -3166,7 +3171,6 @@ position = Vector2( 2535.16, 153.57 )
 position = Vector2( 1749.69, 146.017 )
 
 [node name="enemigo6" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 id = 1
 
@@ -3174,15 +3178,15 @@ id = 1
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1351.92, 118.324 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo6/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
@@ -3219,26 +3223,25 @@ position = Vector2( 1258.77, 498.472 )
 position = Vector2( 1261.29, 98.1839 )
 
 [node name="enemigo7" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo7" groups=[
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 311.683, 1312.35 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo7/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo7/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3268,7 +3271,6 @@ position = Vector2( 502.384, 1332.86 )
 position = Vector2( 295.279, 1156.51 )
 
 [node name="enemigo8" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo8" groups=[
@@ -3278,16 +3280,17 @@ script = ExtResource( 21 )
 editor/display_folded = true
 position = Vector2( 846.876, 1334.91 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo8/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo8/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3317,7 +3320,6 @@ position = Vector2( 2323.27, 1328.75 )
 position = Vector2( 727.944, 1341.06 )
 
 [node name="enemigo9" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo9" groups=[
@@ -3327,16 +3329,17 @@ script = ExtResource( 21 )
 editor/display_folded = true
 position = Vector2( 1140.1, 1236.48 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo9/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo9/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3366,7 +3369,6 @@ position = Vector2( 1256.99, 1328.75 )
 position = Vector2( 1546.11, 1152.41 )
 
 [node name="enemigo10" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo10" groups=[
@@ -3376,16 +3378,17 @@ script = ExtResource( 21 )
 editor/display_folded = true
 position = Vector2( 1056.03, 604.912 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo10/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo10/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3415,7 +3418,6 @@ position = Vector2( 1047.83, 857.129 )
 position = Vector2( 1069.08, 556.446 )
 
 [node name="enemigo11" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo11" groups=[
@@ -3425,16 +3427,17 @@ script = ExtResource( 21 )
 editor/display_folded = true
 position = Vector2( 1533.81, 1328.75 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo11/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo11/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3465,26 +3468,25 @@ rotation = -0.785397
 position = Vector2( 1187.27, 1070.39 )
 
 [node name="enemigo12" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo12" groups=[
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1246.73, 307.582 )
 script = ExtResource( 22 )
 vel_desp = 50.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 50.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo12/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo12/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3514,7 +3516,6 @@ position = Vector2( 1804.48, 256.318 )
 position = Vector2( 1472.29, 252.217 )
 
 [node name="enemigo13" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo13" groups=[
@@ -3523,16 +3524,17 @@ script = ExtResource( 21 )
 ]]
 position = Vector2( 1878.3, 723.843 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo13/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo13/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3562,7 +3564,6 @@ position = Vector2( 2220.74, 691.035 )
 position = Vector2( 2274.06, 1037.58 )
 
 [node name="enemigo14" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo14" groups=[
@@ -3572,16 +3573,17 @@ script = ExtResource( 21 )
 editor/display_folded = true
 position = Vector2( 2475.01, 990.414 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo14/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo14/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3611,7 +3613,6 @@ position = Vector2( 1847.54, 764.854 )
 position = Vector2( 2468.86, 996.566 )
 
 [node name="enemigo15" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo15" groups=[
@@ -3621,16 +3622,17 @@ script = ExtResource( 21 )
 editor/display_folded = true
 position = Vector2( 2526.27, 449.07 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo15/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo15/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3660,7 +3662,6 @@ position = Vector2( 2526.27, 250.167 )
 position = Vector2( 2526.27, 455.222 )
 
 [node name="enemigo16" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo16" groups=[
@@ -3669,16 +3670,17 @@ script = ExtResource( 21 )
 ]]
 position = Vector2( 1628.13, 356.795 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo16/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo16/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3708,26 +3710,25 @@ position = Vector2( 1129.85, 426.514 )
 position = Vector2( 1599.43, 268.622 )
 
 [node name="enemigo17" type="Node" parent="."]
-editor/display_folded = true
 script = ExtResource( 21 )
 
 [node name="Enemy" type="KinematicBody2D" parent="enemigo17" groups=[
 "enemy",
 "npc",
 ]]
-editor/display_folded = true
 position = Vector2( 1525.61, 748.45 )
 script = ExtResource( 22 )
-vel_desp = 50.0
+vel_desp = 30.0
 vel_rot = 15.0
-vel_rot_ray = 5.0
-PRECISION = 100
+vel_rot_ray = 40.0
+PRECISION = 40
+radio_patrullaje = Vector2( 70, 0 )
 
 [node name="Sprite" type="Sprite" parent="enemigo17/Enemy"]
 position = Vector2( 3.59241, 0.59874 )
 rotation = 1.5708
 scale = Vector2( 0.673, 0.457 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemigo17/Enemy"]
 position = Vector2( -0.250343, -0.106361 )
@@ -3742,6 +3743,7 @@ cast_to = Vector2( 300, 0 )
 [node name="cooldown" type="Timer" parent="enemigo17/Enemy"]
 
 [node name="patrol_points" type="Node" parent="enemigo17"]
+editor/display_folded = true
 
 [node name="1" type="Position2D" parent="enemigo17/patrol_points"]
 position = Vector2( 1392.32, 1324.65 )
@@ -3754,6 +3756,12 @@ position = Vector2( 1021.17, 1343.11 )
 
 [node name="4" type="Position2D" parent="enemigo17/patrol_points"]
 position = Vector2( 1099.09, 88.1735 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = 5.0
+pitch_scale = 0.6
+autoplay = true
 
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=51 format=2]
+[gd_resource type="TileSet" load_steps=52 format=2]
 
 [ext_resource path="res://tiles/nivel 3/kenji_arena_1.png" type="Texture" id=1]
 [ext_resource path="res://tiles/nivel 3/kenji_pasto_1.png" type="Texture" id=2]
@@ -33,7 +33,8 @@
 [ext_resource path="res://tiles/nivel 5/kenji_mosaico_3b.png" type="Texture" id=31]
 [ext_resource path="res://tiles/nivel 5/kenji_mosaico_3.png" type="Texture" id=32]
 [ext_resource path="res://tiles/nivel2/pared_hotel_vertical.png" type="Texture" id=33]
-[ext_resource path="res://tiles/nivel2/pared_hotel_horizontal.png" type="Texture" id=34]
+[ext_resource path="res://tiles/nivel 5/murosdeacero.png" type="Texture" id=34]
+[ext_resource path="res://tiles/nivel2/pared_hotel_horizontal.png" type="Texture" id=35]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
@@ -212,7 +213,7 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 } ]
 8/z_index = 0
 9/name = "10"
-9/texture = ExtResource( 34 )
+9/texture = ExtResource( 35 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 0, 32, 32 )
@@ -1117,4 +1118,69 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 78/navigation = SubResource( 1 )
 78/shapes = [  ]
 78/z_index = 0
+79/name = "80"
+79/texture = ExtResource( 20 )
+79/tex_offset = Vector2( 0, 0 )
+79/modulate = Color( 1, 1, 1, 1 )
+79/region = Rect2( 0, 0, 32, 32 )
+79/tile_mode = 0
+79/occluder_offset = Vector2( 16, 16 )
+79/navigation_offset = Vector2( 16, 16 )
+79/navigation = SubResource( 9 )
+79/shapes = [  ]
+79/z_index = 0
+80/name = "81"
+80/texture = ExtResource( 12 )
+80/tex_offset = Vector2( 0, 0 )
+80/modulate = Color( 0.176471, 0.270588, 0.52549, 0.870588 )
+80/region = Rect2( 0, 0, 32, 32 )
+80/tile_mode = 0
+80/occluder_offset = Vector2( 16, 16 )
+80/navigation_offset = Vector2( 16, 16 )
+80/navigation = SubResource( 9 )
+80/shapes = [  ]
+80/z_index = 0
+81/name = "82"
+81/texture = ExtResource( 34 )
+81/tex_offset = Vector2( 0, 0 )
+81/modulate = Color( 1, 1, 1, 1 )
+81/region = Rect2( 64, 0, 32, 32 )
+81/tile_mode = 0
+81/occluder_offset = Vector2( 16, 16 )
+81/navigation_offset = Vector2( 16, 16 )
+81/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
+} ]
+81/z_index = 0
+82/name = "83"
+82/texture = ExtResource( 34 )
+82/tex_offset = Vector2( 0, 0 )
+82/modulate = Color( 1, 1, 1, 1 )
+82/region = Rect2( 97, 30, 30, 33 )
+82/tile_mode = 0
+82/occluder_offset = Vector2( 15, 16.75 )
+82/navigation_offset = Vector2( 15, 16.75 )
+82/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 15, 16.75 )
+} ]
+82/z_index = 0
+83/name = "84"
+83/texture = ExtResource( 5 )
+83/tex_offset = Vector2( 0, 0 )
+83/modulate = Color( 0.0901961, 0.870588, 1, 1 )
+83/region = Rect2( 0, 0, 32, 32 )
+83/tile_mode = 0
+83/occluder_offset = Vector2( 16, 16 )
+83/navigation_offset = Vector2( 16, 16 )
+83/navigation = SubResource( 11 )
+83/shapes = [  ]
+83/z_index = 0
 

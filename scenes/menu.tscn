@@ -1,14 +1,24 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes/main.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/mision.tscn" type="PackedScene" id=3]
 [ext_resource path="res://bgm/MENU.ogg" type="AudioStream" id=4]
-[ext_resource path="res://scenes/canvasmenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://menu/background_menu.jpg" type="Texture" id=5]
+[ext_resource path="res://gui/ikikapitan background.jpg" type="Texture" id=6]
+[ext_resource path="res://menu/heroesepicos_title.png" type="Texture" id=7]
+[ext_resource path="res://fonts/ARMY RUST.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://gui/btn_game.png" type="Texture" id=9]
+[ext_resource path="res://scenes/credits.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=1]
 length = 2.0
 loop = true
+
+[sub_resource type="DynamicFont" id=2]
+size = 46
+outline_color = Color( 0.905882, 0.905882, 0.905882, 1 )
+font_data = ExtResource( 8 )
 
 [node name="menu" type="Node2D" groups=[
 "menu",
@@ -25,81 +35,116 @@ anims/menu = SubResource( 1 )
 stream = ExtResource( 4 )
 autoplay = true
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 5 )]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="creador" parent="CanvasLayer/menu3" index="1"]
-editor/display_folded = false
-margin_left = 207.121
-margin_top = 35.1799
-margin_right = 701.121
-margin_bottom = 251.18
+[node name="bckg2" type="Sprite" parent="CanvasLayer"]
+visible = false
+modulate = Color( 1, 1, 1, 0.631373 )
+position = Vector2( 513.26, 330.492 )
+scale = Vector2( 1.06339, 1.07295 )
+texture = ExtResource( 5 )
 
-[node name="1" parent="CanvasLayer/menu3/graficos" index="0"]
-text = "BRIAN ARG
-"
+[node name="bckg" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 515.72, 330.457 )
+scale = Vector2( 0.128339, 0.143385 )
+texture = ExtResource( 6 )
 
-[node name="2" parent="CanvasLayer/menu3/graficos" index="1"]
-text = "MUYUATO
-"
+[node name="title" type="Sprite" parent="CanvasLayer"]
+visible = false
+position = Vector2( 529.684, 118.874 )
+scale = Vector2( 0.960145, 0.760868 )
+texture = ExtResource( 7 )
 
-[node name="4" parent="CanvasLayer/menu3/graficos" index="3"]
-text = "BLACK NIGHT"
+[node name="touch_start" type="Label" parent="CanvasLayer"]
+margin_left = 274.126
+margin_top = 507.241
+margin_right = 768.126
+margin_bottom = 547.241
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "TOQUE LA PANTALLA PARA EMPEZAR"
+align = 1
+valign = 1
+uppercase = true
 
-[node name="5" parent="CanvasLayer/menu3/graficos" index="4"]
-text = "KENJI"
+[node name="menu2" type="Position2D" parent="CanvasLayer"]
+visible = false
 
-[node name="7" parent="CanvasLayer/menu3/graficos" index="6"]
-margin_top = 354.514
-margin_bottom = 455.514
-text = "hak007"
+[node name="start" type="TextureButton" parent="CanvasLayer/menu2"]
+margin_left = 269.809
+margin_top = 269.208
+margin_right = 918.809
+margin_bottom = 363.208
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 9 )
+expand = true
 
-[node name="graficos2" parent="CanvasLayer/menu3" index="3"]
-editor/display_folded = false
-margin_left = 205.771
-margin_right = 699.771
+[node name="continue" type="TextureButton" parent="CanvasLayer/menu2"]
+margin_left = 269.809
+margin_top = 365.465
+margin_right = 918.809
+margin_bottom = 459.465
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 9 )
+expand = true
 
-[node name="1" parent="CanvasLayer/menu3/graficos2" index="0"]
-text = "ANTIFONTE
-"
+[node name="creditos" type="TextureButton" parent="CanvasLayer/menu2"]
+margin_left = 269.809
+margin_top = 459.465
+margin_right = 918.809
+margin_bottom = 553.465
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 9 )
+expand = true
 
-[node name="2" parent="CanvasLayer/menu3/graficos2" index="1"]
-text = "SANTIAGO FIERRO
-"
+[node name="salir" type="TextureButton" parent="CanvasLayer/menu2"]
+margin_left = 956.0
+margin_top = 21.0
+margin_right = 1002.0
+margin_bottom = 72.0
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 9 )
+expand = true
 
-[node name="3" parent="CanvasLayer/menu3/graficos2" index="2"]
-text = "EITA
-"
+[node name="newgame" type="Label" parent="CanvasLayer/menu2"]
+margin_left = 280.601
+margin_top = 280.602
+margin_right = 774.601
+margin_bottom = 329.602
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "NUEVO JUEGO"
+align = 1
+valign = 1
+uppercase = true
 
-[node name="4" parent="CanvasLayer/menu3/graficos2" index="3"]
-text = "DANNY HERAZO"
+[node name="continue2" type="Label" parent="CanvasLayer/menu2"]
+margin_left = 278.443
+margin_top = 375.574
+margin_right = 772.443
+margin_bottom = 424.574
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "CONTINUAR"
+align = 1
+valign = 1
+uppercase = true
 
-[node name="5" parent="CanvasLayer/menu3/graficos2" index="4"]
-text = "MANPACMAN"
+[node name="credits" type="Label" parent="CanvasLayer/menu2"]
+margin_left = 278.443
+margin_top = 472.706
+margin_right = 772.443
+margin_bottom = 521.706
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "CREDITOS"
+align = 1
+valign = 1
+uppercase = true
 
-[node name="6" parent="CanvasLayer/menu3/graficos2" index="5"]
-text = "TADCAB96"
-
-[node name="7" parent="CanvasLayer/menu3/graficos2" index="6"]
-text = "MAESTRO GODOT"
-
-[node name="COLABPATROC" parent="CanvasLayer/menu3" index="4"]
-margin_left = 556.677
-margin_right = 1050.68
-
-[node name="4" parent="CanvasLayer/menu3/COLABPATROC" index="3"]
-margin_top = 164.193
-margin_bottom = 265.193
-
-[node name="BGMSFX" parent="CanvasLayer/menu3" index="5"]
-margin_left = 564.086
-margin_top = 401.912
-margin_right = 1058.09
-margin_bottom = 617.912
+[node name="menu3" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 [connection signal="pressed" from="CanvasLayer/menu2/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/salir" to="." method="_on_salir_pressed"]
-[connection signal="pressed" from="CanvasLayer/menu3/atras" to="." method="_on_atras_pressed"]
-
-[editable path="CanvasLayer"]

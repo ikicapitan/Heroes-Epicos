@@ -60,7 +60,14 @@ func leer_tuto():
 	
 	if(!file.file_exists("res://data/tutorial/" + String(gamehandler.nivel) + "/" + String(gamehandler.instancias) + ".txt")):
 		$GUI/Dialogo.visible = false
-		get_tree().get_nodes_in_group("botones")[0].visible = true
+		var btn = get_tree().get_nodes_in_group("botones")[0]
+		btn.visible = true
+		if(gamehandler.nivel == 6): #Fin del juego
+			$GUI/Botones/btn_select.visible = false
+			$GUI/Botones/btn_move.visible = false
+			$GUI/Botones/btn_w1.visible = false
+			$GUI/Botones/btn_w2.visible = false
+			$GUI/Botones/btn_cam.visible = false
 	else:
 		$GUI/Dialogo.visible = true
 		file.open("res://data/tutorial/" + String(gamehandler.nivel) + "/" + String(gamehandler.instancias) + ".txt", File.READ)

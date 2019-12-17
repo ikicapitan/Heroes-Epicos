@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://sprites/s4.png" type="Texture" id=3]
+[ext_resource path="res://sprites/General_granadero.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.13881, 11.8194 )

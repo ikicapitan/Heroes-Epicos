@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://tiles/nivel 3/kenji_arena_1.png" type="Texture" id=1]
 [ext_resource path="res://tiles/nivel 5/Pista_Baile.png" type="Texture" id=2]
@@ -16,24 +16,25 @@
 [ext_resource path="res://tiles/HETileset.png" type="Texture" id=14]
 [ext_resource path="res://tiles/Alambre.png" type="Texture" id=15]
 [ext_resource path="res://tiles/suelos_lucas.png" type="Texture" id=16]
-[ext_resource path="res://tiles/Alambre2.png" type="Texture" id=17]
-[ext_resource path="res://tiles/nivel2/tile_4.png" type="Texture" id=18]
-[ext_resource path="res://tiles/nivel2/Piso.png" type="Texture" id=19]
-[ext_resource path="res://tiles/kenji_mosaico_2.1.png" type="Texture" id=20]
-[ext_resource path="res://tiles/kenji_mosaico_2.png" type="Texture" id=21]
-[ext_resource path="res://tiles/nivel 4/Pasto.png" type="Texture" id=22]
-[ext_resource path="res://tiles/nivel 4/Tile_Techo.png" type="Texture" id=23]
-[ext_resource path="res://tiles/edificio_tile.png" type="Texture" id=24]
-[ext_resource path="res://tiles/ruta.png" type="Texture" id=25]
-[ext_resource path="res://tiles/Pared2.png" type="Texture" id=26]
-[ext_resource path="res://tiles/Pared_rota.png" type="Texture" id=27]
-[ext_resource path="res://tiles/Me_Pica_El_Higado.png" type="Texture" id=28]
-[ext_resource path="res://tiles/1.png" type="Texture" id=29]
-[ext_resource path="res://tiles/2.png" type="Texture" id=30]
-[ext_resource path="res://tiles/3.png" type="Texture" id=31]
-[ext_resource path="res://tiles/4.png" type="Texture" id=32]
-[ext_resource path="res://tiles/5.png" type="Texture" id=33]
-[ext_resource path="res://tiles/Torreta_ppal.png" type="Texture" id=34]
+[ext_resource path="res://tiles/nivel 5/murosdeacero.png" type="Texture" id=17]
+[ext_resource path="res://tiles/Alambre2.png" type="Texture" id=18]
+[ext_resource path="res://tiles/nivel2/tile_4.png" type="Texture" id=19]
+[ext_resource path="res://tiles/nivel2/Piso.png" type="Texture" id=20]
+[ext_resource path="res://tiles/kenji_mosaico_2.1.png" type="Texture" id=21]
+[ext_resource path="res://tiles/kenji_mosaico_2.png" type="Texture" id=22]
+[ext_resource path="res://tiles/nivel 4/Pasto.png" type="Texture" id=23]
+[ext_resource path="res://tiles/nivel 4/Tile_Techo.png" type="Texture" id=24]
+[ext_resource path="res://tiles/edificio_tile.png" type="Texture" id=25]
+[ext_resource path="res://tiles/ruta.png" type="Texture" id=26]
+[ext_resource path="res://tiles/Pared2.png" type="Texture" id=27]
+[ext_resource path="res://tiles/Pared_rota.png" type="Texture" id=28]
+[ext_resource path="res://tiles/Me_Pica_El_Higado.png" type="Texture" id=29]
+[ext_resource path="res://tiles/1.png" type="Texture" id=30]
+[ext_resource path="res://tiles/2.png" type="Texture" id=31]
+[ext_resource path="res://tiles/3.png" type="Texture" id=32]
+[ext_resource path="res://tiles/4.png" type="Texture" id=33]
+[ext_resource path="res://tiles/5.png" type="Texture" id=34]
+[ext_resource path="res://tiles/Torreta_ppal.png" type="Texture" id=35]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
@@ -171,11 +172,19 @@ texture = ExtResource( 8 )
 navpoly = SubResource( 5 )
 
 [node name="6" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 0, 32 )
 texture = ExtResource( 6 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="6"]
+navpoly = SubResource( 6 )
+
+[node name="84" type="Sprite" parent="."]
+modulate = Color( 0.0901961, 0.870588, 1, 1 )
+position = Vector2( 0, 64 )
+texture = ExtResource( 6 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="84"]
+visible = false
 navpoly = SubResource( 6 )
 
 [node name="7" type="Sprite" parent="."]
@@ -490,10 +499,32 @@ frame = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="62/StaticBody2D"]
 shape = SubResource( 14 )
 
+[node name="82" type="Sprite" parent="."]
+position = Vector2( 192, 320 )
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="82"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="82/StaticBody2D"]
+shape = SubResource( 14 )
+
+[node name="83" type="Sprite" parent="."]
+position = Vector2( 224, 320 )
+texture = ExtResource( 17 )
+region_enabled = true
+region_rect = Rect2( 97, 30.4555, 30, 33.5 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="83"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="83/StaticBody2D"]
+shape = SubResource( 14 )
+
 [node name="60" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 32, 384 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="60"]
 
@@ -511,7 +542,7 @@ navpoly = SubResource( 15 )
 [node name="16" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 96 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="16"]
 navpoly = SubResource( 15 )
@@ -519,7 +550,7 @@ navpoly = SubResource( 15 )
 [node name="20" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 96 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="20"]
 navpoly = SubResource( 15 )
@@ -527,7 +558,7 @@ navpoly = SubResource( 15 )
 [node name="21" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 128 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="21"]
 navpoly = SubResource( 15 )
@@ -535,7 +566,7 @@ navpoly = SubResource( 15 )
 [node name="22" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 32, 128 )
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="22"]
 navpoly = SubResource( 15 )
@@ -543,7 +574,7 @@ navpoly = SubResource( 15 )
 [node name="23" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 64, 128 )
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="23"]
 navpoly = SubResource( 15 )
@@ -551,7 +582,7 @@ navpoly = SubResource( 15 )
 [node name="24" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 96, 128 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 
@@ -561,7 +592,7 @@ navpoly = SubResource( 15 )
 [node name="25" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 128 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 1
@@ -572,7 +603,7 @@ navpoly = SubResource( 15 )
 [node name="26" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 160 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 2
@@ -583,7 +614,7 @@ navpoly = SubResource( 15 )
 [node name="27" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 160 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 3
@@ -594,7 +625,7 @@ navpoly = SubResource( 15 )
 [node name="35" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 96, 192 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 5
@@ -605,7 +636,7 @@ navpoly = SubResource( 15 )
 [node name="36" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 192 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 6
@@ -616,7 +647,7 @@ navpoly = SubResource( 15 )
 [node name="37" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 224 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 7
@@ -627,7 +658,7 @@ navpoly = SubResource( 15 )
 [node name="38" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 32, 224 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 8
@@ -638,7 +669,7 @@ navpoly = SubResource( 15 )
 [node name="39" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 64, 224 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 10
@@ -649,7 +680,7 @@ navpoly = SubResource( 15 )
 [node name="40" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 96, 224 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 10
@@ -660,7 +691,7 @@ navpoly = SubResource( 15 )
 [node name="44" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 64, 256 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 11
@@ -671,7 +702,7 @@ navpoly = SubResource( 15 )
 [node name="45" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 96, 256 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 12
@@ -682,7 +713,7 @@ navpoly = SubResource( 15 )
 [node name="46" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 256 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 13
@@ -693,7 +724,7 @@ navpoly = SubResource( 15 )
 [node name="47" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 15
@@ -704,7 +735,7 @@ navpoly = SubResource( 15 )
 [node name="48" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 32, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 16
@@ -715,7 +746,7 @@ navpoly = SubResource( 15 )
 [node name="49" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 64, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 17
@@ -726,7 +757,7 @@ navpoly = SubResource( 15 )
 [node name="55" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 96, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 18
@@ -737,7 +768,7 @@ navpoly = SubResource( 15 )
 [node name="71" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 21
@@ -748,7 +779,7 @@ navpoly = SubResource( 15 )
 [node name="72" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 160, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 22
@@ -759,7 +790,7 @@ navpoly = SubResource( 15 )
 [node name="73" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 192, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 23
@@ -770,7 +801,7 @@ navpoly = SubResource( 15 )
 [node name="74" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 224, 288 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 24
@@ -781,7 +812,7 @@ navpoly = SubResource( 15 )
 [node name="75" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 160, 256 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 4
@@ -792,7 +823,7 @@ navpoly = SubResource( 15 )
 [node name="76" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 192, 256 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 vframes = 5
 hframes = 5
 frame = 20
@@ -803,7 +834,7 @@ navpoly = SubResource( 15 )
 [node name="50" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 0, 320 )
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="50"]
 
@@ -814,7 +845,7 @@ shape = SubResource( 14 )
 editor/display_folded = true
 position = Vector2( 32, 320 )
 rotation = 1.5708
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 vframes = 2
 hframes = 2
 
@@ -823,7 +854,7 @@ navpoly = SubResource( 15 )
 
 [node name="52" type="Sprite" parent="."]
 position = Vector2( 64, 320 )
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 vframes = 2
 hframes = 2
 frame = 1
@@ -834,7 +865,7 @@ navpoly = SubResource( 15 )
 [node name="53" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 96, 320 )
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 vframes = 2
 hframes = 2
 frame = 2
@@ -843,13 +874,21 @@ frame = 2
 navpoly = SubResource( 15 )
 
 [node name="54" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 128, 320 )
 texture = ExtResource( 16 )
 vframes = 2
 hframes = 2
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="54"]
+navpoly = SubResource( 15 )
+
+[node name="81" type="Sprite" parent="."]
+editor/display_folded = true
+modulate = Color( 0.176471, 0.270588, 0.52549, 0.870588 )
+position = Vector2( 160, 320 )
+texture = ExtResource( 21 )
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="81"]
 navpoly = SubResource( 15 )
 
 [node name="56" type="Sprite" parent="."]
@@ -871,16 +910,23 @@ frame = 1
 
 [node name="63" type="Sprite" parent="."]
 position = Vector2( 64, 384 )
-texture = ExtResource( 26 )
+texture = ExtResource( 27 )
+
+[node name="80" type="Sprite" parent="."]
+position = Vector2( 160, 384 )
+texture = ExtResource( 27 )
+
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="80"]
+navpoly = SubResource( 15 )
 
 [node name="64" type="Sprite" parent="."]
 position = Vector2( 96, 384 )
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 
 [node name="65" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 384 )
-texture = ExtResource( 28 )
+texture = ExtResource( 29 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="65"]
 
@@ -889,7 +935,7 @@ shape = SubResource( 16 )
 
 [node name="66" type="Sprite" parent="."]
 position = Vector2( 0, 416 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="66"]
@@ -900,7 +946,7 @@ shape = SubResource( 16 )
 [node name="67" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 32, 416 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="67"]
@@ -911,7 +957,7 @@ shape = SubResource( 16 )
 [node name="68" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 64, 416 )
-texture = ExtResource( 31 )
+texture = ExtResource( 32 )
 flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="68"]
@@ -922,7 +968,7 @@ shape = SubResource( 16 )
 [node name="69" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 96, 416 )
-texture = ExtResource( 32 )
+texture = ExtResource( 33 )
 flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="69"]
@@ -933,7 +979,7 @@ shape = SubResource( 16 )
 [node name="70" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 128, 416 )
-texture = ExtResource( 33 )
+texture = ExtResource( 34 )
 flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="70"]
@@ -944,5 +990,5 @@ shape = SubResource( 16 )
 [node name="58" type="Sprite" parent="."]
 position = Vector2( 128, 352 )
 scale = Vector2( 0.5, 0.499999 )
-texture = ExtResource( 34 )
+texture = ExtResource( 35 )
 

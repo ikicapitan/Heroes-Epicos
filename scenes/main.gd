@@ -11,7 +11,9 @@ export (PackedScene) var pj_dead
 export (PackedScene) var enemy_dead
 
 
-
+var datos = {
+	nivel = 0
+	}
 
 func restart_level():
 	yield(get_tree().create_timer(2.0),"timeout")
@@ -26,6 +28,8 @@ func clear_data_level():
 
 func load_level():
 	fade_in()
+	
+	save()
 	
 	var lvl = load("res://niveles/nivel" +str(gamehandler.nivel)+ ".tscn")
 	
@@ -90,3 +94,14 @@ func _on_canvas_animation_finished(anim_name):
 	if(anim_name == "fade_out"):
 		load_level()
 
+func save():
+	var guardar = File.new()
+	guardar.open("user://hepicos.sav",File.WRITE)
+	
+	var dato_guardar = datos
+	
+	dato_guardar.nivel = gamehandler.nivel
+	
+	guardar.store_line(to_json(dato_guardar))
+	
+	guardar.close()

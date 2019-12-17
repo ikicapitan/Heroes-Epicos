@@ -12,3 +12,11 @@ func _on_Area2D_body_entered(body):
 		gamehandler.hostage_saved()
 		queue_free()
 		
+func muerte():
+	var p_dead = get_tree().get_nodes_in_group("main")[0].pj_dead.instance()
+	get_tree().get_nodes_in_group("nivel")[0].add_child(p_dead)
+	p_dead.global_position = $Personaje.global_position
+	$Personaje/Area2D/Sprite.visible = false
+	$Personaje/CollisionShape2D.disabled = true
+	$Personaje/Area2D/CollisionShape2D.disabled = true
+	get_tree().get_nodes_in_group("main")[0].restart_level()

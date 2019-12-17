@@ -1,5 +1,5 @@
 [gd_scene format=2]
 
 [node name="sfx" type="AudioStreamPlayer"]
-volume_db = -7.0
+volume_db = -9.0
 
