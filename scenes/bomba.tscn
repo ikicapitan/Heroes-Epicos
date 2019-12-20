@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/bomba.gd" type="Script" id=1]
-[ext_resource path="res://tiles/nivel 5/objetos.png" type="Texture" id=2]
+[ext_resource path="res://scenes/bomb_explosion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tiles/nivel 5/objetos.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.2227, 7.93835 )
@@ -43,11 +44,12 @@ extents = Vector2( 18.928, 16.5814 )
 [node name="bomba" type="Node"]
 script = ExtResource( 1 )
 tiempo = 300
+explosion = ExtResource( 2 )
 
 [node name="Personaje" type="StaticBody2D" parent="." groups=[
-"objetivo",
 "not_saved",
 "bomba",
+"objetivo",
 ]]
 position = Vector2( 1299.32, 524.012 )
 z_index = 1
@@ -70,7 +72,7 @@ shape = SubResource( 4 )
 position = Vector2( 0.709854, 1.0256 )
 scale = Vector2( 1.19189, 1.20453 )
 z_index = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 125, 34, 37, 27 )
 

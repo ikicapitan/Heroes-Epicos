@@ -2901,7 +2901,6 @@ position = Vector2( 2142.1, 885.52 )
 spr_original = SubResource( 4 )
 
 [node name="bomba" parent="." instance=ExtResource( 20 )]
-editor/display_folded = true
 
 [node name="Personaje" parent="bomba" index="0"]
 position = Vector2( 688.131, 96.8616 )

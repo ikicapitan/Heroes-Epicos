@@ -142,6 +142,7 @@ func muerte():
 	var ed = get_tree().get_nodes_in_group("main")[0].enemy_dead.instance()
 	get_tree().get_nodes_in_group("nivel")[0].add_child(ed)
 	ed.global_position = global_position
+	get_tree().get_nodes_in_group("main")[0].generar_sfx(50)
 	queue_free()
 
 func _on_cooldown_timeout():
@@ -163,7 +164,6 @@ func cegar(duracion):
 	$rango.enabled = true
 	nivel_alerta = 100
 	estado_npc = estados.persiguiendo
-	print("aaaaa")
 	
 	
 	

@@ -100,7 +100,7 @@ func disparar():
 				$cooldown.wait_time = wait_w2
 				$cooldown.start()
 				get_tree().get_nodes_in_group("main")[0].generar_sfx(2)
-				if($rango_w1.is_colliding()):
+				if($rango_w2.is_colliding()):
 					var col = $rango_w2.get_collider()
 					var main = get_tree().get_nodes_in_group("main")[0]
 					var nivel = get_tree().get_nodes_in_group("nivel")[0]

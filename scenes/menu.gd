@@ -7,7 +7,7 @@ export (PackedScene) var mision
 var instancia = 0 #Pantalla carga
 
 var datos = {
-	nivel = 0
+	nivel = 0,
 	}
 
 func _ready():
@@ -56,7 +56,7 @@ func load_data():
 		cargar.open("user://hepicos.sav",File.READ)
 		var dato_cargar = datos
 		if(!cargar.eof_reached()):
-			dato_cargar.nivel = parse_json(cargar.get_line())
+			dato_cargar = parse_json(cargar.get_line())
 		cargar.close()
 		
 		gamehandler.nivel = dato_cargar.nivel

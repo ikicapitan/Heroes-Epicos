@@ -12,10 +12,11 @@ export (PackedScene) var enemy_dead
 
 
 var datos = {
-	nivel = 0
+	nivel = 0,
 	}
 
 func restart_level():
+	fade_out()
 	yield(get_tree().create_timer(2.0),"timeout")
 	clear_data_level()
 	get_tree().reload_current_scene()
@@ -77,6 +78,7 @@ func generar_sfx(num):
 	var audioSource = load("res://sfx/" +str(num)+ ".WAV")
 	var newSfx = sfx.instance()
 	add_child(newSfx)
+	newSfx.add_to_group("sfx")
 	newSfx.stream = audioSource
 	newSfx.play()
 	

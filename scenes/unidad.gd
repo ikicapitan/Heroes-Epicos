@@ -10,6 +10,8 @@ func _ready():
 	
 func morir():
 	if(!dead):
+		get_tree().get_nodes_in_group("main")[0].generar_sfx(50)
+		get_tree().get_nodes_in_group("sfx")[get_tree().get_nodes_in_group("sfx").size()-1].pitch_scale = 2.0
 		dead = true
 		var p_dead = get_tree().get_nodes_in_group("main")[0].pj_dead.instance()
 		get_tree().get_nodes_in_group("nivel")[0].add_child(p_dead)

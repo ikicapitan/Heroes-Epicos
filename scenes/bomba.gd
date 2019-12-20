@@ -15,9 +15,11 @@ func _on_Timer_timeout():
 		gamehandler.update_time(tiempo)
 	else:
 		get_tree().get_nodes_in_group("main")[0].restart_level()
+		get_tree().get_nodes_in_group("main")[0].generar_sfx(47)
 		var newexp = explosion.instance()
-		add_child(newexp)
 		newexp.global_position = $Personaje.global_position
+		get_tree().get_nodes_in_group("nivel")[0].add_child(newexp)
+		
 		queue_free()
 
 

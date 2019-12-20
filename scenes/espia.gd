@@ -106,6 +106,7 @@ func _on_cooldown_timeout():
 	get_tree().get_nodes_in_group("main")[0].generar_sfx(5)
 
 func vestir():
+	get_tree().get_nodes_in_group("main")[0].generar_sfx(42)
 	vestido = !vestido
 	if(vestido):
 		$Area2D/Sprite.texture = spr_espia
