@@ -68,14 +68,13 @@ func load_level():
 		get_tree().get_nodes_in_group("tiempo")[0].visible = true
 	else:
 		get_tree().get_nodes_in_group("tiempo")[0].visible = false
-		
 	
 
 func _ready():
 	load_level()
 
 func generar_sfx(num):
-	var audioSource = load("res://sfx/" +str(num)+ ".WAV")
+	var audioSource = load("res://sfx/" +str(num)+ ".wav")
 	var newSfx = sfx.instance()
 	add_child(newSfx)
 	newSfx.add_to_group("sfx")

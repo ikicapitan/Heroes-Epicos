@@ -11,7 +11,7 @@ var datos = {
 	}
 
 func _ready():
-	pass # Replace with function body.
+	$CanvasLayer/menu3/atras.connect("pressed", self, "_on_atras_pressed")
 
 func procesar_instancia():
 	instancia += 1
