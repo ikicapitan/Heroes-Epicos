@@ -91,6 +91,5 @@ cast_to = Vector2( 300, 0 )
 
 [node name="cooldown" type="Timer" parent="Personaje"]
 one_shot = true
-
 [connection signal="input_event" from="Personaje/Area2D" to="Personaje" method="_on_Area2D_input_event"]
 [connection signal="timeout" from="Personaje/cooldown" to="Personaje" method="_on_cooldown_timeout"]

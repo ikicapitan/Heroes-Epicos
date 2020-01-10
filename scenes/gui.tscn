@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/gui.gd" type="Script" id=1]
 [ext_resource path="res://gui/btn_game.png" type="Texture" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://gui/w1_icon.png" type="Texture" id=7]
 [ext_resource path="res://gui/w2_icon.png" type="Texture" id=8]
 [ext_resource path="res://gui/camera_icon.png" type="Texture" id=9]
-[ext_resource path="res://gui/dial_a_1.png" type="Texture" id=10]
-[ext_resource path="res://gui/dial_a_2.png" type="Texture" id=11]
+[ext_resource path="res://gui/sound_icon.png" type="Texture" id=10]
+[ext_resource path="res://gui/dial_a_1.png" type="Texture" id=11]
+[ext_resource path="res://gui/dial_a_2.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -32,7 +33,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ) ]
+"values": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ) ]
 }
 
 [node name="_main" type="CanvasModulate" groups=[
@@ -70,7 +71,7 @@ custom_fonts/font = SubResource( 1 )
 visible = false
 
 [node name="btn_select" type="TextureButton" parent="GUI/Botones"]
-editor/display_folded = true
+modulate = Color( 0.329412, 0.882353, 0.556863, 1 )
 margin_left = 32.0
 margin_top = 503.0
 margin_right = 117.0
@@ -80,11 +81,12 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="Sprite" type="Sprite" parent="GUI/Botones/btn_select"]
+modulate = Color( 0.0705882, 0.227451, 0.94902, 1 )
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 5 )
 
 [node name="btn_move" type="TextureButton" parent="GUI/Botones"]
-editor/display_folded = true
+modulate = Color( 0.329412, 0.882353, 0.556863, 1 )
 margin_left = 132.0
 margin_top = 500.0
 margin_right = 217.0
@@ -94,11 +96,12 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="Sprite" type="Sprite" parent="GUI/Botones/btn_move"]
+modulate = Color( 0.0705882, 0.227451, 0.94902, 1 )
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 6 )
 
 [node name="btn_w1" type="TextureButton" parent="GUI/Botones"]
-editor/display_folded = true
+modulate = Color( 0.329412, 0.882353, 0.556863, 1 )
 margin_left = 232.0
 margin_top = 500.0
 margin_right = 317.0
@@ -108,11 +111,12 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="Sprite" type="Sprite" parent="GUI/Botones/btn_w1"]
+modulate = Color( 0.0705882, 0.227451, 0.94902, 1 )
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 7 )
 
 [node name="btn_w2" type="TextureButton" parent="GUI/Botones"]
-editor/display_folded = true
+modulate = Color( 0.329412, 0.882353, 0.556863, 1 )
 margin_left = 332.0
 margin_top = 500.0
 margin_right = 417.0
@@ -122,11 +126,12 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="Sprite" type="Sprite" parent="GUI/Botones/btn_w2"]
+modulate = Color( 0.0705882, 0.227451, 0.94902, 1 )
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 8 )
 
 [node name="btn_cam" type="TextureButton" parent="GUI/Botones"]
-editor/display_folded = true
+modulate = Color( 0.329412, 0.882353, 0.556863, 1 )
 margin_left = 432.0
 margin_top = 500.0
 margin_right = 517.0
@@ -136,11 +141,12 @@ texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="Sprite" type="Sprite" parent="GUI/Botones/btn_cam"]
+modulate = Color( 0.0705882, 0.227451, 0.94902, 1 )
 position = Vector2( 42.1715, 42.1714 )
 texture = ExtResource( 9 )
 
 [node name="btn_exit" type="TextureButton" parent="GUI/Botones"]
-editor/display_folded = true
+modulate = Color( 0.329412, 0.882353, 0.556863, 1 )
 margin_left = 957.733
 margin_top = 6.98947
 margin_right = 1009.73
@@ -155,6 +161,35 @@ margin_top = 23.3825
 margin_right = 45.0106
 margin_bottom = 54.3825
 custom_colors/font_color = Color( 0.196078, 0.298039, 0.858824, 1 )
+text = "X
+"
+align = 1
+valign = 1
+
+[node name="btn_sound" type="TextureButton" parent="GUI/Botones"]
+modulate = Color( 0.329412, 0.882353, 0.556863, 1 )
+margin_left = 957.733
+margin_top = 80.0
+margin_right = 1009.73
+margin_bottom = 138.0
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
+expand = true
+
+[node name="Sprite" type="Sprite" parent="GUI/Botones/btn_sound"]
+modulate = Color( 0.0705882, 0.227451, 0.94902, 1 )
+position = Vector2( 25.0872, 29.6788 )
+scale = Vector2( 0.76673, 0.740811 )
+texture = ExtResource( 10 )
+
+[node name="x" type="Label" parent="GUI/Botones/btn_sound"]
+visible = false
+margin_left = -31.4719
+margin_top = 11.8532
+margin_right = 8.52806
+margin_bottom = 42.8532
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0.196078, 0.858824, 0.74902, 1 )
 text = "X
 "
 align = 1
@@ -201,12 +236,12 @@ anims/talk = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="GUI/Dialogo"]
 position = Vector2( 26.3713, 79.114 )
-texture = ExtResource( 10 )
-
+texture = ExtResource( 11 )
 [connection signal="button_down" from="GUI/Botones/btn_select" to="." method="_on_btn_select_button_down"]
 [connection signal="button_down" from="GUI/Botones/btn_move" to="." method="_on_btn_move_button_down"]
 [connection signal="button_down" from="GUI/Botones/btn_w1" to="." method="_on_btn_w1_button_down"]
 [connection signal="button_down" from="GUI/Botones/btn_w2" to="." method="_on_btn_w2_button_down"]
 [connection signal="button_down" from="GUI/Botones/btn_cam" to="." method="_on_btn_cam_button_down"]
 [connection signal="button_down" from="GUI/Botones/btn_exit" to="." method="_on_btn_exit_button_down"]
+[connection signal="button_down" from="GUI/Botones/btn_sound" to="." method="_on_btn_sound_button_down"]
 [connection signal="pressed" from="GUI/Dialogo/TextureButton" to="." method="_on_TextureButton_pressed"]

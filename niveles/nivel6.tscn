@@ -125,9 +125,9 @@ position = Vector2( 2139.51, 591.246 )
 editor/display_folded = true
 
 [node name="Personaje" type="KinematicBody2D" parent="rehen" groups=[
-"rehen",
 "objetivo",
 "not_saved",
+"rehen",
 ]]
 rotation = 1.56373
 z_index = 1
@@ -140,7 +140,9 @@ shape = SubResource( 5 )
 anims/idle = SubResource( 6 )
 anims/walk = SubResource( 7 )
 
-[node name="bgm" type="AudioStreamPlayer" parent="."]
+[node name="bgm" type="AudioStreamPlayer" parent="." groups=[
+"bgm",
+]]
 stream = ExtResource( 3 )
 volume_db = -15.914
 autoplay = true
@@ -480,6 +482,5 @@ text = "EITA
 align = 1
 valign = 1
 uppercase = true
-
 [connection signal="timeout" from="unidad/Personaje/cooldown" to="unidad/Personaje" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]

@@ -3,13 +3,15 @@ extends Node
 var target #Unidad seleccionada
 var puntero #Hacia donde apunta el mouse
 
+var sound = true
+
 enum estados_juego {menu,juego, mision}
 var estado_j_actual = estados_juego.menu
 
 enum estados {none,select,move,weapon1,weapon2, camera}
 var estado_actual = estados.none
 
-var nivel = 1
+var nivel = 5
 
 var instancias = 0 #0 intro, 1 cam, 2 intro
 

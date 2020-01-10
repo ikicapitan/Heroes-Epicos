@@ -28,6 +28,7 @@ func clear_data_level():
 	gamehandler.puntero = null
 
 func load_level():
+	
 	fade_in()
 	
 	save()
@@ -69,17 +70,20 @@ func load_level():
 	else:
 		get_tree().get_nodes_in_group("tiempo")[0].visible = false
 	
+	if(!gamehandler.sound):
+		get_tree().get_nodes_in_group("bgm")[0].stop()
 
 func _ready():
 	load_level()
 
 func generar_sfx(num):
-	var audioSource = load("res://sfx/" +str(num)+ ".wav")
-	var newSfx = sfx.instance()
-	add_child(newSfx)
-	newSfx.add_to_group("sfx")
-	newSfx.stream = audioSource
-	newSfx.play()
+	if(gamehandler.sound):
+		var audioSource = load("res://sfx/" +str(num)+ ".wav")
+		var newSfx = sfx.instance()
+		add_child(newSfx)
+		newSfx.add_to_group("sfx")
+		newSfx.stream = audioSource
+		newSfx.play()
 	
 
 func fade_in():

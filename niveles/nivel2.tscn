@@ -1655,7 +1655,6 @@ cast_to = Vector2( 300, 0 )
 stream = ExtResource( 38 )
 volume_db = -7.0
 autoplay = true
-
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy2/cooldown" to="enemigo2/Enemy2" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo3/Enemy3/cooldown" to="enemigo3/Enemy3" method="_on_cooldown_timeout"]

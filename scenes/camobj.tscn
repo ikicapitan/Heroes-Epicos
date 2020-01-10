@@ -16,4 +16,4 @@ vel_cam = 150.0
 
 [node name="Camera2D" type="Camera2D" parent="PathFollow2D"]
 current = true
-
+zoom = Vector2( 0.8, 0.8 )

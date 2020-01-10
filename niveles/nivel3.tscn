@@ -3756,12 +3756,13 @@ position = Vector2( 1021.17, 1343.11 )
 [node name="4" type="Position2D" parent="enemigo17/patrol_points"]
 position = Vector2( 1099.09, 88.1735 )
 
-[node name="bgm" type="AudioStreamPlayer" parent="."]
+[node name="bgm" type="AudioStreamPlayer" parent="." groups=[
+"bgm",
+]]
 stream = ExtResource( 25 )
 volume_db = 5.0
 pitch_scale = 0.6
 autoplay = true
-
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo3/Enemy/cooldown" to="enemigo3/Enemy" method="_on_cooldown_timeout"]

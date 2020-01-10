@@ -5,5 +5,5 @@
 [node name="Camera2D" type="Camera2D" groups=[
 "cam",
 ]]
+zoom = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
-

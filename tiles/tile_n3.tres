@@ -1183,4 +1183,3 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 83/navigation = SubResource( 11 )
 83/shapes = [  ]
 83/z_index = 0
-

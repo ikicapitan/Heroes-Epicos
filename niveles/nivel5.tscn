@@ -1467,11 +1467,12 @@ anims/walk = SubResource( 23 )
 [node name="Personaje" parent="bomba" index="0"]
 position = Vector2( 613.003, 226.117 )
 
-[node name="bgm" type="AudioStreamPlayer" parent="."]
+[node name="bgm" type="AudioStreamPlayer" parent="." groups=[
+"bgm",
+]]
 stream = ExtResource( 25 )
 volume_db = -15.914
 autoplay = true
-
 
 [editable path="unidad"]
 

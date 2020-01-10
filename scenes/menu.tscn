@@ -14,6 +14,18 @@
 [sub_resource type="Animation" id=1]
 length = 2.0
 loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/touch_start:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.235294 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="DynamicFont" id=2]
 size = 46
@@ -56,6 +68,7 @@ scale = Vector2( 0.960145, 0.760868 )
 texture = ExtResource( 7 )
 
 [node name="touch_start" type="Label" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0.61265 )
 margin_left = 274.126
 margin_top = 507.241
 margin_right = 768.126
@@ -106,6 +119,18 @@ rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 9 )
 expand = true
 
+[node name="x" type="Label" parent="CanvasLayer/menu2/salir"]
+margin_left = -223.168
+margin_top = -0.617401
+margin_right = 270.832
+margin_bottom = 48.3826
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "X"
+align = 1
+valign = 1
+uppercase = true
+
 [node name="newgame" type="Label" parent="CanvasLayer/menu2"]
 margin_left = 280.601
 margin_top = 280.602
@@ -143,7 +168,6 @@ valign = 1
 uppercase = true
 
 [node name="menu3" parent="CanvasLayer" instance=ExtResource( 10 )]
-
 [connection signal="pressed" from="CanvasLayer/menu2/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/menu2/creditos" to="." method="_on_creditos_pressed"]

@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/unidad.gd" type="Script" id=1]
+[ext_resource path="res://scenes/player.gd" type="Script" id=2]
+[ext_resource path="res://sprites/s6.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.89397, 13.5718 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Area2D/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Area2D/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.8981, 11.819 )
+
+[node name="capitan" type="Node"]
+script = ExtResource( 1 )
+vidas = 3
+
+[node name="Personaje" type="KinematicBody2D" parent="." groups=[
+"player",
+]]
+script = ExtResource( 2 )
+vel_desp = 150.0
+vel_rot = 15.0
+PRECISION = 100
+wait_w1 = 0.5
+wait_w2 = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
+position = Vector2( -0.75103, 0.394326 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personaje"]
+anims/idle = SubResource( 2 )
+anims/walk = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Personaje"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje/Area2D"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Personaje/Area2D"]
+position = Vector2( 4.19115, 2.09559 )
+rotation = 1.5708
+scale = Vector2( 0.672567, 0.457393 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="rango_w1" type="RayCast2D" parent="Personaje"]
+cast_to = Vector2( 180, 0 )
+
+[node name="rango_w2" type="RayCast2D" parent="Personaje"]
+cast_to = Vector2( 180, 0 )
+
+[node name="cooldown" type="Timer" parent="Personaje"]
+one_shot = true
+[connection signal="input_event" from="Personaje/Area2D" to="Personaje" method="_on_Area2D_input_event"]
+[connection signal="timeout" from="Personaje/cooldown" to="Personaje" method="_on_cooldown_timeout"]

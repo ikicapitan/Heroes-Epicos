@@ -986,4 +986,3 @@ outlines = [ PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 ) ]
 "shape_transform": Transform2D( 1, 0, 0, 1, 16, 16 )
 } ]
 68/z_index = 0
-

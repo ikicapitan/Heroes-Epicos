@@ -42,6 +42,13 @@ func button_press():
 func _on_btn_exit_button_down():
 	get_tree().quit()
 
+func _on_btn_sound_button_down():
+	gamehandler.sound = !gamehandler.sound
+	$GUI/Botones/btn_sound/x.visible = !gamehandler.sound
+	if(!gamehandler.sound):
+		get_tree().get_nodes_in_group("bgm")[0].stop()
+	else:
+		get_tree().get_nodes_in_group("bgm")[0].play()
 
 func procesar_instancias():
 		
@@ -86,3 +93,5 @@ func _on_TextureButton_pressed():
 	$GUI/Dialogo.visible = false
 	procesar_instancias()
 	
+
+

@@ -1013,4 +1013,3 @@ extents = Vector2( 16, 16 )
 69/navigation = SubResource( 14 )
 69/shapes = [  ]
 69/z_index = 0
-

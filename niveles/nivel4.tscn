@@ -1000,12 +1000,13 @@ position = Vector2( 1029.25, 388.525 )
 position = Vector2( 1350.4, 791.82 )
 rotation = -0.879037
 
-[node name="bmg" type="AudioStreamPlayer" parent="."]
+[node name="bgm" type="AudioStreamPlayer" parent="." groups=[
+"bgm",
+]]
 stream = ExtResource( 13 )
 volume_db = -14.857
 pitch_scale = 0.8
 autoplay = true
-
 [connection signal="timeout" from="enemigo/Enemy/cooldown" to="enemigo/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo2/Enemy/cooldown" to="enemigo2/Enemy" method="_on_cooldown_timeout"]
 [connection signal="timeout" from="enemigo3/Enemy/cooldown" to="enemigo3/Enemy" method="_on_cooldown_timeout"]
